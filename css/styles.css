@@ -24,3 +24,9 @@ html {
 .homepage-text {
   color: white;
 }
+
+#search-button {
+  background-color: rgb(52, 52, 52);
+  border-color: white;
+  color: white;
+}
