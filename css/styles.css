@@ -1,0 +1,26 @@
+html {
+  background-color: black;
+}
+
+.row {
+  background-color: rgb(52, 52, 52);
+  color: white;
+}
+
+#homepage-background {
+  background-color: rgb(255, 255, 255);
+}
+
+#gold {
+  color: rgb(219, 171, 31);
+}
+
+.homepage-second-background {
+  background-color: rgb(52, 52, 52);
+  font-size: 18;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Verdana, sans-serif;
+}
+
+.homepage-text {
+  color: white;
+}
