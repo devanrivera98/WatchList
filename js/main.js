@@ -1,26 +1,16 @@
 // var $searchForm = document.querySelector('.search');
 // var $searchButton1 = document.querySelector('i');
 // var $searchButton2 = document.querySelector('#search-button');
-// var $main = document.querySelector('[data-view="homepage"]');
-// var $section = document.querySelector('[data-view="results"');
+var $main = document.querySelector('[data-view="homepage"]');
+var $section = document.querySelector('[data-view="results"]');
 var $ul = document.querySelector('ul');
+var $home = document.querySelector('#home');
 // console.log($searchForm);
 // console.log($searchButton1);
 // console.log($searchButton2);
 // console.log($section);
 
-// function ViewSwap(name) {
-//   if (name === 'homepage') {
-//     $main.classList.remove('hidden');
-//     $section.classList.add('hidden');
-//   } else if (name === 'results') {
-//     $main.classList.add('hidden');
-//     $section.classList.remove('hidden');
-//   }
-//   data.view = name;
-// }
-
-function getMovieName(name) {
+function getResults(name) {
   var xhr = new XMLHttpRequest();
   // console.log('https://imdb-api.com/API/AdvancedSearch/k_99uf6ywj/?title=' + name);
   xhr.open('GET', 'https://imdb-api.com/API/AdvancedSearch/k_99uf6ywj/?title=' + name);
@@ -53,4 +43,23 @@ function getMovieName(name) {
   xhr.send();
 }
 
-getMovieName(); // no purpose just so I can commit
+getResults();
+
+function ViewSwap(name) {
+  if (name === 'homepage') {
+    $main.classList.remove('hidden');
+    $section.classList.add('hidden');
+  } else if (name === 'results') {
+    $main.classList.add('hidden');
+    $section.classList.remove('hidden');
+  }
+  data.view = name;
+}
+
+$home.addEventListener('click', goHome);
+
+function goHome() {
+  if ($home) {
+    ViewSwap('homepage');
+  }
+}
