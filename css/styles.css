@@ -11,8 +11,9 @@ html {
   background-color: rgb(255, 255, 255);
 }
 
-#gold {
+#my-list {
   color: rgb(219, 171, 31);
+  cursor: pointer;
 }
 
 .homepage-second-background {
@@ -25,8 +26,26 @@ html {
   color: white;
 }
 
+.results-header {
+  color: white;
+  font-size: 40px;
+}
+
 #search-button {
   background-color: rgb(52, 52, 52);
   border-color: white;
   color: white;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.results-background {
+  background-color: rgb(52, 52, 52);
+}
+
+.results-second-background {
+  background-color: rgb(217, 217, 217);
+  width: 60%;
 }

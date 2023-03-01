@@ -18,13 +18,15 @@
           <div>
             WatchList
           </div>
-          <div id="gold">
+          <div id="my-list">
             My List
           </div>
         </div>
         <div class="header-right">
           <div class="input">
-            <input class="search" placeholder="Search" required>
+            <form>
+              <input class="search" placeholder="Search" required>
+            </form>
           </div>
           <i class="fa-solid fa-magnifying-glass only-mobile"></i>
           <input id="search-button" type="submit" name="Search" value="Search">
@@ -32,7 +34,7 @@
       </div>
     </div>
   </header>
-  <main data-view="homepage">
+  <main data-view="homepage" class="hidden">
     <div id="homepage-background">
       <div class="homepage-image-container">
         <img class="homepage-image" src="https://cdn.wallpapersafari.com/83/19/m85rEQ.jpg">
@@ -45,6 +47,20 @@
       </div>
     </div>
   </main>
+  <section data-view="results">
+    <h1 class="results-header">Results</h1>
+    <ul>
+      <li>
+        <div class="results-background">
+          <div class="results-second-background">
+            <h2 id="title">TITLE</h2>
+            <img src="https://m.media-amazon.com/images/M/MV5BNTBkMjg2MjYtYTZjOS00ODQ0LTg0MDEtM2FiNmJmOGU1NGEwXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_UX128_CR0,12,128,176_AL_.jpg"">
+            <h2 id="learn-more">Learn More</h2>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </section>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
 </body>
