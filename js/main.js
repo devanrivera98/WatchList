@@ -1,16 +1,12 @@
-// var $searchForm = document.querySelector('.search');
-// var $searchButton1 = document.querySelector('i');
-// var $searchButton2 = document.querySelector('#search-button');
+var $searchForm = document.querySelector('form');
+var $seachInput = document.querySelector('.search');
 var $main = document.querySelector('[data-view="homepage"]');
 var $section = document.querySelector('[data-view="results"]');
 var $ul = document.querySelector('ul');
 var $home = document.querySelector('#home');
-// console.log($searchForm);
-// console.log($searchButton1);
-// console.log($searchButton2);
-// console.log($section);
 
 function getResults(name) {
+  $searchForm.reset();
   var xhr = new XMLHttpRequest();
   // console.log('https://imdb-api.com/API/AdvancedSearch/k_99uf6ywj/?title=' + name);
   xhr.open('GET', 'https://imdb-api.com/API/AdvancedSearch/k_99uf6ywj/?title=' + name);
@@ -43,8 +39,6 @@ function getResults(name) {
   xhr.send();
 }
 
-getResults();
-
 function ViewSwap(name) {
   if (name === 'homepage') {
     $main.classList.remove('hidden');
@@ -62,4 +56,15 @@ function goHome() {
   if ($home) {
     ViewSwap('homepage');
   }
+}
+
+$searchForm.addEventListener('submit', submitSearch);
+
+function submitSearch(event) {
+  event.preventDefault();
+  getResults($seachInput.value);
+  while ($ul.firstChild) {
+    $ul.removeChild($ul.firstChild);
+  }
+  ViewSwap('results');
 }

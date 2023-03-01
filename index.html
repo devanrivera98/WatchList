@@ -22,19 +22,21 @@
             My List
           </div>
         </div>
-        <div class="header-right">
-          <div class="input">
-            <form>
-              <input class="search" placeholder="Search" required>
-            </form>
+        <form>
+          <div class="header-right">
+            <div class="input">
+              <input class="search" type="text" placeholder="Search" required>
+            </div>
+            <button class="only-mobile">
+              <i class="fa-solid fa-magnifying-glass only-mobile"></i>
+            </button>
+            <input id="search-button" type="submit" name="Search" value="Search">
           </div>
-          <i class="fa-solid fa-magnifying-glass only-mobile"></i>
-          <input id="search-button" type="submit" name="Search" value="Search">
-        </div>
+        </form>
       </div>
     </div>
   </header>
-  <main data-view="homepage" class="hidden">
+  <main data-view="homepage" class="">
     <div id="homepage-background">
       <div class="homepage-image-container">
         <img class="homepage-image" src="https://cdn.wallpapersafari.com/83/19/m85rEQ.jpg">
@@ -47,10 +49,10 @@
       </div>
     </div>
   </main>
-  <section data-view="results">
+  <section data-view="results" class="hidden">
     <h1 class="results-header">Results</h1>
     <ul id="results-list">
-      <li>
+      <!-- <li>
         <div class="results-background">
           <div class="results-second-background">
             <h2 id="title">TITLE</h2>
@@ -58,7 +60,7 @@
             <a id="learn-more">Learn More</a>
           </div>
         </div>
-      </li>
+      </li> -->
     </ul>
   </section>
   <script src="js/data.js"></script>

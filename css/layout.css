@@ -151,6 +151,10 @@ a {
     width: 0;
   }
 
+  button {
+    display: none;
+  }
+
   #search-button {
     display: block;
   }
