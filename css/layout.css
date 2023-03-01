@@ -62,6 +62,7 @@
   width: 90%;
   line-height: 2rem;
   padding: 1rem 0;
+  border-radius: 2.5%;
 }
 
 .black-background {
@@ -159,38 +160,62 @@ a {
     display: block;
   }
 
-  .row {
-    padding: 1rem;
-    margin-bottom: 8rem;
+  #homepage-background {
+    display: flex;
+    padding: 1.5rem 1rem;
+    margin-top: 6rem;
   }
 
   .header-left > div {
     margin: 0.8rem;
   }
 
-  #homepage-background {
-    width: 80%;
-    display: flex;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+  .homepage-image-container {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
   .homepage-image {
     width: 90%;
     border-radius: 2.5%;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
   .homepage-second-background {
     width: 90%;
     line-height: 2rem;
     padding: 2rem 0;
+    font-size: 35px;
     margin: 0;
-    font-size: 30px;
   }
 
   .homepage-text-container {
     padding-top: 0;
-    margin: 0;
     width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  /* CSS Media for Results below */
+  img {
+    width: 50%;
+  }
+
+  .results-background {
+    width: 60%;
+  }
+
+  .results-second-background {
+    width: 70%;
+    padding: 2rem 0;
+  }
+
+  #title {
+    padding-bottom: 1rem;
+  }
+
+  #learn-more {
+    padding-top: 1rem;
   }
 }
