@@ -104,17 +104,28 @@ li {
   padding: 1rem;
 }
 
+img {
+  width: 60%;
+}
+
+a {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
 .results-background {
-  width: 80%;
+  width: 70%;
   display: flex;
   justify-content: center;
-  padding: 1rem 0;
+  padding: 1rem;
   margin: 0 auto;
 }
 
 .results-second-background {
   text-align: center;
   padding: 1rem 0;
+  width: 80%;
 }
 
 #title {
