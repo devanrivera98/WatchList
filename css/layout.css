@@ -23,7 +23,6 @@
 
 .header-left {
   display: flex;
-  justify-content: flex-start;
 }
 
 .header-left > div {
@@ -32,7 +31,6 @@
 
 .header-right {
   display: flex;
-  justify-content: flex-end;
 }
 
 .header-right > div.input {
@@ -82,7 +80,6 @@
 
 #homepage-background {
   width: 90%;
-  display: table;
   margin: 0 auto;
   padding-top: 1rem;
   padding-bottom: 2rem;

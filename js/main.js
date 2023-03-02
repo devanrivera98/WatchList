@@ -8,12 +8,9 @@ var $home = document.querySelector('#home');
 function getResults(name) {
   $searchForm.reset();
   var xhr = new XMLHttpRequest();
-  // console.log('https://imdb-api.com/API/AdvancedSearch/k_99uf6ywj/?title=' + name);
   xhr.open('GET', 'https://imdb-api.com/API/AdvancedSearch/k_99uf6ywj/?title=' + name);
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
-    // console.log('xhr.status', xhr.status);
-    // console.log('xhr.response', xhr.response);
     for (var i = 0; i < 5; i++) {
       var $li = document.createElement('li');
       var $resultsBackground = document.createElement('div');
