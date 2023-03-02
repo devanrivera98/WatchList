@@ -1,7 +1,8 @@
 var $searchForm = document.querySelector('form');
 var $seachInput = document.querySelector('.search');
 var $main = document.querySelector('[data-view="homepage"]');
-var $section = document.querySelector('[data-view="results"]');
+var $sectionResults = document.querySelector('[data-view="results"]');
+var $sectionDescription = document.querySelector('[data-view="description"]');
 var $ul = document.querySelector('ul');
 var $home = document.querySelector('#home');
 
@@ -39,10 +40,16 @@ function getResults(name) {
 function viewSwap(name) {
   if (name === 'homepage') {
     $main.classList.remove('hidden');
-    $section.classList.add('hidden');
+    $sectionResults.classList.add('hidden');
+    $sectionDescription.classList.add('hidden');
   } else if (name === 'results') {
     $main.classList.add('hidden');
-    $section.classList.remove('hidden');
+    $sectionDescription.classList.add('hidden');
+    $sectionResults.classList.remove('hidden');
+  } else if (name === 'description') {
+    $sectionDescription.classList.remove('hidden');
+    $main.classList.add('hidden');
+    $sectionResults.classList.add('hidden');
   }
   data.view = name;
 }
