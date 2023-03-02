@@ -150,17 +150,20 @@ a {
   padding: 1rem 0;
 }
 
-#plot-header {
+#description-plot-header,
+#description-cast-header,
+#description-genre-header {
   padding: 0.5rem 0;
 }
 
-#plot {
+#description-plot {
   padding: 0 0.5rem;
 }
 
-#three-item-row {
+#description-three-item-row {
   display: flex;
-  padding: 1.5rem 0;
+  justify-content: space-between;
+  padding-top: 1.5rem;
 }
 
 /* CSS For Description Page Ends Here */
