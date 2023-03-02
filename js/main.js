@@ -18,7 +18,7 @@ function getResults(name) {
       var $movieBackground = document.createElement('div');
       $movieBackground.className = 'results-second-background';
       var $movieTitle = document.createElement('h2');
-      $movieTitle.setAttribute('id', 'title');
+      $movieTitle.setAttribute('class', 'title');
       $movieTitle.textContent = xhr.response.results[i].title;
       var $moviePoster = document.createElement('img');
       $moviePoster.setAttribute('src', xhr.response.results[i].image);

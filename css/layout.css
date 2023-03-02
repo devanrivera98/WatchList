@@ -88,7 +88,8 @@
 
 /* CSS for Results Page Starts Here */
 
-.results-header {
+.results-header,
+.description-header {
   display: flex;
   justify-content: center;
 }
@@ -126,7 +127,7 @@ a {
   width: 80%;
 }
 
-#title {
+.title {
   padding-bottom: 1rem;
 }
 
@@ -135,6 +136,34 @@ a {
 }
 
 /* CSS For Results Page Ends Here */
+
+/* CSS For Description Page Starts Here */
+
+.description-background {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 1rem;
+}
+
+.description-image {
+  padding: 1rem 0;
+}
+
+#plot-header {
+  padding: 0.5rem 0;
+}
+
+#plot {
+  padding: 0 0.5rem;
+}
+
+#three-item-row {
+  display: flex;
+  padding: 1.5rem 0;
+}
+
+/* CSS For Description Page Ends Here */
 
 @media screen and (min-width: 768px) {
   .container {
@@ -208,7 +237,7 @@ a {
     padding: 2rem 0;
   }
 
-  #title {
+  .title {
     padding-bottom: 1rem;
   }
 
