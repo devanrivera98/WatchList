@@ -36,7 +36,7 @@ function getResults(name) {
   xhr.send();
 }
 
-function ViewSwap(name) {
+function viewSwap(name) {
   if (name === 'homepage') {
     $main.classList.remove('hidden');
     $section.classList.add('hidden');
@@ -51,7 +51,7 @@ $home.addEventListener('click', goHome);
 
 function goHome() {
   if ($home) {
-    ViewSwap('homepage');
+    viewSwap('homepage');
   }
 }
 
@@ -63,5 +63,5 @@ function submitSearch(event) {
   while ($ul.firstChild) {
     $ul.removeChild($ul.firstChild);
   }
-  ViewSwap('results');
+  viewSwap('results');
 }
