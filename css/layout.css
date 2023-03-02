@@ -1,0 +1,218 @@
+* {
+  margin: auto 0;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.container {
+  max-width: 768px;
+}
+
+.header {
+  position: fixed;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.header-left {
+  display: flex;
+}
+
+.header-left > div {
+  margin: 0.5rem;
+}
+
+.header-right {
+  display: flex;
+}
+
+.header-right > div.input {
+  margin: 0.5rem;
+}
+
+.search {
+  width: 70px;
+  text-indent: 5px;
+}
+
+#search-button {
+  display: none;
+}
+
+.homepage-image {
+  width: 90%;
+  border-radius: 2.5%;
+}
+
+.homepage-image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.homepage-second-background {
+  width: 90%;
+  line-height: 2rem;
+  padding: 1rem 0;
+  border-radius: 2.5%;
+}
+
+.black-background {
+  height: 100vh;
+}
+
+.homepage-text-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+}
+
+.homepage-text {
+  text-align: center;
+  padding: 1rem 2rem;
+}
+
+#homepage-background {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  border-radius: 1%;
+}
+
+/* CSS for Results Page Starts Here */
+
+.results-header {
+  display: flex;
+  justify-content: center;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  padding: 1rem;
+}
+
+img {
+  width: 60%;
+}
+
+a {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.results-background {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+.results-second-background {
+  text-align: center;
+  padding: 1rem 0;
+  width: 80%;
+}
+
+#title {
+  padding-bottom: 1rem;
+}
+
+#learn-more {
+  padding-top: 1rem;
+}
+
+/* CSS For Results Page Ends Here */
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 1600px;
+  }
+
+  .search {
+    width: 150px;
+  }
+
+  .only-mobile {
+    width: 0;
+  }
+
+  button {
+    display: none;
+  }
+
+  #search-button {
+    display: block;
+  }
+
+  #homepage-background {
+    display: flex;
+    padding: 1.5rem 1rem;
+    margin-top: 6rem;
+  }
+
+  .header-left > div {
+    margin: 0.8rem;
+  }
+
+  .homepage-image-container {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .homepage-image {
+    width: 90%;
+    border-radius: 2.5%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .homepage-second-background {
+    width: 90%;
+    line-height: 2rem;
+    padding: 2rem 0;
+    font-size: 35px;
+    margin: 0;
+  }
+
+  .homepage-text-container {
+    padding-top: 0;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  /* CSS Media for Results below */
+  img {
+    width: 50%;
+  }
+
+  .results-background {
+    width: 60%;
+  }
+
+  .results-second-background {
+    width: 70%;
+    padding: 2rem 0;
+  }
+
+  #title {
+    padding-bottom: 1rem;
+  }
+
+  #learn-more {
+    padding-top: 1rem;
+  }
+}

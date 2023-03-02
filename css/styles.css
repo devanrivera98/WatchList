@@ -1,0 +1,54 @@
+html {
+  background-color: black;
+}
+
+.row {
+  background-color: rgb(52, 52, 52);
+  color: white;
+}
+
+#home {
+  cursor: pointer;
+}
+
+#homepage-background {
+  background-color: rgb(255, 255, 255);
+}
+
+#my-list {
+  color: rgb(219, 171, 31);
+  cursor: pointer;
+}
+
+.homepage-second-background {
+  background-color: rgb(52, 52, 52);
+  font-size: 18;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Verdana, sans-serif;
+}
+
+.homepage-text {
+  color: white;
+}
+
+.results-header {
+  color: white;
+  font-size: 40px;
+}
+
+#search-button {
+  background-color: rgb(52, 52, 52);
+  border-color: white;
+  color: white;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.results-background {
+  background-color: rgb(52, 52, 52);
+}
+
+.results-second-background {
+  background-color: rgb(217, 217, 217);
+}
