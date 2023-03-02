@@ -139,6 +139,10 @@ a {
 
 /* CSS For Description Page Starts Here */
 
+.description-header {
+  padding-bottom: 0.5rem;
+}
+
 .description-background {
   width: 80%;
   margin: 0 auto;
@@ -150,17 +154,17 @@ a {
   padding: 1rem 0;
 }
 
-#description-plot-header,
-#description-cast-header,
-#description-genre-header {
+.description-plot-header,
+.description-cast-header,
+.description-genre-header {
   padding: 0.5rem 0;
 }
 
-#description-plot {
+.description-plot {
   padding: 0 0.5rem;
 }
 
-#description-three-item-row {
+.description-three-item-row {
   display: flex;
   justify-content: space-between;
   padding-top: 1.5rem;
@@ -226,7 +230,7 @@ a {
     margin-bottom: 0;
   }
 
-  /* CSS Media for Results below */
+  /* CSS Media for Results Starts Here */
   img {
     width: 50%;
   }
@@ -246,5 +250,42 @@ a {
 
   #learn-more {
     padding-top: 1rem;
+  }
+
+  /* CSS Media for Results End Here */
+
+  /* CSS Media for Description Page Starts Here */
+
+  .description-background {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 1rem 2rem;
+    font-size: 20px;
+  }
+
+  .description-title {
+    font-size: 40px;
+  }
+
+  .description-image {
+    padding: 1rem 0;
+  }
+
+  .description-plot-header,
+  .description-cast-header,
+  .description-genre-header {
+    padding: 0.5rem 0;
+    font-size: 30px;
+  }
+
+  .description-plot {
+    padding: 0 0.5rem;
+  }
+
+  .description-three-item-row {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1.5rem;
   }
 }
