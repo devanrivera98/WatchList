@@ -25,6 +25,7 @@ function getResults(name) {
       $movieTitle.textContent = xhr.response.results[i].title;
       var $moviePoster = document.createElement('img');
       $moviePoster.setAttribute('src', xhr.response.results[i].image);
+      $moviePoster.setAttribute('alt', 'movie-poster');
       var $learnMore = document.createElement('a');
       $learnMore.setAttribute('class', 'learn-more');
       $learnMore.textContent = 'Learn More';
@@ -59,6 +60,7 @@ function getResults(name) {
             $descriptionTitle.textContent = xhr.response.results[i].title;
             var $descriptionImage = document.createElement('img');
             $descriptionImage.setAttribute('src', xhr.response.results[i].image);
+            $descriptionImage.setAttribute('alt', 'movie-poster');
             $descriptionImage.className = 'description-image';
             var $descriptionPlotHeader = document.createElement('h3');
             $descriptionPlotHeader.className = 'description-plot-header';
