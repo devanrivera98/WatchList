@@ -97,7 +97,11 @@ function getResults(name) {
             var $Runtime = document.createElement('div');
             $Runtime.textContent = 'Runtime:';
             var $descriptionRuntime = document.createElement('div');
-            $descriptionRuntime.textContent = xhr.response.results[i].runtimeStr;
+            if (xhr.response.results[i].runtimeStr !== null) {
+              $descriptionRuntime.textContent = xhr.response.results[i].runtimeStr;
+            } else {
+              $descriptionRuntime.textContent = 'N/A';
+            }
             var $AverageCriticScoreContainer = document.createElement('div');
             var $AverageCriticScore = document.createElement('div');
             $AverageCriticScore.textContent = 'Average Critic Score:';
@@ -126,12 +130,29 @@ function getResults(name) {
             $AverageCriticScoreContainer.appendChild($AverageCriticScore);
             $AverageCriticScoreContainer.appendChild($descriptionAverageCriticScore);
             $descriptionUl.appendChild($descriptionLi);
+            var $movieInfoObject = {
+              title: xhr.response.results[i].title,
+              image: xhr.response.results[i].image,
+              plot: xhr.response.results[i].plot,
+              stars: xhr.response.results[i].stars,
+              genres: xhr.response.results[i].genres,
+              contentRating: xhr.response.results[i].contentRating,
+              runtime: xhr.response.results[i].runtimeStr,
+              rating: xhr.response.results[i].imDbRating
+            };
+            // console.log(xhr.response.results[i].title);
             viewSwap('description');
           }
         }
       }
-    }
+      // start of new function
+      $descriptionAddButton.addEventListener('click', addToList);
 
+      function addToList(event) {
+        // console.log($movieInfoObject);
+        data.entries.unshift($movieInfoObject);
+      }
+    }
   });
   xhr.send();
 }
@@ -150,7 +171,6 @@ function viewSwap(name) {
     $main.classList.add('hidden');
     $sectionResults.classList.add('hidden');
   }
-  data.view = name;
 }
 
 $home.addEventListener('click', goHome);
