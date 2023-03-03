@@ -49,9 +49,12 @@ ul {
 .results-background,
 .description-background {
   background-color: rgb(52, 52, 52);
-  color: white;
 }
 
 .results-second-background {
   background-color: rgb(217, 217, 217);
+}
+
+.description-background {
+  color: white;
 }
