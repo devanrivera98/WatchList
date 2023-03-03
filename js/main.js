@@ -14,7 +14,6 @@ function getResults(name) {
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
     for (var i = 0; i < 10; i++) {
-      // console.log(xhr.response);
       var $li = document.createElement('li');
       $li.setAttribute('data-entry-id', xhr.response.results[i].id);
       var $resultsBackground = document.createElement('div');
@@ -40,17 +39,11 @@ function getResults(name) {
       $resultsBackground.appendChild($movieId);
       $ul.appendChild($li);
     }
-    // var $movieIdResults = document.querySelectorAll('.movie-id');
-    // console.log('value of $movieIdResults.textContent', $movieIdResults[0].textContent);
-    // var $learnMoreAll = document.querySelectorAll('.learn-more');
-    // console.log($learnMoreAll);
 
     $ul.addEventListener('click', learnMoreClick);
 
     function learnMoreClick(event) {
       if (event.target.classList.contains('learn-more')) {
-        // console.log(xhr.response);
-        // console.log(typeof event.target.closet('li').getAttribute('data-entry-id'));
         if ($descriptionUl.childElementCount !== 0) {
           while ($descriptionUl.firstChild) {
             $descriptionUl.removeChild($descriptionUl.firstChild);
@@ -167,7 +160,3 @@ function submitSearch(event) {
   }
   viewSwap('results');
 }
-
-// if you pick from the same category more than once it will add that second entry twice
-// I need to figure out how to reset the more info page so that it will only keep one movie at a time
-// if I figure out how to reset the More Info page that might fix my first issue
