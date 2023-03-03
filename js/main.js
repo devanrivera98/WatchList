@@ -62,6 +62,12 @@ function getResults(name) {
             $descriptionImage.setAttribute('src', xhr.response.results[i].image);
             $descriptionImage.setAttribute('alt', 'movie-poster');
             $descriptionImage.className = 'description-image';
+            var $descriptionButtonContainer = document.createElement('div');
+            $descriptionButtonContainer.className = 'description-button';
+            var $descriptionAddButton = document.createElement('button');
+            $descriptionAddButton.className = 'add-button';
+            var $descriptionFaPlus = document.createElement('i');
+            $descriptionFaPlus.classList.add('fa-solid', 'fa-plus', 'fa-3x');
             var $descriptionPlotHeader = document.createElement('h3');
             $descriptionPlotHeader.className = 'description-plot-header';
             $descriptionPlotHeader.textContent = 'Description';
@@ -100,6 +106,9 @@ function getResults(name) {
             $descriptionLi.appendChild($descriptionBackground);
             $descriptionBackground.appendChild($descriptionTitle);
             $descriptionBackground.appendChild($descriptionImage);
+            $descriptionBackground.appendChild($descriptionButtonContainer);
+            $descriptionButtonContainer.appendChild($descriptionAddButton);
+            $descriptionAddButton.appendChild($descriptionFaPlus);
             $descriptionBackground.appendChild($descriptionPlotHeader);
             $descriptionBackground.appendChild($descriptionPlot);
             $descriptionBackground.appendChild($descriptionCastHeader);
