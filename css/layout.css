@@ -88,7 +88,8 @@
 
 /* CSS for Results Page Starts Here */
 
-.results-header {
+.results-header,
+.description-header {
   display: flex;
   justify-content: center;
 }
@@ -126,15 +127,50 @@ a {
   width: 80%;
 }
 
-#title {
-  padding-bottom: 1rem;
+.title {
+  padding: 0 0.5rem 1rem;
 }
 
-#learn-more {
+.learn-more {
   padding-top: 1rem;
 }
 
 /* CSS For Results Page Ends Here */
+
+/* CSS For Description Page Starts Here */
+
+.description-header {
+  padding-bottom: 0.5rem;
+}
+
+.description-background {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 1rem;
+}
+
+.description-image {
+  padding: 1rem 0;
+}
+
+.description-plot-header,
+.description-cast-header,
+.description-genre-header {
+  padding: 0.5rem 0;
+}
+
+.description-plot {
+  padding: 0 0.5rem;
+}
+
+.description-three-item-row {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1.5rem;
+}
+
+/* CSS For Description Page Ends Here */
 
 @media screen and (min-width: 768px) {
   .container {
@@ -194,7 +230,7 @@ a {
     margin-bottom: 0;
   }
 
-  /* CSS Media for Results below */
+  /* CSS Media for Results Starts Here */
   img {
     width: 50%;
   }
@@ -208,11 +244,48 @@ a {
     padding: 2rem 0;
   }
 
-  #title {
-    padding-bottom: 1rem;
+  .title {
+    padding: 0 0.5rem 1rem;
   }
 
-  #learn-more {
+  .learn-more {
     padding-top: 1rem;
+  }
+
+  /* CSS Media for Results End Here */
+
+  /* CSS Media for Description Page Starts Here */
+
+  .description-background {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 1rem 2rem;
+    font-size: 20px;
+  }
+
+  .description-title {
+    font-size: 40px;
+  }
+
+  .description-image {
+    padding: 1rem 0;
+  }
+
+  .description-plot-header,
+  .description-cast-header,
+  .description-genre-header {
+    padding: 0.5rem 0;
+    font-size: 30px;
+  }
+
+  .description-plot {
+    padding: 0 0.5rem;
+  }
+
+  .description-three-item-row {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1.5rem;
   }
 }

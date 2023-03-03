@@ -30,7 +30,8 @@ html {
   color: white;
 }
 
-.results-header {
+.results-header,
+.description-header {
   color: white;
   font-size: 40px;
 }
@@ -45,10 +46,15 @@ ul {
   list-style-type: none;
 }
 
-.results-background {
+.results-background,
+.description-background {
   background-color: rgb(52, 52, 52);
 }
 
 .results-second-background {
   background-color: rgb(217, 217, 217);
+}
+
+.description-background {
+  color: white;
 }
