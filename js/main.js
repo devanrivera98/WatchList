@@ -140,16 +140,13 @@ function getResults(name) {
               runtime: xhr.response.results[i].runtimeStr,
               rating: xhr.response.results[i].imDbRating
             };
-            // console.log(xhr.response.results[i].title);
             viewSwap('description');
           }
         }
       }
-      // start of new function
       $descriptionAddButton.addEventListener('click', addToList);
 
       function addToList(event) {
-        // console.log($movieInfoObject);
         data.entries.unshift($movieInfoObject);
       }
     }
