@@ -3,8 +3,10 @@ var $seachInput = document.querySelector('.search');
 var $main = document.querySelector('[data-view="homepage"]');
 var $sectionResults = document.querySelector('[data-view="results"]');
 var $sectionDescription = document.querySelector('[data-view="description"]');
+var $myListPage = document.querySelector('[data-view="my-list-page"]');
 var $ul = document.querySelector('ul');
 var $home = document.querySelector('#home');
+var $myList = document.querySelector('#my-list');
 var $descriptionUl = document.querySelector('#description-list');
 
 function getResults(name) {
@@ -165,12 +167,20 @@ function viewSwap(name) {
     $main.classList.remove('hidden');
     $sectionResults.classList.add('hidden');
     $sectionDescription.classList.add('hidden');
+    $myListPage.classList.add('hidden');
   } else if (name === 'results') {
+    $sectionResults.classList.remove('hidden');
     $main.classList.add('hidden');
     $sectionDescription.classList.add('hidden');
-    $sectionResults.classList.remove('hidden');
+    $myListPage.classList.add('hidden');
   } else if (name === 'description') {
     $sectionDescription.classList.remove('hidden');
+    $main.classList.add('hidden');
+    $sectionResults.classList.add('hidden');
+    $myListPage.classList.add('hidden');
+  } else if (name === 'my-list-page') {
+    $myListPage.classList.remove('hidden');
+    $sectionDescription.classList.add('hidden');
     $main.classList.add('hidden');
     $sectionResults.classList.add('hidden');
   }
@@ -181,6 +191,14 @@ $home.addEventListener('click', goHome);
 function goHome() {
   if ($home) {
     viewSwap('homepage');
+  }
+}
+
+$myList.addEventListener('click', goToMyList);
+
+function goToMyList() {
+  if ($myList) {
+    viewSwap('my-list-page');
   }
 }
 

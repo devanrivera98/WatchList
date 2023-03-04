@@ -25,7 +25,8 @@
   display: flex;
 }
 
-.header-left > div {
+.header-left > #my-list,
+.header-left > #home {
   margin: 0.5rem;
 }
 
@@ -184,7 +185,7 @@ a {
 
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 1600px;
+    max-width: 2000px;
   }
 
   .search {
@@ -206,7 +207,8 @@ a {
     margin-top: 6rem;
   }
 
-  .header-left > div {
+  .header-left > #home,
+  .header-left > #my-list {
     margin: 0.8rem;
   }
 
