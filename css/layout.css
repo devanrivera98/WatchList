@@ -170,6 +170,16 @@ a {
   padding-top: 1.5rem;
 }
 
+.description-row {
+  display: flex;
+  justify-content: center;
+}
+
+.description-button {
+  display: flex;
+  justify-content: center;
+}
+
 /* CSS For Description Page Ends Here */
 
 @media screen and (min-width: 768px) {
@@ -183,9 +193,6 @@ a {
 
   .only-mobile {
     width: 0;
-  }
-
-  button {
     display: none;
   }
 
@@ -288,4 +295,6 @@ a {
     justify-content: space-between;
     padding-top: 1.5rem;
   }
+
+  /* CSS Media for Description Page Ends Here */
 }

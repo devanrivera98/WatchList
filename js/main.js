@@ -62,6 +62,12 @@ function getResults(name) {
             $descriptionImage.setAttribute('src', xhr.response.results[i].image);
             $descriptionImage.setAttribute('alt', 'movie-poster');
             $descriptionImage.className = 'description-image';
+            var $descriptionButtonContainer = document.createElement('div');
+            $descriptionButtonContainer.className = 'description-button';
+            var $descriptionAddButton = document.createElement('button');
+            $descriptionAddButton.className = 'add-button';
+            var $descriptionFaPlus = document.createElement('i');
+            $descriptionFaPlus.classList.add('fa-solid', 'fa-plus', 'fa-3x');
             var $descriptionPlotHeader = document.createElement('h3');
             $descriptionPlotHeader.className = 'description-plot-header';
             $descriptionPlotHeader.textContent = 'Description';
@@ -91,7 +97,11 @@ function getResults(name) {
             var $Runtime = document.createElement('div');
             $Runtime.textContent = 'Runtime:';
             var $descriptionRuntime = document.createElement('div');
-            $descriptionRuntime.textContent = xhr.response.results[i].runtimeStr;
+            if (xhr.response.results[i].runtimeStr !== null) {
+              $descriptionRuntime.textContent = xhr.response.results[i].runtimeStr;
+            } else {
+              $descriptionRuntime.textContent = 'N/A';
+            }
             var $AverageCriticScoreContainer = document.createElement('div');
             var $AverageCriticScore = document.createElement('div');
             $AverageCriticScore.textContent = 'Average Critic Score:';
@@ -100,6 +110,9 @@ function getResults(name) {
             $descriptionLi.appendChild($descriptionBackground);
             $descriptionBackground.appendChild($descriptionTitle);
             $descriptionBackground.appendChild($descriptionImage);
+            $descriptionBackground.appendChild($descriptionButtonContainer);
+            $descriptionButtonContainer.appendChild($descriptionAddButton);
+            $descriptionAddButton.appendChild($descriptionFaPlus);
             $descriptionBackground.appendChild($descriptionPlotHeader);
             $descriptionBackground.appendChild($descriptionPlot);
             $descriptionBackground.appendChild($descriptionCastHeader);
@@ -117,12 +130,32 @@ function getResults(name) {
             $AverageCriticScoreContainer.appendChild($AverageCriticScore);
             $AverageCriticScoreContainer.appendChild($descriptionAverageCriticScore);
             $descriptionUl.appendChild($descriptionLi);
+            var $movieInfoObject = {
+              title: xhr.response.results[i].title,
+              image: xhr.response.results[i].image,
+              plot: xhr.response.results[i].plot,
+              stars: xhr.response.results[i].stars,
+              genres: xhr.response.results[i].genres,
+              contentRating: xhr.response.results[i].contentRating,
+              runtime: xhr.response.results[i].runtimeStr,
+              rating: xhr.response.results[i].imDbRating
+            };
             viewSwap('description');
+
           }
         }
       }
-    }
+      $descriptionAddButton.addEventListener('click', addToList);
 
+      function addToList(event) {
+        if (data.entries.find(isMovieName) === undefined) {
+          data.entries.unshift($movieInfoObject);
+        }
+      }
+      function isMovieName(name) {
+        return name.title === $movieInfoObject.title;
+      }
+    }
   });
   xhr.send();
 }
@@ -141,7 +174,6 @@ function viewSwap(name) {
     $main.classList.add('hidden');
     $sectionResults.classList.add('hidden');
   }
-  data.view = name;
 }
 
 $home.addEventListener('click', goHome);
