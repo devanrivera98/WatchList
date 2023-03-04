@@ -141,13 +141,19 @@ function getResults(name) {
               rating: xhr.response.results[i].imDbRating
             };
             viewSwap('description');
+
           }
         }
       }
       $descriptionAddButton.addEventListener('click', addToList);
 
       function addToList(event) {
-        data.entries.unshift($movieInfoObject);
+        if (data.entries.find(isMovieName) === undefined) {
+          data.entries.unshift($movieInfoObject);
+        }
+      }
+      function isMovieName(name) {
+        return name.title === $movieInfoObject.title;
       }
     }
   });
