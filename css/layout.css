@@ -90,7 +90,8 @@
 /* CSS for Results Page Starts Here */
 
 .results-header,
-.description-header {
+.description-header,
+.my-list-header {
   display: flex;
   justify-content: center;
 }
@@ -183,7 +184,55 @@ a {
 
 /* CSS For Description Page Ends Here */
 
-@media screen and (min-width: 768px) {
+/* CSS For My List Page Starts Here */
+
+.two-item-row {
+  display: flex;
+}
+
+.column {
+  flex: 1;
+}
+
+.my-list-background {
+  padding: 0.5rem;
+}
+
+.my-list-movie-poster {
+  object-fit: cover;
+  max-width: 40%;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 0.5rem;
+  border-radius: 3%;
+}
+
+.my-list-movie-details {
+  max-height: 40%;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0.5rem;
+  text-align: center;
+  border-radius: 3%;
+}
+
+.my-list-title {
+  padding: 0.25rem 0;
+}
+
+.my-list-movie-description {
+  padding: 0 0.5rem;
+}
+
+.my-list-three-item-row {
+  display: flex;
+  padding: 0.5rem;
+  justify-content: space-around;
+}
+
+/* CSS For My List Page Ends Here */
+
+@media screen and (min-width: 450px) {
   .container {
     max-width: 2000px;
   }
@@ -299,4 +348,43 @@ a {
   }
 
   /* CSS Media for Description Page Ends Here */
+
+  /* CSS Media for My List Page Starts Here */
+
+  .my-list-background {
+    width: 90%;
+    margin: auto;
+  }
+
+  .my-list-title-info {
+    font-size: 40px;
+  }
+
+  .my-list-paragraph {
+    font-size: 30px;
+  }
+
+  .my-list-three-item-row {
+    padding-top: 20%;
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .my-list-background {
+    width: 80%;
+    margin: auto;
+  }
+
+  .my-list-three-item-row {
+    padding-top: 30%;
+  }
+
+  .my-list-title {
+    padding: 1rem 0;
+  }
+
+  .my-list-paragraph {
+    padding: 2rem 0;
+  }
 }

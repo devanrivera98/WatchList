@@ -212,3 +212,17 @@ function submitSearch(event) {
   }
   viewSwap('results');
 }
+
+$myList.addEventListener('click', createMyList);
+
+function createMyList() {
+  for (var i = 0; i < data.entries.length; i++) {
+    // console.log('is this working?');
+    var $myListBackground = document.createElement('div');
+    $myListBackground.className = 'my-list-background';
+    var $myListTwoItemRow = document.createElement('div');
+    $myListTwoItemRow.className = 'two-item-row';
+    var $myListMoviePoster = document.createElement('div');
+    $myListMoviePoster.classList.add('my-list-movie-poster');
+  }
+}

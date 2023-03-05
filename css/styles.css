@@ -31,7 +31,8 @@ html {
 }
 
 .results-header,
-.description-header {
+.description-header,
+.my-list-header {
   color: white;
   font-size: 40px;
 }
@@ -47,7 +48,8 @@ ul {
 }
 
 .results-background,
-.description-background {
+.description-background,
+.my-list-background {
   background-color: rgb(52, 52, 52);
 }
 
@@ -57,4 +59,12 @@ ul {
 
 .description-background {
   color: white;
+}
+
+.my-list-movie-details {
+  background-color: rgb(217, 217, 217);
+}
+
+.my-list-title {
+  font-size: 25px;
 }
