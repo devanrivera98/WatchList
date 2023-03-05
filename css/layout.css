@@ -199,7 +199,7 @@ a {
 }
 
 .my-list-movie-poster {
-  object-fit: cover;
+  object-fit: fill;
   max-width: 40%;
   margin-top: 0;
   margin-bottom: 0;
@@ -230,9 +230,13 @@ a {
   justify-content: space-around;
 }
 
+.my-list-h3 {
+  padding: 0.5rem 0;
+}
+
 /* CSS For My List Page Ends Here */
 
-@media screen and (min-width: 450px) {
+@media screen and (min-width: 650px) {
   .container {
     max-width: 2000px;
   }
@@ -368,6 +372,18 @@ a {
     padding-top: 20%;
     font-size: 30px;
   }
+
+  .my-list-h3 {
+    font-size: 35px;
+  }
+
+  .my-list-info {
+    font-size: 30px;
+  }
+
+  .my-list-movie-poster {
+    object-fit: cover;
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -377,7 +393,7 @@ a {
   }
 
   .my-list-three-item-row {
-    padding-top: 30%;
+    padding-top: 5%;
   }
 
   .my-list-title {
@@ -385,6 +401,10 @@ a {
   }
 
   .my-list-paragraph {
-    padding: 2rem 0;
+    padding: 1rem 0;
+  }
+
+  .my-list-h3 {
+    padding: 1rem 0;
   }
 }

@@ -8,6 +8,7 @@ var $ul = document.querySelector('ul');
 var $home = document.querySelector('#home');
 var $myList = document.querySelector('#my-list');
 var $descriptionUl = document.querySelector('#description-list');
+var $myListUl = document.querySelector('#my-list-ul');
 
 function getResults(name) {
   $searchForm.reset();
@@ -216,13 +217,97 @@ function submitSearch(event) {
 $myList.addEventListener('click', createMyList);
 
 function createMyList() {
+  if ($myListUl.childElementCount !== 0) {
+    while ($myListUl.firstChild) {
+      $myListUl.removeChild($myListUl.firstChild);
+    }
+  }
   for (var i = 0; i < data.entries.length; i++) {
-    // console.log('is this working?');
+    var $myListLi = document.createElement('li');
     var $myListBackground = document.createElement('div');
     $myListBackground.className = 'my-list-background';
     var $myListTwoItemRow = document.createElement('div');
     $myListTwoItemRow.className = 'two-item-row';
-    var $myListMoviePoster = document.createElement('div');
-    $myListMoviePoster.classList.add('my-list-movie-poster');
+    var $myListMoviePoster = document.createElement('img');
+    $myListMoviePoster.classList.add('my-list-movie-poster', 'column');
+    $myListMoviePoster.setAttribute('src', data.entries[i].image);
+    var $myListMovieDetails = document.createElement('div');
+    $myListMovieDetails.classList.add('my-list-movie-details', 'column');
+    var $myListTitle = document.createElement('div');
+    $myListTitle.className = 'my-list-title';
+    var $myListTitleInfo = document.createElement('h3');
+    $myListTitleInfo.className = 'my-list-title-info';
+    $myListTitleInfo.textContent = data.entries[i].title;
+    var $myListMovieDescription = document.createElement('div');
+    $myListMovieDescription.className = 'my-list-movie-description';
+    var $myListParagraphTitle = document.createElement('h3');
+    $myListParagraphTitle.className = 'my-list-h3';
+    $myListParagraphTitle.textContent = 'Description:';
+    var $myListParagraph = document.createElement('p');
+    $myListParagraph.className = 'my-list-paragraph';
+    $myListParagraph.textContent = data.entries[i].plot;
+    var $myListCastContainer = document.createElement('div');
+    var $myListCast = document.createElement('h3');
+    $myListCast.className = 'my-list-h3';
+    $myListCast.textContent = 'Cast:';
+    var $myListCastInfo = document.createElement('div');
+    $myListCastInfo.className = 'my-list-info';
+    $myListCastInfo.textContent = data.entries[i].stars;
+    var $myListGenreContainer = document.createElement('div');
+    var $myListGenre = document.createElement('h3');
+    $myListGenre.className = 'my-list-h3';
+    $myListGenre.textContent = 'Genre:';
+    var $myListGenreInfo = document.createElement('div');
+    $myListGenreInfo.className = 'my-list-info';
+    $myListGenreInfo.textContent = data.entries[i].genres;
+    var $mylistThreeItemRow = document.createElement('div');
+    $mylistThreeItemRow.className = 'my-list-three-item-row';
+    var $divContainerOne = document.createElement('div');
+    var $myListContent = document.createElement('div');
+    $myListContent.textContent = 'Content';
+    var $myListRating = document.createElement('div');
+    $myListRating.textContent = 'Rating:';
+    var $myListContentRatingInfo = document.createElement('div');
+    $myListContentRatingInfo.textContent = data.entries[i].contentRating;
+    var $divContainerTwo = document.createElement('div');
+    var $myListRuntime = document.createElement('div');
+    $myListRuntime.textContent = 'Runtime:';
+    var $myListRuntimeInfo = document.createElement('div');
+    $myListRuntimeInfo.textContent = data.entries[i].runtime;
+    var $divContainerThree = document.createElement('div');
+    var $myListAverage = document.createElement('div');
+    $myListAverage.textContent = 'Average';
+    var $myListScore = document.createElement('div');
+    $myListScore.textContent = 'Score:';
+    var $myListAverageScoreInfo = document.createElement('div');
+    $myListAverageScoreInfo.textContent = data.entries[i].rating;
+    $myListLi.appendChild($myListBackground);
+    $myListBackground.appendChild($myListTwoItemRow);
+    $myListTwoItemRow.appendChild($myListMoviePoster);
+    $myListTwoItemRow.appendChild($myListMovieDetails);
+    $myListMovieDetails.appendChild($myListTitle);
+    $myListTitle.appendChild($myListTitleInfo);
+    $myListMovieDetails.appendChild($myListMovieDescription);
+    $myListMovieDescription.appendChild($myListParagraphTitle);
+    $myListMovieDescription.appendChild($myListParagraph);
+    $myListMovieDetails.appendChild($myListCastContainer);
+    $myListCastContainer.appendChild($myListCast);
+    $myListCastContainer.appendChild($myListCastInfo);
+    $myListMovieDetails.appendChild($myListGenreContainer);
+    $myListGenreContainer.appendChild($myListGenre);
+    $myListGenreContainer.appendChild($myListGenreInfo);
+    $myListMovieDetails.appendChild($mylistThreeItemRow);
+    $mylistThreeItemRow.appendChild($divContainerOne);
+    $divContainerOne.appendChild($myListContent);
+    $divContainerOne.appendChild($myListRating);
+    $divContainerOne.appendChild($myListContentRatingInfo);
+    $mylistThreeItemRow.append($divContainerTwo);
+    $divContainerTwo.appendChild($myListRuntime);
+    $divContainerTwo.appendChild($myListRuntimeInfo);
+    $mylistThreeItemRow.appendChild($divContainerThree);
+    $divContainerThree.appendChild($myListAverage);
+    $divContainerThree.appendChild($myListScore);
+    $divContainerThree.appendChild($myListAverageScoreInfo);
+    $myListUl.appendChild($myListLi);
   }
 }
