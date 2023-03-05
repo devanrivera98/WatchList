@@ -153,6 +153,8 @@ function getResults(name) {
       function addToList(event) {
         if (data.entries.find(isMovieName) === undefined) {
           data.entries.unshift($movieInfoObject);
+          createMyList();
+          viewSwap('my-list-page');
         }
       }
       function isMovieName(name) {
