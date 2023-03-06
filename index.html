@@ -15,12 +15,12 @@
     <div class="container">
       <div class="row">
         <div class="header-left">
-          <div id="home">
+          <a id="home">
             WatchList
-          </div>
-          <div id="my-list">
+          </a>
+          <a id="my-list">
             My List
-          </div>
+          </a>
         </div>
         <form>
           <div class="header-right">
@@ -54,9 +54,57 @@
     <ul id="results-list">
     </ul>
   </section>
-  <section data-view="description" class="">
+  <section data-view="description" class="hidden">
     <h1 class="description-header">More Info</h1>
     <ul id="description-list">
+    </ul>
+  </section>
+  <section data-view="my-list-page">
+    <h1 class="my-list-header">My List</h1>
+    <ul id="my-list-ul">
+      <!--PlaceHolder for my Delete feature on issue 5-->
+      <!-- <li>
+        <div class="my-list-background">
+          <div class="two-item-row">
+            <img class="my-list-movie-poster column"
+              src="https://m.media-amazon.com/images/M/MV5BOGQzZTBjMjQtOTVmMS00NGE5LWEyYmMtOGQ1ZGZjNmRkYjFhXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_Ratio0.6837_AL_.jpg">
+            <div class="my-list-movie-details column">
+              <div class="my-list-title">
+                <h3 class="my-list-title-info">Title</h3>
+              </div>
+              <div class="my-list-movie-description">
+                <h3 class="my-list-h3">Description</h3>
+                <p class="my-list-paragraph">This is the placeholder for where there would be a plot description of what the
+                  movie is about. If you liked the movie already and added it to your list, it would be displayed here</p>
+              </div>
+              <div>
+                <h3 class="my-list-h3">Cast:</h3>
+                <div class="my-list-info">Adam Adams, John John, Bill Bill, Samuel Samuel, Joe Joe</div>
+              </div>
+              <div>
+                <h3 class="my-list-h3">Genre:</h3>
+                <div class="my-list-info">Action, Mystery</div>
+              </div>
+              <div class="my-list-three-item-row">
+                <div>
+                  <div>Content</div>
+                  <div>Rating:</div>
+                  <div>R</div>
+                </div>
+                <div>
+                  <div>Runtime:</div>
+                  <div>130 minutes</div>
+                </div>
+                <div>
+                  <div>Average</div>
+                  <div>Score</div>
+                  <div>7.0</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li> -->
     </ul>
   </section>
   <script src="js/data.js"></script>
