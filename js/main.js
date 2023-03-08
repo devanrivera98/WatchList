@@ -283,6 +283,12 @@ function createMyList() {
     $myListScore.textContent = 'Score:';
     var $myListAverageScoreInfo = document.createElement('div');
     $myListAverageScoreInfo.textContent = data.entries[i].rating;
+    // new below
+    var $myListDeleteButtonContainer = document.createElement('div');
+    $myListDeleteButtonContainer.className = 'delete-button-container';
+    var $myListDeleteButton = document.createElement('button');
+    $myListDeleteButton.className = 'delete-button';
+    $myListDeleteButton.textContent = 'Delete Entry';
     $myListLi.appendChild($myListBackground);
     $myListBackground.appendChild($myListTwoItemRow);
     $myListTwoItemRow.appendChild($myListMoviePoster);
@@ -311,5 +317,7 @@ function createMyList() {
     $divContainerThree.appendChild($myListScore);
     $divContainerThree.appendChild($myListAverageScoreInfo);
     $myListUl.appendChild($myListLi);
+    $myListMovieDetails.appendChild($myListDeleteButtonContainer);
+    $myListDeleteButtonContainer.appendChild($myListDeleteButton);
   }
 }

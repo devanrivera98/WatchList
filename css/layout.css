@@ -240,7 +240,7 @@ a {
   padding: 0.25rem 1rem;
 }
 
-.section-off {
+.section-on {
   position: fixed;
   height: 1000vh;
   width: 100%;
@@ -250,6 +250,10 @@ a {
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+.section-off {
+  display: none;
 }
 
 .pop-up-modal {
@@ -428,7 +432,7 @@ a {
   }
 
   .my-list-movie-poster {
-    object-fit: cover;
+    object-fit: fill;
   }
 
   .pop-up-question {
