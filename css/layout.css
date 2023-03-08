@@ -234,6 +234,12 @@ a {
   padding: 0.5rem 0;
 }
 
+.delete-button-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.25rem 1rem;
+}
+
 /* CSS For My List Page Ends Here */
 
 @media screen and (min-width: 650px) {
@@ -393,7 +399,7 @@ a {
   }
 
   .my-list-three-item-row {
-    padding-top: 5%;
+    padding-top: 3%;
   }
 
   .my-list-title {
@@ -406,5 +412,9 @@ a {
 
   .my-list-h3 {
     padding: 1rem 0;
+  }
+
+  .delete-button {
+    font-size: 20px;
   }
 }
