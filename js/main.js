@@ -9,6 +9,7 @@ var $home = document.querySelector('#home');
 var $myList = document.querySelector('#my-list');
 var $descriptionUl = document.querySelector('#description-list');
 var $myListUl = document.querySelector('#my-list-ul');
+var $popUpPage = document.querySelector('#pop-up-page');
 
 function getResults(name) {
   $searchForm.reset();
@@ -325,5 +326,20 @@ function createMyList() {
     $myListUl.appendChild($myListLi);
     $myListMovieDetails.appendChild($myListDeleteButtonContainer);
     $myListDeleteButtonContainer.appendChild($myListDeleteButton);
+  }
+
+  // var $allDeleteButtons = document.querySelectorAll('.delete-button');
+  $myListUl.addEventListener('click', deleteEntryModal);
+  $popUpPage.addEventListener('click', deleteEntryModal);
+
+  function deleteEntryModal(event) {
+    if (event.target.classList.contains('delete-button')) {
+      $popUpPage.classList.remove('section-off');
+      $popUpPage.classList.add('section-on');
+    }
+    if (event.target.classList.contains('pop-up-button-cancel')) {
+      $popUpPage.classList.remove('section-on');
+      $popUpPage.classList.add('section-off');
+    }
   }
 }
