@@ -159,7 +159,10 @@ function getResults(name) {
 
       function addToList(event) {
         if (data.entries.find(isMovieName) === undefined) {
+          $movieInfoObject.entryId = data.nextEntryId;
+          data.nextEntryId++;
           data.entries.unshift($movieInfoObject);
+          // console.log('value of $movieInfoObject:', $movieInfoObject);
           createMyList();
           viewSwap('my-list-page');
         }
@@ -225,7 +228,7 @@ function submitSearch(event) {
 
 $myList.addEventListener('click', createMyList);
 
-function createMyList() {
+function createMyList(event) {
   if ($myListUl.childElementCount !== 0) {
     while ($myListUl.firstChild) {
       $myListUl.removeChild($myListUl.firstChild);
@@ -233,6 +236,7 @@ function createMyList() {
   }
   for (var i = 0; i < data.entries.length; i++) {
     var $myListLi = document.createElement('li');
+    $myListLi.setAttribute('data-entry-id', data.entries[i].entryId);
     var $myListBackground = document.createElement('div');
     $myListBackground.className = 'my-list-background';
     var $myListTwoItemRow = document.createElement('div');
@@ -290,7 +294,6 @@ function createMyList() {
     $myListScore.textContent = 'Score:';
     var $myListAverageScoreInfo = document.createElement('div');
     $myListAverageScoreInfo.textContent = data.entries[i].rating;
-    // new below
     var $myListDeleteButtonContainer = document.createElement('div');
     $myListDeleteButtonContainer.className = 'delete-button-container';
     var $myListDeleteButton = document.createElement('button');
@@ -327,19 +330,47 @@ function createMyList() {
     $myListMovieDetails.appendChild($myListDeleteButtonContainer);
     $myListDeleteButtonContainer.appendChild($myListDeleteButton);
   }
-
   // var $allDeleteButtons = document.querySelectorAll('.delete-button');
-  $myListUl.addEventListener('click', deleteEntryModal);
-  $popUpPage.addEventListener('click', deleteEntryModal);
+  $myListUl.addEventListener('click', popUpModal);
+  $popUpPage.addEventListener('click', popUpModal);
 
-  function deleteEntryModal(event) {
+  function popUpModal(event) {
     if (event.target.classList.contains('delete-button')) {
+      // console.log('value of closest event:', event.target.closest('li').getAttribute('data-entry-id'));
+      data.editing = event.target.closest('li').getAttribute('data-entry-id');
+      // console.log('value of data.editing:', data.editing);
+      // this is the only console log that works
+      for (var i = 0; i < data.entries.length; i++) {
+        // try using foreach to add a property to each index of the array
+      }
       $popUpPage.classList.remove('section-off');
       $popUpPage.classList.add('section-on');
     }
     if (event.target.classList.contains('pop-up-button-cancel')) {
       $popUpPage.classList.remove('section-on');
       $popUpPage.classList.add('section-off');
+      data.editing = null;
     }
+  }
+
+  // trying to make the above function store the properies of the entry being clicked into data.editing so that I can use it for comparison when I need to delete an entry
+  $popUpPage.addEventListener('click', confirmDelete);
+
+  function confirmDelete(event) {
+    var $liMyListAll = document.querySelectorAll('#my-list-ul > li');
+    if (event.target.classList.contains('pop-up-button-confirm')) {
+      // console.log(event.target.closest('li'));
+      for (var i = 0; i < data.entries.length; i++) {
+        // console.log('value of data.entries[i].entryId:', typeof data.entries[i].entryId);
+        // console.log('value of data.editing', typeof data.editing);
+        if (Number(data.editing) === data.entries[i].entryId) {
+          data.entries.splice(i, 1);
+          $myListUl.removeChild($liMyListAll[i]);
+        }
+      }
+    }
+    $popUpPage.classList.remove('section-on');
+    $popUpPage.classList.add('section-off');
+    data.editing = null;
   }
 }

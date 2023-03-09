@@ -1,7 +1,9 @@
 /* exported data */
 var data = {
   view: 'homepage',
-  entries: []
+  entries: [],
+  editing: null,
+  nextEntryId: 1
 };
 
 window.addEventListener('beforeunload', addLocalStorage);
