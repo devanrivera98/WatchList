@@ -10,6 +10,15 @@ var $myList = document.querySelector('#my-list');
 var $descriptionUl = document.querySelector('#description-list');
 var $myListUl = document.querySelector('#my-list-ul');
 var $popUpPage = document.querySelector('#pop-up-page');
+var $noEntries = document.querySelector('.no-entries-on');
+
+function toggleNoEntries() {
+  if (data.entries.length === 0) {
+    $noEntries.classList.remove('hidden');
+  } else {
+    $noEntries.classList.add('hidden');
+  }
+}
 
 function getResults(name) {
   $searchForm.reset();
@@ -229,6 +238,7 @@ function submitSearch(event) {
 $myList.addEventListener('click', createMyList);
 
 function createMyList(event) {
+  toggleNoEntries();
   if ($myListUl.childElementCount !== 0) {
     while ($myListUl.firstChild) {
       $myListUl.removeChild($myListUl.firstChild);
@@ -372,5 +382,6 @@ function createMyList(event) {
     $popUpPage.classList.remove('section-on');
     $popUpPage.classList.add('section-off');
     data.editing = null;
+    toggleNoEntries();
   }
 }

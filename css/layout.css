@@ -302,6 +302,13 @@ a {
   font-size: 15px;
 }
 
+.no-entries-on {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 0;
+  font-size: 20px;
+}
+
 /* CSS For My List Page Ends Here */
 
 @media screen and (min-width: 650px) {
@@ -470,6 +477,10 @@ a {
   }
 
   .pop-up-button-confirm {
+    font-size: 30px;
+  }
+
+  .no-entries-on {
     font-size: 30px;
   }
 }
