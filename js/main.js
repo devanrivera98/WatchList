@@ -12,14 +12,6 @@ var $myListUl = document.querySelector('#my-list-ul');
 var $popUpPage = document.querySelector('#pop-up-page');
 var $noEntries = document.querySelector('.no-entries-on');
 
-function toggleNoEntries() {
-  if (data.entries.length === 0) {
-    $noEntries.classList.remove('hidden');
-  } else {
-    $noEntries.classList.add('hidden');
-  }
-}
-
 function getResults(name) {
   $searchForm.reset();
   var xhr = new XMLHttpRequest();
@@ -91,26 +83,42 @@ function getResults(name) {
             $descriptionPlotHeader.textContent = 'Description';
             var $descriptionPlot = document.createElement('p');
             $descriptionPlot.className = 'description-plot';
-            $descriptionPlot.textContent = xhr.response.results[i].plot;
+            if (xhr.response.results[i].plot !== null) {
+              $descriptionPlot.textContent = xhr.response.results[i].plot;
+            } else {
+              $descriptionPlot.textContent = 'N/A';
+            }
             var $descriptionCastHeader = document.createElement('h3');
             $descriptionCastHeader.className = 'description-cast-header';
             $descriptionCastHeader.textContent = 'Cast:';
             var $descriptionCastList = document.createElement('div');
             $descriptionCastList.className = 'description-cast-list';
-            $descriptionCastList.textContent = xhr.response.results[i].stars;
+            if (xhr.response.results[i].stars !== null) {
+              $descriptionCastList.textContent = xhr.response.results[i].stars;
+            } else {
+              $descriptionCastList.textContent = 'N/A';
+            }
             var $descriptionGenreHeader = document.createElement('h3');
             $descriptionGenreHeader.className = 'description-genre-header';
             $descriptionGenreHeader.textContent = 'Genre:';
             var $descriptionGenreList = document.createElement('div');
             $descriptionGenreList.className = 'description-genre-list';
-            $descriptionGenreList.textContent = xhr.response.results[i].genres;
+            if (xhr.response.results[i].genres !== null) {
+              $descriptionGenreList.textContent = xhr.response.results[i].genres;
+            } else {
+              $descriptionGenreList.textContent = 'N/A';
+            }
             var $descriptionThreeItemRow = document.createElement('div');
             $descriptionThreeItemRow.className = 'description-three-item-row';
             var $ContentRatingContainer = document.createElement('div');
             var $ContentRating = document.createElement('div');
             $ContentRating.textContent = 'Content Rating:';
             var $descriptionContentRatingResults = document.createElement('div');
-            $descriptionContentRatingResults.textContent = xhr.response.results[i].contentRating;
+            if (xhr.response.results[i].contentRating !== null) {
+              $descriptionContentRatingResults.textContent = xhr.response.results[i].contentRating;
+            } else {
+              $descriptionContentRatingResults.textContent = 'N/A';
+            }
             var $RuntimeContainer = document.createElement('div');
             var $Runtime = document.createElement('div');
             $Runtime.textContent = 'Runtime:';
@@ -120,11 +128,15 @@ function getResults(name) {
             } else {
               $descriptionRuntime.textContent = 'N/A';
             }
-            var $AverageCriticScoreContainer = document.createElement('div');
-            var $AverageCriticScore = document.createElement('div');
-            $AverageCriticScore.textContent = 'Average Critic Score:';
+            var $averageCriticScoreContainer = document.createElement('div');
+            var $averageCriticScore = document.createElement('div');
+            $averageCriticScore.textContent = 'Average Critic Score:';
             var $descriptionAverageCriticScore = document.createElement('div');
-            $descriptionAverageCriticScore.textContent = xhr.response.results[i].imDbRating;
+            if (xhr.response.results[i].imDbRating !== null) {
+              $descriptionAverageCriticScore.textContent = xhr.response.results[i].imDbRating;
+            } else {
+              $descriptionAverageCriticScore.textContent = 'N/A';
+            }
             $descriptionLi.appendChild($descriptionBackground);
             $descriptionBackground.appendChild($descriptionTitle);
             $descriptionBackground.appendChild($descriptionmoviePosterContainer);
@@ -145,9 +157,9 @@ function getResults(name) {
             $descriptionThreeItemRow.appendChild($RuntimeContainer);
             $RuntimeContainer.appendChild($Runtime);
             $RuntimeContainer.appendChild($descriptionRuntime);
-            $descriptionThreeItemRow.appendChild($AverageCriticScoreContainer);
-            $AverageCriticScoreContainer.appendChild($AverageCriticScore);
-            $AverageCriticScoreContainer.appendChild($descriptionAverageCriticScore);
+            $descriptionThreeItemRow.appendChild($averageCriticScoreContainer);
+            $averageCriticScoreContainer.appendChild($averageCriticScore);
+            $averageCriticScoreContainer.appendChild($descriptionAverageCriticScore);
             $descriptionUl.appendChild($descriptionLi);
             var $movieInfoObject = {
               title: xhr.response.results[i].title,
@@ -206,8 +218,8 @@ function viewSwap(name) {
     $main.classList.add('hidden');
     $sectionResults.classList.add('hidden');
   }
+  data.view = name;
 }
-
 $home.addEventListener('click', goHome);
 
 function goHome() {
@@ -233,6 +245,25 @@ function submitSearch(event) {
     $ul.removeChild($ul.firstChild);
   }
   viewSwap('results');
+}
+
+function toggleNoEntries() {
+  if (data.entries.length === 0) {
+    $noEntries.classList.remove('hidden');
+  } else {
+    $noEntries.classList.add('hidden');
+  }
+}
+
+// window.addEventListener('beforeunload', refreshView);
+
+window.addEventListener('DOMContentLoaded', refreshView);
+
+function refreshView(event) {
+  viewSwap(data.view);
+  createMyList();
+  // return currentView;
+  // possible solution to get the results page to render the same searched list when refreshing is to create an array of the current searched title and put it in an array in local storage
 }
 
 $myList.addEventListener('click', createMyList);
@@ -340,19 +371,12 @@ function createMyList(event) {
     $myListMovieDetails.appendChild($myListDeleteButtonContainer);
     $myListDeleteButtonContainer.appendChild($myListDeleteButton);
   }
-  // var $allDeleteButtons = document.querySelectorAll('.delete-button');
   $myListUl.addEventListener('click', popUpModal);
   $popUpPage.addEventListener('click', popUpModal);
 
   function popUpModal(event) {
     if (event.target.classList.contains('delete-button')) {
-      // console.log('value of closest event:', event.target.closest('li').getAttribute('data-entry-id'));
       data.editing = event.target.closest('li').getAttribute('data-entry-id');
-      // console.log('value of data.editing:', data.editing);
-      // this is the only console log that works
-      for (var i = 0; i < data.entries.length; i++) {
-        // try using foreach to add a property to each index of the array
-      }
       $popUpPage.classList.remove('section-off');
       $popUpPage.classList.add('section-on');
     }
@@ -363,16 +387,12 @@ function createMyList(event) {
     }
   }
 
-  // trying to make the above function store the properies of the entry being clicked into data.editing so that I can use it for comparison when I need to delete an entry
   $popUpPage.addEventListener('click', confirmDelete);
 
   function confirmDelete(event) {
     var $liMyListAll = document.querySelectorAll('#my-list-ul > li');
     if (event.target.classList.contains('pop-up-button-confirm')) {
-      // console.log(event.target.closest('li'));
       for (var i = 0; i < data.entries.length; i++) {
-        // console.log('value of data.entries[i].entryId:', typeof data.entries[i].entryId);
-        // console.log('value of data.editing', typeof data.editing);
         if (Number(data.editing) === data.entries[i].entryId) {
           data.entries.splice(i, 1);
           $myListUl.removeChild($liMyListAll[i]);
