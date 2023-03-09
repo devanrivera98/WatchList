@@ -137,6 +137,16 @@ a {
   padding-top: 1rem;
 }
 
+.movie-poster-container {
+  display: flex;
+  justify-content: center;
+  height: 150px;
+}
+
+.movie-poster-container img {
+  height: 150px;
+}
+
 /* CSS For Results Page Ends Here */
 
 /* CSS For Description Page Starts Here */
@@ -180,6 +190,14 @@ a {
 .description-button {
   display: flex;
   justify-content: center;
+}
+
+.description-movie-poster-container {
+  height: 300px;
+}
+
+.description-movie-poster-container img {
+  height: 300px;
 }
 
 /* CSS For Description Page Ends Here */
@@ -401,6 +419,14 @@ a {
     padding-top: 1.5rem;
   }
 
+  .description-movie-poster-container {
+    height: 300px;
+  }
+
+  .description-movie-poster-container img {
+    height: 300px;
+  }
+
   /* CSS Media for Description Page Ends Here */
 
   /* CSS Media for My List Page Starts Here */
@@ -484,5 +510,21 @@ a {
 
   .pop-up-button-confirm {
     font-size: 35px;
+  }
+
+  .movie-poster-container {
+    height: 300px;
+  }
+
+  .movie-poster-container img {
+    height: 300px;
+  }
+
+  .description-movie-poster-container {
+    height: 400px;
+  }
+
+  .description-movie-poster-container img {
+    height: 400px;
   }
 }

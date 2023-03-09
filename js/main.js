@@ -26,6 +26,8 @@ function getResults(name) {
       var $movieTitle = document.createElement('h2');
       $movieTitle.setAttribute('class', 'title');
       $movieTitle.textContent = xhr.response.results[i].title;
+      var $moviePosterContainer = document.createElement('div');
+      $moviePosterContainer.className = 'movie-poster-container';
       var $moviePoster = document.createElement('img');
       $moviePoster.setAttribute('src', xhr.response.results[i].image);
       $moviePoster.setAttribute('alt', 'movie-poster');
@@ -38,7 +40,8 @@ function getResults(name) {
       $li.appendChild($resultsBackground);
       $resultsBackground.appendChild($movieBackground);
       $movieBackground.appendChild($movieTitle);
-      $movieBackground.appendChild($moviePoster);
+      $movieBackground.appendChild($moviePosterContainer);
+      $moviePosterContainer.appendChild($moviePoster);
       $movieBackground.appendChild($learnMore);
       $resultsBackground.appendChild($movieId);
       $ul.appendChild($li);
@@ -61,6 +64,8 @@ function getResults(name) {
             var $descriptionTitle = document.createElement('div');
             $descriptionTitle.className = 'description-title';
             $descriptionTitle.textContent = xhr.response.results[i].title;
+            var $descriptionmoviePosterContainer = document.createElement('div');
+            $descriptionmoviePosterContainer.className = 'description-movie-poster-container';
             var $descriptionImage = document.createElement('img');
             $descriptionImage.setAttribute('src', xhr.response.results[i].image);
             $descriptionImage.setAttribute('alt', 'movie-poster');
@@ -112,7 +117,8 @@ function getResults(name) {
             $descriptionAverageCriticScore.textContent = xhr.response.results[i].imDbRating;
             $descriptionLi.appendChild($descriptionBackground);
             $descriptionBackground.appendChild($descriptionTitle);
-            $descriptionBackground.appendChild($descriptionImage);
+            $descriptionBackground.appendChild($descriptionmoviePosterContainer);
+            $descriptionmoviePosterContainer.appendChild($descriptionImage);
             $descriptionBackground.appendChild($descriptionButtonContainer);
             $descriptionButtonContainer.appendChild($descriptionAddButton);
             $descriptionAddButton.appendChild($descriptionFaPlus);
