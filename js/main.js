@@ -13,6 +13,8 @@ var $popUpPage = document.querySelector('#pop-up-page');
 var $noEntries = document.querySelector('.no-entries-on');
 
 function getResults(name) {
+  data.temporaryResults.splice(0, 1);
+  data.temporaryResults.unshift(name);
   $searchForm.reset();
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://imdb-api.com/API/AdvancedSearch/k_99uf6ywj/?title=' + name);
@@ -171,6 +173,8 @@ function getResults(name) {
               runtime: xhr.response.results[i].runtimeStr,
               rating: xhr.response.results[i].imDbRating
             };
+            data.temporaryDescription.splice(0, 1);
+            data.temporaryDescription.unshift($movieInfoObject);
             viewSwap('description');
 
           }
@@ -255,15 +259,13 @@ function toggleNoEntries() {
   }
 }
 
-// window.addEventListener('beforeunload', refreshView);
-
 window.addEventListener('DOMContentLoaded', refreshView);
 
 function refreshView(event) {
   viewSwap(data.view);
+  getResults(data.temporaryResults[0]);
+  refreshDescriptionPage();
   createMyList();
-  // return currentView;
-  // possible solution to get the results page to render the same searched list when refreshing is to create an array of the current searched title and put it in an array in local storage
 }
 
 $myList.addEventListener('click', createMyList);
@@ -404,4 +406,108 @@ function createMyList(event) {
     data.editing = null;
     toggleNoEntries();
   }
+}
+
+function refreshDescriptionPage() {
+  var $descriptionLi = document.createElement('li');
+  var $descriptionBackground = document.createElement('div');
+  $descriptionBackground.className = 'description-background';
+  var $descriptionTitle = document.createElement('div');
+  $descriptionTitle.className = 'description-title';
+  $descriptionTitle.textContent = data.temporaryDescription[0].title;
+  var $descriptionmoviePosterContainer = document.createElement('div');
+  $descriptionmoviePosterContainer.className = 'description-movie-poster-container';
+  var $descriptionImage = document.createElement('img');
+  $descriptionImage.setAttribute('src', data.temporaryDescription[0].image);
+  $descriptionImage.setAttribute('alt', 'movie-poster');
+  $descriptionImage.className = 'description-image';
+  var $descriptionButtonContainer = document.createElement('div');
+  $descriptionButtonContainer.className = 'description-button';
+  var $descriptionAddButton = document.createElement('button');
+  $descriptionAddButton.className = 'add-button';
+  var $descriptionFaPlus = document.createElement('i');
+  $descriptionFaPlus.classList.add('fa-solid', 'fa-plus', 'fa-3x');
+  var $descriptionPlotHeader = document.createElement('h3');
+  $descriptionPlotHeader.className = 'description-plot-header';
+  $descriptionPlotHeader.textContent = 'Description';
+  var $descriptionPlot = document.createElement('p');
+  $descriptionPlot.className = 'description-plot';
+  if (data.temporaryDescription[0].plot !== null) {
+    $descriptionPlot.textContent = data.temporaryDescription[0].plot;
+  } else {
+    $descriptionPlot.textContent = 'N/A';
+  }
+  var $descriptionCastHeader = document.createElement('h3');
+  $descriptionCastHeader.className = 'description-cast-header';
+  $descriptionCastHeader.textContent = 'Cast:';
+  var $descriptionCastList = document.createElement('div');
+  $descriptionCastList.className = 'description-cast-list';
+  if (data.temporaryDescription[0].stars !== null) {
+    $descriptionCastList.textContent = data.temporaryDescription[0].stars;
+  } else {
+    $descriptionCastList.textContent = 'N/A';
+  }
+  var $descriptionGenreHeader = document.createElement('h3');
+  $descriptionGenreHeader.className = 'description-genre-header';
+  $descriptionGenreHeader.textContent = 'Genre:';
+  var $descriptionGenreList = document.createElement('div');
+  $descriptionGenreList.className = 'description-genre-list';
+  if (data.temporaryDescription[0].genres !== null) {
+    $descriptionGenreList.textContent = data.temporaryDescription[0].genres;
+  } else {
+    $descriptionGenreList.textContent = 'N/A';
+  }
+  var $descriptionThreeItemRow = document.createElement('div');
+  $descriptionThreeItemRow.className = 'description-three-item-row';
+  var $ContentRatingContainer = document.createElement('div');
+  var $ContentRating = document.createElement('div');
+  $ContentRating.textContent = 'Content Rating:';
+  var $descriptionContentRatingResults = document.createElement('div');
+  if (data.temporaryDescription[0].contentRating !== null) {
+    $descriptionContentRatingResults.textContent = data.temporaryDescription[0].contentRating;
+  } else {
+    $descriptionContentRatingResults.textContent = 'N/A';
+  }
+  var $RuntimeContainer = document.createElement('div');
+  var $Runtime = document.createElement('div');
+  $Runtime.textContent = 'Runtime:';
+  var $descriptionRuntime = document.createElement('div');
+  if (data.temporaryDescription[0].runtimeStr !== null) {
+    $descriptionRuntime.textContent = data.temporaryDescription[0].runtimeStr;
+  } else {
+    $descriptionRuntime.textContent = 'N/A';
+  }
+  var $averageCriticScoreContainer = document.createElement('div');
+  var $averageCriticScore = document.createElement('div');
+  $averageCriticScore.textContent = 'Average Critic Score:';
+  var $descriptionAverageCriticScore = document.createElement('div');
+  if (data.temporaryDescription[0].imDbRating !== null) {
+    $descriptionAverageCriticScore.textContent = data.temporaryDescription[0].imDbRating;
+  } else {
+    $descriptionAverageCriticScore.textContent = 'N/A';
+  }
+  $descriptionLi.appendChild($descriptionBackground);
+  $descriptionBackground.appendChild($descriptionTitle);
+  $descriptionBackground.appendChild($descriptionmoviePosterContainer);
+  $descriptionmoviePosterContainer.appendChild($descriptionImage);
+  $descriptionBackground.appendChild($descriptionButtonContainer);
+  $descriptionButtonContainer.appendChild($descriptionAddButton);
+  $descriptionAddButton.appendChild($descriptionFaPlus);
+  $descriptionBackground.appendChild($descriptionPlotHeader);
+  $descriptionBackground.appendChild($descriptionPlot);
+  $descriptionBackground.appendChild($descriptionCastHeader);
+  $descriptionBackground.appendChild($descriptionCastList);
+  $descriptionBackground.appendChild($descriptionGenreHeader);
+  $descriptionBackground.appendChild($descriptionGenreList);
+  $descriptionBackground.appendChild($descriptionThreeItemRow);
+  $descriptionThreeItemRow.appendChild($ContentRatingContainer);
+  $ContentRatingContainer.appendChild($ContentRating);
+  $ContentRatingContainer.appendChild($descriptionContentRatingResults);
+  $descriptionThreeItemRow.appendChild($RuntimeContainer);
+  $RuntimeContainer.appendChild($Runtime);
+  $RuntimeContainer.appendChild($descriptionRuntime);
+  $descriptionThreeItemRow.appendChild($averageCriticScoreContainer);
+  $averageCriticScoreContainer.appendChild($averageCriticScore);
+  $averageCriticScoreContainer.appendChild($descriptionAverageCriticScore);
+  $descriptionUl.appendChild($descriptionLi);
 }

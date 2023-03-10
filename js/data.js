@@ -1,6 +1,8 @@
 /* exported data */
 var data = {
   view: 'homepage',
+  temporaryResults: [],
+  temporaryDescription: [],
   entries: [],
   editing: null,
   nextEntryId: 1
