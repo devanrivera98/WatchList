@@ -140,11 +140,11 @@ a {
 .movie-poster-container {
   display: flex;
   justify-content: center;
-  height: 150px;
+  height: 200px;
 }
 
 .movie-poster-container img {
-  height: 150px;
+  height: 200px;
 }
 
 /* CSS For Results Page Ends Here */
@@ -389,6 +389,14 @@ a {
     padding-top: 1rem;
   }
 
+  .movie-poster-container {
+    height: 250px;
+  }
+
+  .movie-poster-container img {
+    height: 250px;
+  }
+
   /* CSS Media for Results End Here */
 
   /* CSS Media for Description Page Starts Here */
@@ -524,11 +532,11 @@ a {
   }
 
   .movie-poster-container {
-    height: 300px;
+    height: 350px;
   }
 
   .movie-poster-container img {
-    height: 300px;
+    height: 350px;
   }
 
   .description-movie-poster-container {
