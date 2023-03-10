@@ -8,7 +8,7 @@ var data = {
   nextEntryId: 1
 };
 
-window.addEventListener('beforeunload', addLocalStorage);
+window.addEventListener('unload', addLocalStorage);
 
 function addLocalStorage(event) {
   var dataJson = JSON.stringify(data);
