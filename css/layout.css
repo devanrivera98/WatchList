@@ -137,6 +137,16 @@ a {
   padding-top: 1rem;
 }
 
+.movie-poster-container {
+  display: flex;
+  justify-content: center;
+  height: 200px;
+}
+
+.movie-poster-container img {
+  height: 200px;
+}
+
 /* CSS For Results Page Ends Here */
 
 /* CSS For Description Page Starts Here */
@@ -180,6 +190,14 @@ a {
 .description-button {
   display: flex;
   justify-content: center;
+}
+
+.description-movie-poster-container {
+  height: 300px;
+}
+
+.description-movie-poster-container img {
+  height: 300px;
 }
 
 /* CSS For Description Page Ends Here */
@@ -232,6 +250,61 @@ a {
 
 .my-list-h3 {
   padding: 0.5rem 0;
+}
+
+.delete-button-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.25rem 1rem;
+}
+
+.section-on {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.section-off {
+  display: none;
+}
+
+.pop-up-modal {
+  width: 50%;
+  border-radius: 2.5%;
+}
+
+.pop-up-two-columns {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1rem 0;
+  overflow: auto;
+}
+
+.pop-up-question {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 20px;
+  padding: 1rem 0.25rem;
+}
+
+.pop-up-button-cancel {
+  font-size: 15px;
+}
+
+.pop-up-button-confirm {
+  font-size: 15px;
+}
+
+.no-entries-on {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 0;
+  font-size: 20px;
 }
 
 /* CSS For My List Page Ends Here */
@@ -314,6 +387,14 @@ a {
     padding-top: 1rem;
   }
 
+  .movie-poster-container {
+    height: 250px;
+  }
+
+  .movie-poster-container img {
+    height: 250px;
+  }
+
   /* CSS Media for Results End Here */
 
   /* CSS Media for Description Page Starts Here */
@@ -351,6 +432,14 @@ a {
     padding-top: 1.5rem;
   }
 
+  .description-movie-poster-container {
+    height: 300px;
+  }
+
+  .description-movie-poster-container img {
+    height: 300px;
+  }
+
   /* CSS Media for Description Page Ends Here */
 
   /* CSS Media for My List Page Starts Here */
@@ -382,7 +471,23 @@ a {
   }
 
   .my-list-movie-poster {
-    object-fit: cover;
+    object-fit: fill;
+  }
+
+  .pop-up-question {
+    font-size: 35px;
+  }
+
+  .pop-up-button-cancel {
+    font-size: 30px;
+  }
+
+  .pop-up-button-confirm {
+    font-size: 30px;
+  }
+
+  .no-entries-on {
+    font-size: 30px;
   }
 }
 
@@ -393,7 +498,7 @@ a {
   }
 
   .my-list-three-item-row {
-    padding-top: 5%;
+    padding-top: 3%;
   }
 
   .my-list-title {
@@ -406,5 +511,37 @@ a {
 
   .my-list-h3 {
     padding: 1rem 0;
+  }
+
+  .delete-button {
+    font-size: 20px;
+  }
+
+  .pop-up-question {
+    font-size: 40px;
+  }
+
+  .pop-up-button-cancel {
+    font-size: 35px;
+  }
+
+  .pop-up-button-confirm {
+    font-size: 35px;
+  }
+
+  .movie-poster-container {
+    height: 350px;
+  }
+
+  .movie-poster-container img {
+    height: 350px;
+  }
+
+  .description-movie-poster-container {
+    height: 400px;
+  }
+
+  .description-movie-poster-container img {
+    height: 400px;
   }
 }

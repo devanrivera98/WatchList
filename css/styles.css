@@ -70,3 +70,28 @@ ul {
 .my-list-title {
   font-size: 25px;
 }
+
+.delete-button {
+  border-color: rgb(217, 217, 217);
+  color: red;
+}
+
+.pop-up-modal {
+  background-color: white;
+}
+
+.section-on {
+  background-color: rgb(0 0 0/ 70%);
+}
+
+.pop-up-button-cancel {
+  color: green;
+}
+
+.pop-up-button-confirm {
+  color: red;
+}
+
+.no-entries-on {
+  color: white;
+}
