@@ -224,6 +224,18 @@ function viewSwap(name) {
   }
   data.view = name;
 }
+
+$searchForm.addEventListener('submit', submitSearch);
+
+function submitSearch(event) {
+  event.preventDefault();
+  getResults($seachInput.value);
+  while ($ul.firstChild) {
+    $ul.removeChild($ul.firstChild);
+  }
+  viewSwap('results');
+}
+
 $home.addEventListener('click', goHome);
 
 function goHome() {
@@ -238,17 +250,6 @@ function goToMyList() {
   if ($myList) {
     viewSwap('my-list-page');
   }
-}
-
-$searchForm.addEventListener('submit', submitSearch);
-
-function submitSearch(event) {
-  event.preventDefault();
-  getResults($seachInput.value);
-  while ($ul.firstChild) {
-    $ul.removeChild($ul.firstChild);
-  }
-  viewSwap('results');
 }
 
 function toggleNoEntries() {
