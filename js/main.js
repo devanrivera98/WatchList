@@ -187,7 +187,6 @@ function getResults(name) {
           $movieInfoObject.entryId = data.nextEntryId;
           data.nextEntryId++;
           data.entries.unshift($movieInfoObject);
-          // console.log('value of $movieInfoObject:', $movieInfoObject);
           createMyList();
           viewSwap('my-list-page');
         }
