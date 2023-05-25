@@ -207,6 +207,7 @@ a {
 
 .two-item-row {
   display: flex;
+  align-items: stretch;
 }
 
 .column {
@@ -227,6 +228,8 @@ a {
 }
 
 .my-list-movie-details {
+  display: flex;
+  flex-direction: column;
   max-height: 40%;
   margin-top: 0;
   margin-bottom: 0;
@@ -468,24 +471,24 @@ a {
   }
 
   .my-list-title-info {
-    font-size: 40px;
+    font-size: 20px;
   }
 
   .my-list-paragraph {
-    font-size: 30px;
+    font-size: 15px;
   }
 
   .my-list-three-item-row {
     padding-top: 20%;
-    font-size: 30px;
+    font-size: 15px;
   }
 
   .my-list-h3 {
-    font-size: 35px;
+    font-size: 20px;
   }
 
   .my-list-info {
-    font-size: 30px;
+    font-size: 15px;
   }
 
   .my-list-movie-poster {
@@ -565,5 +568,39 @@ a {
 
   .description-movie-poster-container img {
     height: 400px;
+  }
+}
+
+@media screen and (min-width: 860px) {
+  .my-list-title-info {
+    font-size: 20px;
+  }
+
+  .my-list-paragraph {
+    font-size: 15px;
+    padding: 1rem 0;
+  }
+
+  .my-list-three-item-row {
+    padding-top: 3%;
+    font-size: 20px;
+  }
+
+  .my-list-h3 {
+    font-size: 20px;
+    padding: 1rem 0;
+  }
+
+  .my-list-info {
+    font-size: 20px;
+  }
+
+  .my-list-background {
+    width: 80%;
+    margin: auto;
+  }
+
+  .my-list-title {
+    padding: 1rem 0;
   }
 }
