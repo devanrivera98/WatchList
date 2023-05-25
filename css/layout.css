@@ -247,10 +247,24 @@ a {
   display: flex;
   padding: 0.5rem;
   justify-content: space-around;
+  font-size: 13px;
 }
 
 .my-list-h3 {
   padding: 0.5rem 0;
+  font-size: 14px;
+}
+
+.my-list-title-info {
+  font-size: 14px;
+}
+
+.my-list-paragraph {
+  font-size: 13px;
+}
+
+.my-list-info {
+  font-size: 13px;
 }
 
 .delete-button-container {
