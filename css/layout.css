@@ -76,6 +76,7 @@
 
 .homepage-text {
   text-align: center;
+  align-items: center;
   padding: 1rem 2rem;
 }
 
@@ -333,6 +334,14 @@ a {
     margin-top: 6rem;
   }
 
+  .homepage-image {
+    height: 500px;
+  }
+
+  .homepage-text {
+    font-size: 19px;
+  }
+
   .header-left > #home,
   .header-left > #my-list {
     margin: 0.8rem;
@@ -343,26 +352,21 @@ a {
     margin-bottom: 0;
   }
 
-  .homepage-image {
-    width: 90%;
-    border-radius: 2.5%;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-
   .homepage-second-background {
     width: 90%;
     line-height: 2rem;
     padding: 2rem 0;
     font-size: 35px;
     margin: 0;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .homepage-text-container {
+    height: 500px;
     padding-top: 0;
     width: 100%;
-    margin-top: 0;
-    margin-bottom: 0;
   }
 
   /* CSS Media for Results Starts Here */
@@ -492,6 +496,10 @@ a {
 }
 
 @media screen and (min-width: 992px) {
+  .homepage-text {
+    font-size: 30px;
+  }
+
   .my-list-background {
     width: 80%;
     margin: auto;
