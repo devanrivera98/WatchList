@@ -467,7 +467,7 @@ a {
   /* CSS Media for My List Page Starts Here */
 
   .my-list-background {
-    width: 90%;
+    width: 70%;
     margin: auto;
   }
 
@@ -519,6 +519,10 @@ a {
 }
 
 @media screen and (min-width: 992px) {
+  .my-list-background {
+    width: 70%;
+  }
+
   .homepage-text {
     font-size: 30px;
   }
