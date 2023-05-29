@@ -19,6 +19,7 @@
   justify-content: space-between;
   padding: 1rem;
   margin-bottom: 2rem;
+  height: 100px;
 }
 
 .header-left {
@@ -117,7 +118,7 @@ a {
 }
 
 .results-background {
-  width: 70%;
+  width: 50%;
   height: 400px;
   display: flex;
   justify-content: center;
@@ -126,7 +127,9 @@ a {
 }
 
 .results-second-background {
-  height: 300px;
+  display: flex;
+  flex-direction: column;
+  height: 350px;
   text-align: center;
   padding: 1rem 0;
   width: 80%;
@@ -140,10 +143,12 @@ a {
 
 .title {
   padding: 0 0.5rem 1rem;
+  font-size: 14px;
 }
 
 .learn-more {
   padding-top: 1rem;
+  font-size: 16px;
 }
 
 .movie-poster-container img {
@@ -397,28 +402,32 @@ a {
 
   .title {
     padding: 0 0.5rem 1rem;
+    font-size: 20px;
   }
 
   .learn-more {
     padding-top: 1rem;
+    font-size: 20px;
   }
 
   .results-background {
-    height: 500px;
+    height: 400px;
   }
 
   .results-second-background {
-    width: 70%;
-    padding: 2rem 0;
-    height: 450px;
+    height: 350px;
   }
 
   .movie-poster-container {
-    height: 300px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    height: 200px;
   }
 
   .movie-poster-container img {
-    height: 300px;
+    height: 200px;
   }
 
   /* CSS Media for Results End Here */
