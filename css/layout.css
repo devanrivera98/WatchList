@@ -118,6 +118,7 @@ a {
 
 .results-background {
   width: 70%;
+  height: 400px;
   display: flex;
   justify-content: center;
   padding: 1rem;
@@ -125,9 +126,16 @@ a {
 }
 
 .results-second-background {
+  height: 300px;
   text-align: center;
   padding: 1rem 0;
   width: 80%;
+}
+
+.movie-poster-container {
+  display: flex;
+  justify-content: center;
+  height: 200px;
 }
 
 .title {
@@ -136,12 +144,6 @@ a {
 
 .learn-more {
   padding-top: 1rem;
-}
-
-.movie-poster-container {
-  display: flex;
-  justify-content: center;
-  height: 200px;
 }
 
 .movie-poster-container img {
@@ -388,18 +390,10 @@ a {
   }
 
   /* CSS Media for Results Starts Here */
-  img {
+
+  /* img {
     width: 50%;
-  }
-
-  .results-background {
-    width: 60%;
-  }
-
-  .results-second-background {
-    width: 70%;
-    padding: 2rem 0;
-  }
+  } */
 
   .title {
     padding: 0 0.5rem 1rem;
@@ -409,12 +403,22 @@ a {
     padding-top: 1rem;
   }
 
+  .results-background {
+    height: 500px;
+  }
+
+  .results-second-background {
+    width: 70%;
+    padding: 2rem 0;
+    height: 450px;
+  }
+
   .movie-poster-container {
-    height: 250px;
+    height: 300px;
   }
 
   .movie-poster-container img {
-    height: 250px;
+    height: 300px;
   }
 
   /* CSS Media for Results End Here */
@@ -541,14 +545,6 @@ a {
 
   .pop-up-button-confirm {
     font-size: 35px;
-  }
-
-  .movie-poster-container {
-    height: 350px;
-  }
-
-  .movie-poster-container img {
-    height: 350px;
   }
 
   .description-movie-poster-container {
