@@ -11,8 +11,21 @@ var $descriptionUl = document.querySelector('#description-list');
 var $myListUl = document.querySelector('#my-list-ul');
 var $popUpPage = document.querySelector('#pop-up-page');
 var $noEntries = document.querySelector('.no-entries-on');
+var $loader = document.querySelector('.lds-default');
+var $loaderHolder = document.querySelector('.loader-holder');
+
+function removeLoader() {
+  $loader.classList.add('hidden');
+  $loaderHolder.classList.add('hidden');
+}
+
+function addLoader() {
+  $loader.classList.remove('hidden');
+  $loaderHolder.classList.remove('hidden');
+}
 
 function getResults(name) {
+  addLoader();
   data.temporaryResults.splice(0, 1);
   data.temporaryResults.unshift(name);
   $searchForm.reset();
@@ -20,6 +33,7 @@ function getResults(name) {
   xhr.open('GET', 'https://imdb-api.com/API/AdvancedSearch/k_99uf6ywj/?title=' + name);
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
+    removeLoader();
     for (var i = 0; i < 10; i++) {
       var $li = document.createElement('li');
       $li.setAttribute('data-entry-id', xhr.response.results[i].id);
@@ -293,7 +307,11 @@ function createMyList(event) {
     $myListTitle.className = 'my-list-title';
     var $myListTitleInfo = document.createElement('h3');
     $myListTitleInfo.className = 'my-list-title-info';
-    $myListTitleInfo.textContent = data.entries[i].title;
+    if (data.entries[i].title === null) {
+      $myListTitleInfo.textContent = 'N/A';
+    } else {
+      $myListTitleInfo.textContent = data.entries[i].title;
+    }
     var $myListMovieDescription = document.createElement('div');
     $myListMovieDescription.className = 'my-list-movie-description';
     var $myListParagraphTitle = document.createElement('h3');
@@ -301,21 +319,33 @@ function createMyList(event) {
     $myListParagraphTitle.textContent = 'Description:';
     var $myListParagraph = document.createElement('p');
     $myListParagraph.className = 'my-list-paragraph';
-    $myListParagraph.textContent = data.entries[i].plot;
+    if (data.entries[i].plot === null) {
+      $myListParagraph.textContent = 'N/A';
+    } else {
+      $myListParagraph.textContent = data.entries[i].plot;
+    }
     var $myListCastContainer = document.createElement('div');
     var $myListCast = document.createElement('h3');
     $myListCast.className = 'my-list-h3';
     $myListCast.textContent = 'Cast:';
     var $myListCastInfo = document.createElement('div');
     $myListCastInfo.className = 'my-list-info';
-    $myListCastInfo.textContent = data.entries[i].stars;
+    if (data.entries[i].stars === null) {
+      $myListCastInfo.textContent = 'N/A';
+    } else {
+      $myListCastInfo.textContent = data.entries[i].stars;
+    }
     var $myListGenreContainer = document.createElement('div');
     var $myListGenre = document.createElement('h3');
     $myListGenre.className = 'my-list-h3';
     $myListGenre.textContent = 'Genre:';
     var $myListGenreInfo = document.createElement('div');
     $myListGenreInfo.className = 'my-list-info';
-    $myListGenreInfo.textContent = data.entries[i].genres;
+    if (data.entries[i].genres === null) {
+      $myListGenreInfo.textContent = 'N/A';
+    } else {
+      $myListGenreInfo.textContent = data.entries[i].genres;
+    }
     var $mylistThreeItemRow = document.createElement('div');
     $mylistThreeItemRow.className = 'my-list-three-item-row';
     var $divContainerOne = document.createElement('div');
@@ -324,19 +354,31 @@ function createMyList(event) {
     var $myListRating = document.createElement('div');
     $myListRating.textContent = 'Rating:';
     var $myListContentRatingInfo = document.createElement('div');
-    $myListContentRatingInfo.textContent = data.entries[i].contentRating;
+    if (data.entries[i].contentRating === null) {
+      $myListContentRatingInfo.textContent = 'N/A';
+    } else {
+      $myListContentRatingInfo.textContent = data.entries[i].contentRating;
+    }
     var $divContainerTwo = document.createElement('div');
     var $myListRuntime = document.createElement('div');
     $myListRuntime.textContent = 'Runtime:';
     var $myListRuntimeInfo = document.createElement('div');
-    $myListRuntimeInfo.textContent = data.entries[i].runtime;
+    if (data.entries[i].runtime === null) {
+      $myListRuntimeInfo.textContent = 'N/A';
+    } else {
+      $myListRuntimeInfo.textContent = data.entries[i].runtime;
+    }
     var $divContainerThree = document.createElement('div');
     var $myListAverage = document.createElement('div');
     $myListAverage.textContent = 'Average';
     var $myListScore = document.createElement('div');
     $myListScore.textContent = 'Score:';
     var $myListAverageScoreInfo = document.createElement('div');
-    $myListAverageScoreInfo.textContent = data.entries[i].rating;
+    if (data.entries[i].rating === null) {
+      $myListAverageScoreInfo.textContent = 'N/A';
+    } else {
+      $myListAverageScoreInfo.textContent = data.entries[i].rating;
+    }
     var $myListDeleteButtonContainer = document.createElement('div');
     $myListDeleteButtonContainer.className = 'delete-button-container';
     var $myListDeleteButton = document.createElement('button');
