@@ -186,8 +186,11 @@ a {
 
 .description-three-item-row {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  padding: 1rem;
+  padding-left: 2rem;
   padding-top: 1.5rem;
+  font-size: 15px;
 }
 
 .description-row {
@@ -201,11 +204,12 @@ a {
 }
 
 .description-movie-poster-container {
-  height: 300px;
+  height: 250px;
 }
 
 .description-movie-poster-container img {
-  height: 300px;
+  width: 50%;
+  height: 250px;
 }
 
 /* CSS For Description Page Ends Here */
@@ -435,7 +439,7 @@ a {
   /* CSS Media for Description Page Starts Here */
 
   .description-background {
-    width: 50%;
+    width: 70%;
     margin: 0 auto;
     text-align: center;
     padding: 1rem 2rem;
@@ -463,8 +467,11 @@ a {
 
   .description-three-item-row {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    padding: 1rem;
+    padding-left: 3rem;
     padding-top: 1.5rem;
+    font-size: 20px;
   }
 
   .description-movie-poster-container {
@@ -558,6 +565,8 @@ a {
 
   .description-movie-poster-container {
     height: 400px;
+    width: 70%;
+    margin: 0 auto;
   }
 
   .description-movie-poster-container img {
