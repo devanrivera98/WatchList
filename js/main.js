@@ -11,8 +11,21 @@ var $descriptionUl = document.querySelector('#description-list');
 var $myListUl = document.querySelector('#my-list-ul');
 var $popUpPage = document.querySelector('#pop-up-page');
 var $noEntries = document.querySelector('.no-entries-on');
+var $loader = document.querySelector('.lds-default');
+var $loaderHolder = document.querySelector('.loader-holder');
+
+function removeLoader() {
+  $loader.classList.add('hidden');
+  $loaderHolder.classList.add('hidden');
+}
+
+function addLoader() {
+  $loader.classList.remove('hidden');
+  $loaderHolder.classList.remove('hidden');
+}
 
 function getResults(name) {
+  addLoader();
   data.temporaryResults.splice(0, 1);
   data.temporaryResults.unshift(name);
   $searchForm.reset();
@@ -20,6 +33,7 @@ function getResults(name) {
   xhr.open('GET', 'https://imdb-api.com/API/AdvancedSearch/k_99uf6ywj/?title=' + name);
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
+    removeLoader();
     for (var i = 0; i < 10; i++) {
       var $li = document.createElement('li');
       $li.setAttribute('data-entry-id', xhr.response.results[i].id);
