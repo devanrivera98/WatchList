@@ -1,10 +1,10 @@
 # WatchList
 
-A front end web application that allows the user to search up a movie/tv show and add it to their list of entertainment they want to watch.
+A front end web application that allows users to search for movies or television show and add them to their list of entertainment they want to watch.
 
 ## Why I Built This
 
-As a movie lover, I got inspired to create an app that helps me remember which movies or shows I want to watch. With this app, I no longer have to struggle to recall their titles because I can keep track of them easily. It's a simple and convenient way to manage my movie-watching goals.
+As a movie lover, I was inspired to create an app that helps me remember which movies or shows I want to watch. With this app, I no longer struggle to recall their titles because I can easily keep track of them. It provides a simple and convenient way to manage my movie-watching goals.
 
 ## Technologies Used
 
@@ -20,13 +20,13 @@ Try the application live at https://devanrivera98.github.io/ajax-project/
 
 ## Features
 
-- User can navigate a search bar by entering title of entertainment to load a list of results
-- User can click to learn more about the individual entertainment from the results
-- User can add a movie/television show to a watchlist from the more info page via a button
-- User can view their list of entertainment
-- User can remove a movie/television show from their watchlist
+- Users can search for movies or TV shows using a search bar to load a list of results.
+- Users can click on a result to learn more about the selected entertainment.
+- Users can add a movie or TV show to their watchlist from the detailed information page by clicking a button.
+- Users can view their list of entertainment on their watchlist.
+- Users can remove a movie or TV show from their watchlist.
 
 
 ## Possible Strech Features
-- Create a list of movies coming soon but not out yet
-- Create a filter during the search results for specifically television or movies
+- Create a list of upcoming movies or shows that are not yet released.
+- Add a filter option during the search results to specifically search for TV shows or movies.
