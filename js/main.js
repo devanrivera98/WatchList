@@ -6,7 +6,7 @@ var $sectionDescription = document.querySelector('[data-view="description"]');
 var $myListPage = document.querySelector('[data-view="my-list-page"]');
 var $ul = document.querySelector('ul');
 var $home = document.querySelector('#home');
-var $myList = document.querySelector('#my-list');
+var $myList = document.querySelector('#my-list-header');
 var $descriptionUl = document.querySelector('#description-list');
 var $myListUl = document.querySelector('#my-list-ul');
 var $popUpPage = document.querySelector('#pop-up-page');
