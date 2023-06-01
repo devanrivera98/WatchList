@@ -17,7 +17,7 @@ html {
   background-color: rgb(255, 255, 255);
 }
 
-#my-list {
+#my-list-header {
   color: rgb(219, 171, 31);
   cursor: pointer;
 }
@@ -49,6 +49,8 @@ ul {
   list-style-type: none;
 }
 
+/* CSS For Results Page Starts Here */
+
 .results-background,
 .description-background,
 .my-list-background {
@@ -62,6 +64,10 @@ ul {
 .description-background {
   color: white;
 }
+
+/* CSS For Results Page Ends Here */
+
+/* CSS For My List Page Starts Here */
 
 .my-list-movie-details {
   background-color: rgb(217, 217, 217);
@@ -95,3 +101,5 @@ ul {
 .no-entries-on {
   color: white;
 }
+
+/* CSS For My List Page Ends Here */
