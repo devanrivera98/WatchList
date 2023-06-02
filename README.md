@@ -8,7 +8,7 @@ As a movie lover, I was inspired to create an app that helps me remember which m
 
 ## Live Demo
 
-Try the application live at https://devanrivera98.github.io/ajax-project/
+Try the application live at https://devanrivera98.github.io/WatchList/
 
 ## Technologies Used
 
