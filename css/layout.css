@@ -123,11 +123,18 @@
   position: fixed;
 }
 
-.row {
+.flex {
+  display: flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.header-row {
   display: flex;
   justify-content: space-between;
   padding: 1rem;
-  margin-bottom: 2rem;
   height: 100px;
 }
 
@@ -149,7 +156,7 @@
 }
 
 .search {
-  width: 70px;
+  width: 80px;
   text-indent: 5px;
 }
 
@@ -216,8 +223,14 @@ li {
   padding: 1rem;
 }
 
-img {
+/* turned off all image tags so adjustments might need to be made on search results
+/* img {
   width: 60%;
+} */
+
+.homepage-banner {
+  height: 14rem;
+  width: 100%;
 }
 
 a {
