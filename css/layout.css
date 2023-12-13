@@ -156,13 +156,18 @@
   width: 100%;
 }
 
+.recommended-movie-item {
+  width: 25%;
+}
+
 .recommended-movie {
   padding: 0 0.2rem;
   margin: 0 0.1rem;
+  flex: 0 0 35%;
 }
 
 .recommended-container {
-  overflow: auto;
+  overflow: scroll;
 }
 
 .header-row {

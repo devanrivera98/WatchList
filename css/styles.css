@@ -19,6 +19,10 @@ html {
   flex-direction: row;
 }
 
+.rounded {
+  border-radius: 0.5rem;
+}
+
 #home,
 .add-button,
 .learn-more {
@@ -30,7 +34,7 @@ html {
 }
 
 #my-list-header {
-  color: rgb(219, 171, 31);
+  color: #ca2422;
   cursor: pointer;
 }
 
