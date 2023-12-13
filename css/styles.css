@@ -2,6 +2,14 @@ html {
   background-color: black;
 }
 
+.white {
+  color: white;
+}
+
+.light-gray {
+  background-color: rgb(26, 26, 26);
+}
+
 .header-row {
   background-color: #352e34;
   color: white;

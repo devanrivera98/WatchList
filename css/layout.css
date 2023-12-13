@@ -1,5 +1,6 @@
 * {
   margin: auto 0;
+  padding: 0;
 }
 
 /* CSS LOADING SPINNER STARTS HERE */
@@ -127,8 +128,41 @@
   display: flex;
 }
 
+.inline-block {
+  display: inline-block;
+}
+
+.column {
+  flex-direction: column;
+}
+
 .justify-between {
   justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.top-movies {
+  padding-top: 2rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.recommended-movie-width {
+  width: 100%;
+}
+
+.recommended-movie {
+  padding: 0 0.2rem;
+  margin: 0 0.1rem;
+}
+
+.recommended-container {
+  overflow: auto;
 }
 
 .header-row {
@@ -341,10 +375,6 @@ a {
 .two-item-row {
   display: flex;
   align-items: stretch;
-}
-
-.column {
-  flex: 1;
 }
 
 .my-list-background {
