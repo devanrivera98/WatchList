@@ -145,7 +145,11 @@
 }
 
 .top-movies {
-  padding-top: 2rem;
+  padding: 1rem 0;
+}
+
+.poster {
+  height: 190px;
 }
 
 .text-center {
