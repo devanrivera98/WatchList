@@ -6,6 +6,18 @@ html {
   color: white;
 }
 
+.black {
+  color: black;
+}
+
+.vibrant-gray {
+  background-color: #352e34;
+}
+
+.gray {
+  background-color: #352e34;
+}
+
 .light-gray {
   background-color: rgb(26, 26, 26);
 }

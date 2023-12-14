@@ -152,6 +152,13 @@
   height: 190px;
 }
 
+.our-motto {
+  margin: auto;
+  width: 65%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 .text-center {
   text-align: center;
 }
