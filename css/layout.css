@@ -149,7 +149,8 @@
 }
 
 .poster {
-  height: 190px;
+  min-height: 190px;
+  min-width: 125px;
 }
 
 .our-motto {
@@ -171,7 +172,7 @@
   width: 25%;
 }
 
-.recommended-movie {
+.recommended-movie-container {
   padding: 0 0.2rem;
   margin: 0 0.1rem;
   flex: 0 0 35%;
@@ -511,6 +512,10 @@ a {
   .container {
     max-width: 2000px;
   }
+
+  /* .poster {
+    height: 250px;
+  } */
 
   .search {
     width: 150px;
