@@ -145,11 +145,12 @@
 }
 
 .top-movies {
-  padding: 1rem 0;
+  padding: 1rem;
+  text-decoration: underline;
 }
 
 .poster {
-  min-height: 190px;
+  height: 250px;
   min-width: 125px;
 }
 
@@ -158,6 +159,8 @@
   width: 65%;
   margin-top: 2rem;
   margin-bottom: 2rem;
+  padding: 1rem;
+  font-size: 20px;
 }
 
 .text-center {
@@ -166,6 +169,7 @@
 
 .recommended-movie-width {
   width: 100%;
+  text-align: center;
 }
 
 .recommended-movie-item {
@@ -175,11 +179,15 @@
 .recommended-movie-container {
   padding: 0 0.2rem;
   margin: 0 0.1rem;
-  flex: 0 0 35%;
+  height: 300px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 15%;
 }
 
 .recommended-container {
-  overflow: scroll;
+  overflow-x: scroll;
 }
 
 .header-row {
@@ -517,6 +525,10 @@ a {
     height: 250px;
   } */
 
+  .our-motto {
+    font-size: 30px;
+  }
+
   .search {
     width: 150px;
   }
@@ -708,6 +720,10 @@ a {
 }
 
 @media screen and (min-width: 992px) {
+  .our-motto {
+    font-size: 40px;
+  }
+
   .my-list-background {
     width: 70%;
   }
