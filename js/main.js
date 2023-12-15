@@ -48,6 +48,10 @@ function addLoader() {
   $loaderHolder.classList.remove('hidden');
 }
 
+// function getHomepageResults(name) {
+//   addLoader();
+// }
+
 function getResults(name) {
   addLoader();
   data.temporaryResults.splice(0, 1);
