@@ -14,17 +14,28 @@ var $noEntries = document.querySelector('.no-entries-on');
 var $loader = document.querySelector('.lds-default');
 var $loaderHolder = document.querySelector('.loader-holder');
 var cardWrapper = document.querySelector('.recommended-container');
+var cardWrapper2 = document.querySelector('.recommended-container2');
 var widthToScroll = cardWrapper.children[2].offsetWidth;
 var nextArrow = document.querySelector('.arrow-next');
 var prevArrow = document.querySelector('.arrow-prev');
+var nextArrow2 = document.querySelector('.arrow-next2');
+var prevArrow2 = document.querySelector('.arrow-prev2');
 // console.log(widthToScroll);
+
+prevArrow.onclick = function () {
+  cardWrapper.scrollLeft -= widthToScroll + 3;
+};
 
 nextArrow.onclick = function () {
   cardWrapper.scrollLeft += widthToScroll + 3;
 };
 
-prevArrow.onclick = function () {
-  cardWrapper.scrollLeft -= widthToScroll + 3;
+nextArrow2.onclick = function () {
+  cardWrapper2.scrollLeft += widthToScroll + 3;
+};
+
+prevArrow2.onclick = function () {
+  cardWrapper2.scrollLeft -= widthToScroll + 3;
 };
 
 function removeLoader() {
