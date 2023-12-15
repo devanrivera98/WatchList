@@ -13,6 +13,19 @@ var $popUpPage = document.querySelector('#pop-up-page');
 var $noEntries = document.querySelector('.no-entries-on');
 var $loader = document.querySelector('.lds-default');
 var $loaderHolder = document.querySelector('.loader-holder');
+var cardWrapper = document.querySelector('.recommended-container');
+var widthToScroll = cardWrapper.children[2].offsetWidth;
+var nextArrow = document.querySelector('.arrow-next');
+var prevArrow = document.querySelector('.arrow-prev');
+// console.log(widthToScroll);
+
+nextArrow.onclick = function () {
+  cardWrapper.scrollLeft += widthToScroll + 3;
+};
+
+prevArrow.onclick = function () {
+  cardWrapper.scrollLeft -= widthToScroll + 3;
+};
 
 function removeLoader() {
   $loader.classList.add('hidden');

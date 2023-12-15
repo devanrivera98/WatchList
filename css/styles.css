@@ -6,6 +6,19 @@ html {
   color: white;
 }
 
+.arrow-color {
+  color: rgb(244, 197, 24);
+}
+
+.arrow-color::before {
+  background-color: #352e34;
+  color: rgb(244, 197, 24);
+}
+
+.arrow-color:hover::before {
+  color: #ca2422;
+}
+
 .black {
   color: black;
 }

@@ -167,6 +167,34 @@
   text-align: center;
 }
 
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.arrow-next {
+  top: 50%;
+  right: 10px;
+  z-index: 2;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow-prev {
+  top: 50%;
+  left: 10px;
+  z-index: 2;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .recommended-movie-width {
   width: 100%;
   text-align: center;
@@ -527,6 +555,10 @@ a {
 
   .our-motto {
     font-size: 30px;
+  }
+
+  .recommended-container {
+    overflow-x: hidden;
   }
 
   .search {
