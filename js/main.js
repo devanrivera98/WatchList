@@ -51,15 +51,23 @@ function addLoader() {
 
 $homepageMedia.addEventListener('click', getHomepageResults);
 
+// console.log(data);
 function getHomepageResults() {
   var clickedElement = event.target;
+  // console.log(event.target);
   var closestContainer = clickedElement.closest('.recommended-movie-container');
+  if (closestContainer === null) {
+    return;
+  }
   var movieId = closestContainer.id;
+  if (data.temporaryDescription.length) {
+    data.temporaryDescription = [];
+  }
+  $descriptionUl.removeChild($descriptionUl.firstElementChild);
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://imdb-api.com/en/API/Title/k_99uf6ywj/' + movieId);
   xhr.response = 'json';
   xhr.addEventListener('load', function () {
-    refreshDescriptionPage();
     var responseData = JSON.parse(xhr.response);
     // console.log(responseData);
     // console.log(data);
@@ -75,6 +83,7 @@ function getHomepageResults() {
     };
     data.temporaryDescription.splice(0, 1);
     data.temporaryDescription.unshift($movieInfoObject);
+    refreshDescriptionPage();
     viewSwap('description');
   });
   xhr.send();
@@ -507,6 +516,7 @@ function createMyList(event) {
 }
 
 function refreshDescriptionPage() {
+  // console.log(data);
   var $descriptionLi = document.createElement('li');
   var $descriptionBackground = document.createElement('div');
   $descriptionBackground.className = 'description-background';
