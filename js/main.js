@@ -13,29 +13,30 @@ var $popUpPage = document.querySelector('#pop-up-page');
 var $noEntries = document.querySelector('.no-entries-on');
 var $loader = document.querySelector('.lds-default');
 var $loaderHolder = document.querySelector('.loader-holder');
-var cardWrapper = document.querySelector('.recommended-container');
-var cardWrapper2 = document.querySelector('.recommended-container2');
-var widthToScroll = cardWrapper.children[2].offsetWidth;
-var nextArrow = document.querySelector('.arrow-next');
-var prevArrow = document.querySelector('.arrow-prev');
-var nextArrow2 = document.querySelector('.arrow-next2');
-var prevArrow2 = document.querySelector('.arrow-prev2');
+var $homepageMedia = document.querySelector('.recommended-media-container');
+var $cardWrapper = document.querySelector('.recommended-container');
+var $cardWrapper2 = document.querySelector('.recommended-container2');
+var $widthToScroll = $cardWrapper.children[2].offsetWidth;
+var $nextArrow = document.querySelector('.arrow-next');
+var $prevArrow = document.querySelector('.arrow-prev');
+var $nextArrow2 = document.querySelector('.arrow-next2');
+var $prevArrow2 = document.querySelector('.arrow-prev2');
 // console.log(widthToScroll);
 
-prevArrow.onclick = function () {
-  cardWrapper.scrollLeft -= widthToScroll + 3;
+$prevArrow.onclick = function () {
+  $cardWrapper.scrollLeft -= $widthToScroll + 3;
 };
 
-nextArrow.onclick = function () {
-  cardWrapper.scrollLeft += widthToScroll + 3;
+$nextArrow.onclick = function () {
+  $cardWrapper.scrollLeft += $widthToScroll + 3;
 };
 
-nextArrow2.onclick = function () {
-  cardWrapper2.scrollLeft += widthToScroll + 3;
+$nextArrow2.onclick = function () {
+  $cardWrapper2.scrollLeft += $widthToScroll + 3;
 };
 
-prevArrow2.onclick = function () {
-  cardWrapper2.scrollLeft -= widthToScroll + 3;
+$prevArrow2.onclick = function () {
+  $cardWrapper2.scrollLeft -= $widthToScroll + 3;
 };
 
 function removeLoader() {
@@ -48,9 +49,36 @@ function addLoader() {
   $loaderHolder.classList.remove('hidden');
 }
 
-// function getHomepageResults(name) {
-//   addLoader();
-// }
+$homepageMedia.addEventListener('click', getHomepageResults);
+
+function getHomepageResults() {
+  var clickedElement = event.target;
+  var closestContainer = clickedElement.closest('.recommended-movie-container');
+  var movieId = closestContainer.id;
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'https://imdb-api.com/en/API/Title/k_99uf6ywj/' + movieId);
+  xhr.response = 'json';
+  xhr.addEventListener('load', function () {
+    refreshDescriptionPage();
+    var responseData = JSON.parse(xhr.response);
+    // console.log(responseData);
+    // console.log(data);
+    var $movieInfoObject = {
+      title: responseData.title,
+      image: responseData.image,
+      plot: responseData.plot,
+      stars: responseData.stars,
+      genres: responseData.genres,
+      contentRating: responseData.contentRating,
+      runtime: responseData.runtimeStr,
+      rating: responseData.imDbRating
+    };
+    data.temporaryDescription.splice(0, 1);
+    data.temporaryDescription.unshift($movieInfoObject);
+    viewSwap('description');
+  });
+  xhr.send();
+}
 
 function getResults(name) {
   addLoader();
@@ -542,17 +570,18 @@ function refreshDescriptionPage() {
   var $Runtime = document.createElement('div');
   $Runtime.textContent = 'Runtime:';
   var $descriptionRuntime = document.createElement('div');
-  if (data.temporaryDescription[0].runtimeStr !== null) {
-    $descriptionRuntime.textContent = data.temporaryDescription[0].runtimeStr;
+  if (data.temporaryDescription[0].runtime !== null) {
+    $descriptionRuntime.textContent = data.temporaryDescription[0].runtime;
   } else {
     $descriptionRuntime.textContent = 'N/A';
   }
+  // console.log($descriptionRuntime);
   var $averageCriticScoreContainer = document.createElement('div');
   var $averageCriticScore = document.createElement('div');
   $averageCriticScore.textContent = 'Average Critic Score:';
   var $descriptionAverageCriticScore = document.createElement('div');
-  if (data.temporaryDescription[0].imDbRating !== null) {
-    $descriptionAverageCriticScore.textContent = data.temporaryDescription[0].imDbRating;
+  if (data.temporaryDescription[0].rating !== null) {
+    $descriptionAverageCriticScore.textContent = data.temporaryDescription[0].rating;
   } else {
     $descriptionAverageCriticScore.textContent = 'N/A';
   }
