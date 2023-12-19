@@ -374,7 +374,7 @@ function createMyList(event) {
     $myListTitle.className = 'my-list-title';
     var $myListTitleInfo = document.createElement('h3');
     $myListTitleInfo.className = 'my-list-title-info';
-    if (data.entries[i].title === null) {
+    if (data.entries[i].title === null || data.entries[i].title === '') {
       $myListTitleInfo.textContent = 'N/A';
     } else {
       $myListTitleInfo.textContent = data.entries[i].title;
@@ -386,7 +386,7 @@ function createMyList(event) {
     $myListParagraphTitle.textContent = 'Description:';
     var $myListParagraph = document.createElement('p');
     $myListParagraph.className = 'my-list-paragraph';
-    if (data.entries[i].plot === null) {
+    if (data.entries[i].plot === null || data.entries[i].plot === '') {
       $myListParagraph.textContent = 'N/A';
     } else {
       $myListParagraph.textContent = data.entries[i].plot;
@@ -397,7 +397,7 @@ function createMyList(event) {
     $myListCast.textContent = 'Cast:';
     var $myListCastInfo = document.createElement('div');
     $myListCastInfo.className = 'my-list-info';
-    if (data.entries[i].stars === null) {
+    if (data.entries[i].stars === null || data.entries[i].stars === '') {
       $myListCastInfo.textContent = 'N/A';
     } else {
       $myListCastInfo.textContent = data.entries[i].stars;
@@ -408,7 +408,7 @@ function createMyList(event) {
     $myListGenre.textContent = 'Genre:';
     var $myListGenreInfo = document.createElement('div');
     $myListGenreInfo.className = 'my-list-info';
-    if (data.entries[i].genres === null) {
+    if (data.entries[i].genres === null || data.entries[i].genres === '') {
       $myListGenreInfo.textContent = 'N/A';
     } else {
       $myListGenreInfo.textContent = data.entries[i].genres;
@@ -421,7 +421,7 @@ function createMyList(event) {
     var $myListRating = document.createElement('div');
     $myListRating.textContent = 'Rating:';
     var $myListContentRatingInfo = document.createElement('div');
-    if (data.entries[i].contentRating === null) {
+    if (data.entries[i].contentRating === null || data.entries[i].contentRating === '') {
       $myListContentRatingInfo.textContent = 'N/A';
     } else {
       $myListContentRatingInfo.textContent = data.entries[i].contentRating;
@@ -430,7 +430,7 @@ function createMyList(event) {
     var $myListRuntime = document.createElement('div');
     $myListRuntime.textContent = 'Runtime:';
     var $myListRuntimeInfo = document.createElement('div');
-    if (data.entries[i].runtime === null) {
+    if (data.entries[i].runtime === null || data.entries[i].runtime === '') {
       $myListRuntimeInfo.textContent = 'N/A';
     } else {
       $myListRuntimeInfo.textContent = data.entries[i].runtime;
@@ -441,7 +441,7 @@ function createMyList(event) {
     var $myListScore = document.createElement('div');
     $myListScore.textContent = 'Score:';
     var $myListAverageScoreInfo = document.createElement('div');
-    if (data.entries[i].rating === null) {
+    if (data.entries[i].rating === null || data.entries[i].rating === '') {
       $myListAverageScoreInfo.textContent = 'N/A';
     } else {
       $myListAverageScoreInfo.textContent = data.entries[i].rating;
@@ -621,4 +621,20 @@ function refreshDescriptionPage() {
   $averageCriticScoreContainer.appendChild($averageCriticScore);
   $averageCriticScoreContainer.appendChild($descriptionAverageCriticScore);
   $descriptionUl.appendChild($descriptionLi);
+
+  // $descriptionAddButton.addEventListener('click', addToList);
+
+  // function addToList(event) {
+  //   if (data.entries.find(isMovieName) === undefined) {
+  //     $movieInfoObject.entryId = data.nextEntryId;
+  //     data.nextEntryId++;
+  //     data.entries.unshift($movieInfoObject);
+  //     createMyList();
+  //     viewSwap('my-list-page');
+  //   }
+  // }
+  // function isMovieName(name) {
+  //   return name.title === $movieInfoObject.title;
+  // }
 }
+// console.log(data);
