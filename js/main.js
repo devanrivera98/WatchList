@@ -63,7 +63,9 @@ function getHomepageResults() {
   if (data.temporaryDescription.length) {
     data.temporaryDescription = [];
   }
-  $descriptionUl.removeChild($descriptionUl.firstElementChild);
+  if ($descriptionUl.firstElementChild) {
+    $descriptionUl.removeChild($descriptionUl.firstElementChild);
+  }
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://imdb-api.com/en/API/Title/k_99uf6ywj/' + movieId);
   xhr.response = 'json';
@@ -174,7 +176,7 @@ function getResults(name) {
             $descriptionCastHeader.textContent = 'Cast:';
             var $descriptionCastList = document.createElement('div');
             $descriptionCastList.className = 'description-cast-list';
-            if (xhr.response.results[i].stars !== null) {
+            if (xhr.response.results[i].stars !== null && xhr.response.results[i].stars !== '') {
               $descriptionCastList.textContent = xhr.response.results[i].stars;
             } else {
               $descriptionCastList.textContent = 'N/A';
@@ -550,7 +552,7 @@ function refreshDescriptionPage() {
   $descriptionCastHeader.textContent = 'Cast:';
   var $descriptionCastList = document.createElement('div');
   $descriptionCastList.className = 'description-cast-list';
-  if (data.temporaryDescription[0].stars !== null) {
+  if (data.temporaryDescription[0].stars !== null && data.temporaryDescription[0].stars !== '') {
     $descriptionCastList.textContent = data.temporaryDescription[0].stars;
   } else {
     $descriptionCastList.textContent = 'N/A';
