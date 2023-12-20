@@ -86,6 +86,7 @@ function getHomepageResults() {
     data.temporaryDescription.splice(0, 1);
     data.temporaryDescription.unshift($movieInfoObject);
     refreshDescriptionPage();
+    document.documentElement.scrollTop = 0;
     viewSwap('description');
   });
   xhr.send();
