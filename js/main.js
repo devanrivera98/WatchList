@@ -622,19 +622,30 @@ function refreshDescriptionPage() {
   $averageCriticScoreContainer.appendChild($descriptionAverageCriticScore);
   $descriptionUl.appendChild($descriptionLi);
 
-  // $descriptionAddButton.addEventListener('click', addToList);
+  $descriptionAddButton.addEventListener('click', addToList);
 
-  // function addToList(event) {
-  //   if (data.entries.find(isMovieName) === undefined) {
-  //     $movieInfoObject.entryId = data.nextEntryId;
-  //     data.nextEntryId++;
-  //     data.entries.unshift($movieInfoObject);
-  //     createMyList();
-  //     viewSwap('my-list-page');
-  //   }
-  // }
-  // function isMovieName(name) {
-  //   return name.title === $movieInfoObject.title;
-  // }
+}
+
+function addToList(item) {
+  var $movieInfoObject = {
+    title: data.temporaryDescription[0].title,
+    image: data.temporaryDescription[0].image,
+    plot: data.temporaryDescription[0].plot,
+    stars: data.temporaryDescription[0].stars,
+    genres: data.temporaryDescription[0].genres,
+    contentRating: data.temporaryDescription[0].contentRating,
+    runtime: data.temporaryDescription[0].runtime,
+    rating: data.temporaryDescription[0].rating
+  };
+  if (data.entries.find(isMovieName) === undefined) {
+    $movieInfoObject.entryId = data.nextEntryId;
+    data.nextEntryId++;
+    data.entries.unshift($movieInfoObject);
+    createMyList();
+    viewSwap('my-list-page');
+  }
+}
+function isMovieName(item) {
+  return name.title === item.title;
 }
 // console.log(data);
