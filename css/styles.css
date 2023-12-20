@@ -2,9 +2,50 @@ html {
   background-color: black;
 }
 
-.row {
-  background-color: rgb(52, 52, 52);
+.white {
   color: white;
+}
+
+.arrow-color {
+  color: rgb(244, 197, 24);
+}
+
+.arrow-color::before {
+  background-color: #352e34;
+  color: rgb(244, 197, 24);
+}
+
+.arrow-color:hover::before {
+  color: #ca2422;
+}
+
+.black {
+  color: black;
+}
+
+.vibrant-gray {
+  background-color: #352e34;
+}
+
+.gray {
+  background-color: #352e34;
+}
+
+.light-gray {
+  background-color: rgb(26, 26, 26);
+}
+
+.header-row {
+  background-color: #352e34;
+  color: white;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.rounded {
+  border-radius: 0.5rem;
 }
 
 #home,
@@ -18,12 +59,12 @@ html {
 }
 
 #my-list-header {
-  color: rgb(219, 171, 31);
+  color: #ca2422;
   cursor: pointer;
 }
 
 .homepage-second-background {
-  background-color: rgb(52, 52, 52);
+  background-color: #352e34;
   font-size: 18;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Verdana, sans-serif;
 }
@@ -40,7 +81,7 @@ html {
 }
 
 #search-button {
-  background-color: rgb(52, 52, 52);
+  background-color: #352e34;
   border-color: white;
   color: white;
 }
@@ -54,7 +95,7 @@ ul {
 .results-background,
 .description-background,
 .my-list-background {
-  background-color: rgb(52, 52, 52);
+  background-color: #352e34;
 }
 
 .results-second-background {

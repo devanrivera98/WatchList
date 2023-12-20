@@ -1,5 +1,6 @@
 * {
   margin: auto 0;
+  padding: 0;
 }
 
 /* CSS LOADING SPINNER STARTS HERE */
@@ -123,11 +124,111 @@
   position: fixed;
 }
 
-.row {
+.flex {
+  display: flex;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.top-movies {
+  padding: 1rem;
+  text-decoration: underline;
+}
+
+.poster {
+  height: 250px;
+  min-width: 125px;
+}
+
+.our-motto {
+  margin: auto;
+  width: 65%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  font-size: 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.arrow-next {
+  top: 50%;
+  right: 10px;
+  z-index: 2;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow-prev {
+  top: 50%;
+  left: 10px;
+  z-index: 2;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.recommended-movie-width {
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.recommended-movie-item {
+  width: 25%;
+}
+
+.recommended-movie-container {
+  padding: 0 0.2rem;
+  margin: 0 0.1rem;
+  height: 300px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 15%;
+}
+
+.recommended-container {
+  overflow-x: scroll;
+}
+
+.header-row {
   display: flex;
   justify-content: space-between;
   padding: 1rem;
-  margin-bottom: 2rem;
   height: 100px;
 }
 
@@ -149,7 +250,7 @@
 }
 
 .search {
-  width: 70px;
+  width: 80px;
   text-indent: 5px;
 }
 
@@ -216,8 +317,14 @@ li {
   padding: 1rem;
 }
 
-img {
+/* turned off all image tags so adjustments might need to be made on search results
+/* img {
   width: 60%;
+} */
+
+.homepage-banner {
+  height: 14rem;
+  width: 100%;
 }
 
 a {
@@ -328,10 +435,6 @@ a {
 .two-item-row {
   display: flex;
   align-items: stretch;
-}
-
-.column {
-  flex: 1;
 }
 
 .my-list-background {
@@ -451,6 +554,18 @@ a {
 @media screen and (min-width: 650px) {
   .container {
     max-width: 2000px;
+  }
+
+  /* .poster {
+    height: 250px;
+  } */
+
+  .our-motto {
+    font-size: 30px;
+  }
+
+  .recommended-container {
+    overflow-x: hidden;
   }
 
   .search {
@@ -644,6 +759,10 @@ a {
 }
 
 @media screen and (min-width: 992px) {
+  .our-motto {
+    font-size: 40px;
+  }
+
   .my-list-background {
     width: 70%;
   }
