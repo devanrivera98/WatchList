@@ -6,6 +6,14 @@ html {
   color: white;
 }
 
+.black {
+  color: black;
+}
+
+.white-bg {
+  background-color: white;
+}
+
 .arrow-color {
   color: rgb(244, 197, 24);
 }
@@ -17,10 +25,6 @@ html {
 
 .arrow-color:hover::before {
   color: #ca2422;
-}
-
-.black {
-  color: black;
 }
 
 .vibrant-gray {

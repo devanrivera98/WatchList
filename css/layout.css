@@ -136,6 +136,10 @@
   flex-direction: column;
 }
 
+.margin-auto {
+  margin: auto;
+}
+
 .justify-between {
   justify-content: space-between;
 }
@@ -311,6 +315,27 @@
 
 .results-image {
   width: 100%;
+}
+
+.results-learn-more-container {
+  padding: 1rem;
+}
+
+.results-learn-more {
+  padding: 0.5rem;
+  border-radius: 1rem;
+}
+
+.result-page {
+  width: 50%;
+}
+
+.results-bg {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
 }
 
 /* CSS for Results Page Starts Here */
@@ -578,6 +603,10 @@ a {
     font-size: 30px;
   }
 
+  .results-bg {
+    width: 60%;
+  }
+
   .recommended-container {
     overflow-x: hidden;
   }
@@ -645,10 +674,6 @@ a {
 
   .result-page {
     padding-top: 1rem;
-  }
-
-  .results-bg {
-    padding-top: 5rem;
   }
 
   .learn-more {
