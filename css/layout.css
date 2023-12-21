@@ -304,7 +304,9 @@
 }
 
 .results-title-container {
-  padding: 1rem 0;
+  padding: 1rem 3rem;
+  align-items: center;
+  text-align: center;
 }
 
 .results-image-container {
@@ -336,6 +338,7 @@
   flex-direction: column;
   justify-content: center;
   margin: auto;
+  border-radius: 1rem;
 }
 
 /* CSS for Results Page Starts Here */
@@ -401,10 +404,10 @@ a {
   font-size: 14px;
 }
 
-.learn-more {
+/* .learn-more {
   padding-top: 1rem;
   font-size: 16px;
-}
+} */
 
 .movie-poster-container img {
   height: 200px;
@@ -676,10 +679,10 @@ a {
     padding-top: 1rem;
   }
 
-  .learn-more {
+  /* .learn-more {
     padding-top: 1rem;
     font-size: 20px;
-  }
+  } */
 
   .results-background {
     height: 400px;
