@@ -299,6 +299,20 @@
   border-radius: 1%;
 }
 
+.results-title-container {
+  padding: 1rem 0;
+}
+
+.results-image-container {
+  width: 300px;
+  display: flex;
+  margin: auto;
+}
+
+.results-image {
+  width: 100%;
+}
+
 /* CSS for Results Page Starts Here */
 
 .results-header,
@@ -627,6 +641,14 @@ a {
   .title {
     padding: 0 0.5rem 1rem;
     font-size: 20px;
+  }
+
+  .result-page {
+    padding-top: 1rem;
+  }
+
+  .results-bg {
+    padding-top: 5rem;
   }
 
   .learn-more {

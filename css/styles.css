@@ -94,7 +94,8 @@ ul {
 
 .results-background,
 .description-background,
-.my-list-background {
+.my-list-background,
+.results-bg {
   background-color: #352e34;
 }
 
