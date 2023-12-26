@@ -371,7 +371,9 @@
   padding-top: 0.5rem;
 }
 
-.description-cast-container {
+.description-cast-container,
+.description-genre-container,
+.description-score-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -474,7 +476,8 @@ a {
 
 .description-plot-header,
 .description-cast-header,
-.description-genre-header {
+.description-genre-header,
+.description-score-header {
   padding: 0.5rem 0;
 }
 
