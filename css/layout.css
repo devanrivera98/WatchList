@@ -341,6 +341,15 @@
   border-radius: 1rem;
 }
 
+.description-image-container {
+  width: 200px;
+  margin: auto;
+}
+
+.description-image {
+  width: 100%;
+}
+
 /* CSS for Results Page Starts Here */
 
 .results-header,
@@ -428,9 +437,9 @@ a {
   padding: 1rem;
 }
 
-.description-image {
+/* .description-image {
   padding: 1rem 0;
-}
+} */
 
 .description-plot-header,
 .description-cast-header,
@@ -711,9 +720,9 @@ a {
     font-size: 40px;
   }
 
-  .description-image {
+  /* .description-image {
     padding: 1rem 0;
-  }
+  } */
 
   .description-plot-header,
   .description-cast-header,

@@ -48,7 +48,8 @@
       </div>
     </div>
   </header>
-  <main data-view="homepage">
+  <main data-view="homepage" class="hidden">
+    <!--I made the homepage class hidden remove when done-->
     <div class="white">
       <div>
         <div class="flex row">
@@ -189,6 +190,18 @@
   </section>
   <section data-view="description" class="hidden">
     <h1 class="description-header">More Info</h1>
+    <ul>
+      <li class="white more-info-bg">
+        <div>
+          <div class="flex justify-center">
+            <h1>Breaking Bad</h1>
+          </div>
+          <div class="description-image-container">
+            <img class="description-image" src="images/breaking-bad.jpg"/>
+          </div>
+        </div>
+      </li>
+    </ul>
     <ul id="description-list">
     </ul>
   </section>
@@ -211,7 +224,7 @@
     <ul id="my-list-ul">
     </ul>
   </section>
-  <section data-view="results hidden">
+  <section data-view="results" class="hidden">
     <!-- <div class="white results-page">
       <div class="results-bg">
         <div class="flex justify-center results-title-container">
