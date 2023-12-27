@@ -373,9 +373,11 @@
 
 .description-cast-container,
 .description-genre-container,
-.description-score-container {
+.description-score-container,
+.description-filter-container {
   display: flex;
   flex-direction: column;
+  text-align: center;
   align-items: center;
 }
 
@@ -477,12 +479,9 @@ a {
 .description-plot-header,
 .description-cast-header,
 .description-genre-header,
-.description-score-header {
+.description-score-header,
+.description-filter-header {
   padding: 0.5rem 0;
-}
-
-.description-plot {
-  padding: 0 0.5rem;
 }
 
 .description-three-item-row {
@@ -760,14 +759,25 @@ a {
 
   .description-plot-header,
   .description-cast-header,
-  .description-genre-header {
+  .description-genre-header,
+  .description-score-header,
+  .description-filter-header,
+  .description-title-container {
     padding: 0.5rem 0;
     font-size: 30px;
   }
 
-  .description-plot {
-    padding: 0 0.5rem;
+  .description-content {
+    font-size: 20px;
   }
+
+  .description-plot {
+    width: 75%;
+  }
+
+  /* .description-plot {
+    padding: 0 0.5rem;
+  } */
 
   .description-three-item-row {
     display: flex;
@@ -879,5 +889,9 @@ a {
 
   .description-movie-poster-container img {
     height: 400px;
+  }
+
+  .description-image-container {
+    width: 200px;
   }
 }
