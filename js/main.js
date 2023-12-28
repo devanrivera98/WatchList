@@ -173,106 +173,231 @@ function getResults(name) {
         for (var i = 0; i < xhr.response.results.length; i++) {
           if (xhr.response.results[i].id === (event.target.closest('li').getAttribute('data-entry-id'))) {
             var $descriptionLi = document.createElement('li');
-            var $descriptionBackground = document.createElement('div');
-            $descriptionBackground.className = 'description-background';
-            var $descriptionTitle = document.createElement('div');
-            $descriptionTitle.className = 'description-title';
+            $descriptionLi.className = 'white more-info-bg rounded';
+            var $descriptionMainDiv = document.createElement('div');
+            var $descriptionTitleContainer = document.createElement('div');
+            $descriptionTitleContainer.className = 'description-title-container flex justify-center';
+            var $descriptionTitle = document.createElement('h1');
             $descriptionTitle.textContent = xhr.response.results[i].title;
-            var $descriptionmoviePosterContainer = document.createElement('div');
-            $descriptionmoviePosterContainer.className = 'description-movie-poster-container';
+            var $descriptionImageContainer = document.createElement('div');
+            $descriptionImageContainer.className = 'description-image-container';
             var $descriptionImage = document.createElement('img');
             $descriptionImage.setAttribute('src', xhr.response.results[i].image);
             $descriptionImage.setAttribute('alt', 'movie-poster');
+            // $descriptionImage.setAttribute('src', xhr.response.results[i].image);
             $descriptionImage.className = 'description-image';
             var $descriptionButtonContainer = document.createElement('div');
-            $descriptionButtonContainer.className = 'description-button';
-            var $descriptionAddButton = document.createElement('button');
-            $descriptionAddButton.className = 'add-button';
-            var $descriptionFaPlus = document.createElement('i');
-            $descriptionFaPlus.classList.add('fa-solid', 'fa-plus', 'fa-3x');
+            $descriptionButtonContainer.className = 'description-button-container flex justify-center';
+            var $descriptionAddButton = document.createElement('i');
+            $descriptionAddButton.className = 'fa-solid fa-plus fa-2x black white-bg add-button';
+            var $descriptionPlotContainer = document.createElement('div');
+            $descriptionPlotContainer.className = 'description-plot-container';
             var $descriptionPlotHeader = document.createElement('h3');
             $descriptionPlotHeader.className = 'description-plot-header';
             $descriptionPlotHeader.textContent = 'Description';
-            var $descriptionPlot = document.createElement('p');
+            var $descriptionPlot = document.createElement('div');
             $descriptionPlot.className = 'description-plot';
-            if (xhr.response.results[i].plot !== null) {
-              $descriptionPlot.textContent = xhr.response.results[i].plot;
+            var $descriptionContent = document.createElement('div');
+            $descriptionContent.className = 'description-content';
+            if (xhr.response.results[i].plot !== null && xhr.response.results[i].plot !== '') {
+              $descriptionContent.textContent = xhr.response.results[i].plot;
             } else {
-              $descriptionPlot.textContent = 'N/A';
+              $descriptionContent.textContent = 'N/A';
             }
+            var $descriptionCastContainer = document.createElement('div');
+            $descriptionCastContainer.className = 'description-cast-container';
             var $descriptionCastHeader = document.createElement('h3');
-            $descriptionCastHeader.className = 'description-cast-header';
             $descriptionCastHeader.textContent = 'Cast:';
-            var $descriptionCastList = document.createElement('div');
-            $descriptionCastList.className = 'description-cast-list';
+            $descriptionCastHeader.className = 'description-cast-header';
+            var $descriptionContent2 = document.createElement('div');
+            $descriptionContent2.className = 'description-content';
             if (xhr.response.results[i].stars !== null && xhr.response.results[i].stars !== '') {
-              $descriptionCastList.textContent = xhr.response.results[i].stars;
+              $descriptionContent2.textContent = xhr.response.results[i].stars;
             } else {
-              $descriptionCastList.textContent = 'N/A';
+              $descriptionContent2.textContent = 'N/A';
             }
+            var $descriptionGenreContainer = document.createElement('div');
+            $descriptionGenreContainer.className = 'description-genre-container';
             var $descriptionGenreHeader = document.createElement('h3');
-            $descriptionGenreHeader.className = 'description-genre-header';
+            $descriptionGenreHeader.className = 'description-score-header';
             $descriptionGenreHeader.textContent = 'Genre:';
-            var $descriptionGenreList = document.createElement('div');
-            $descriptionGenreList.className = 'description-genre-list';
-            if (xhr.response.results[i].genres !== null) {
-              $descriptionGenreList.textContent = xhr.response.results[i].genres;
+            var $descriptionContent3 = document.createElement('div');
+            $descriptionContent3.className = 'description-content';
+            if (xhr.response.results[i].genres !== null && xhr.response.results[i].genres !== '') {
+              $descriptionContent3.textContent = xhr.response.results[i].genres;
             } else {
-              $descriptionGenreList.textContent = 'N/A';
+              $descriptionContent3.textContent = 'N/A';
             }
-            var $descriptionThreeItemRow = document.createElement('div');
-            $descriptionThreeItemRow.className = 'description-three-item-row';
-            var $ContentRatingContainer = document.createElement('div');
-            var $ContentRating = document.createElement('div');
-            $ContentRating.textContent = 'Content Rating:';
-            var $descriptionContentRatingResults = document.createElement('div');
-            if (xhr.response.results[i].contentRating !== null) {
-              $descriptionContentRatingResults.textContent = xhr.response.results[i].contentRating;
+            var $descriptionScoreContainer = document.createElement('div');
+            $descriptionScoreContainer.className = 'description-score-container';
+            var $descriptionScoreHeader = document.createElement('h3');
+            $descriptionScoreHeader.className = 'description-score-header';
+            $descriptionScoreHeader.textContent = 'Average Viewer Score:';
+            var $descriptionContent4 = document.createElement('div');
+            $descriptionContent4.className = 'description-content';
+            if (xhr.response.results[i].imDBRating !== null && xhr.response.results[i].imDbRating !== '') {
+              $descriptionContent4.textContent = xhr.response.results[i].imDbRating;
             } else {
-              $descriptionContentRatingResults.textContent = 'N/A';
+              $descriptionContent4.textContent = 'N/A';
             }
-            var $RuntimeContainer = document.createElement('div');
-            var $Runtime = document.createElement('div');
-            $Runtime.textContent = 'Runtime:';
-            var $descriptionRuntime = document.createElement('div');
-            if (xhr.response.results[i].runtimeStr !== null) {
-              $descriptionRuntime.textContent = xhr.response.results[i].runtimeStr;
+            var $descriptionFilterContainer1 = document.createElement('div');
+            $descriptionFilterContainer1.className = 'description-filter-container';
+            var $descriptionFilterHeader1 = document.createElement('div');
+            // $descriptionFilterHeader1.className = 'description-filter-header';
+            var $descriptionContentRating = document.createElement('h3');
+            $descriptionContentRating.className = 'description-genre-header';
+            $descriptionContentRating.textContent = 'Content Rating:';
+            var $descriptionContent5 = document.createElement('div');
+            $descriptionContent5.className = 'description-content';
+            if (xhr.response.results[i].contentRating !== null && xhr.response.results[i].contentRating !== '') {
+              $descriptionContent5.textContent = xhr.response.results[i].contentRating;
             } else {
-              $descriptionRuntime.textContent = 'N/A';
+              $descriptionContent5.textContent = 'N/A';
             }
-            var $averageCriticScoreContainer = document.createElement('div');
-            var $averageCriticScore = document.createElement('div');
-            $averageCriticScore.textContent = 'Average Critic Score:';
-            var $descriptionAverageCriticScore = document.createElement('div');
-            if (xhr.response.results[i].imDbRating !== null) {
-              $descriptionAverageCriticScore.textContent = xhr.response.results[i].imDbRating;
+            var $descriptionFilterContainer2 = document.createElement('div');
+            $descriptionFilterContainer2.className = 'description-filter-container';
+            var $descriptionFilterHeader2 = document.createElement('div');
+            // $descriptionFilterHeader2.className = 'description-filter-header';
+            var $descriptionRuntime = document.createElement('h3');
+            $descriptionRuntime.className = 'description-genre-header';
+            $descriptionRuntime.textContent = 'Runtime:';
+            var $descriptionContent6 = document.createElement('div');
+            $descriptionContent6.className = 'description-content';
+            if (xhr.response.results[i].runtimeStr !== null && xhr.response.results[i].runtimeStr !== '') {
+              $descriptionContent6.textContent = xhr.response.results[i].runtimeStr;
             } else {
-              $descriptionAverageCriticScore.textContent = 'N/A';
+              $descriptionContent6.textContent = 'N/A';
             }
-            $descriptionLi.appendChild($descriptionBackground);
-            $descriptionBackground.appendChild($descriptionTitle);
-            $descriptionBackground.appendChild($descriptionmoviePosterContainer);
-            $descriptionmoviePosterContainer.appendChild($descriptionImage);
-            $descriptionBackground.appendChild($descriptionButtonContainer);
+            $descriptionLi.appendChild($descriptionMainDiv);
+            $descriptionMainDiv.appendChild($descriptionTitleContainer);
+            $descriptionTitleContainer.appendChild($descriptionTitle);
+            $descriptionMainDiv.appendChild($descriptionImageContainer);
+            $descriptionImageContainer.appendChild($descriptionImage);
+            $descriptionMainDiv.appendChild($descriptionButtonContainer);
             $descriptionButtonContainer.appendChild($descriptionAddButton);
-            $descriptionAddButton.appendChild($descriptionFaPlus);
-            $descriptionBackground.appendChild($descriptionPlotHeader);
-            $descriptionBackground.appendChild($descriptionPlot);
-            $descriptionBackground.appendChild($descriptionCastHeader);
-            $descriptionBackground.appendChild($descriptionCastList);
-            $descriptionBackground.appendChild($descriptionGenreHeader);
-            $descriptionBackground.appendChild($descriptionGenreList);
-            $descriptionBackground.appendChild($descriptionThreeItemRow);
-            $descriptionThreeItemRow.appendChild($ContentRatingContainer);
-            $ContentRatingContainer.appendChild($ContentRating);
-            $ContentRatingContainer.appendChild($descriptionContentRatingResults);
-            $descriptionThreeItemRow.appendChild($RuntimeContainer);
-            $RuntimeContainer.appendChild($Runtime);
-            $RuntimeContainer.appendChild($descriptionRuntime);
-            $descriptionThreeItemRow.appendChild($averageCriticScoreContainer);
-            $averageCriticScoreContainer.appendChild($averageCriticScore);
-            $averageCriticScoreContainer.appendChild($descriptionAverageCriticScore);
+            $descriptionMainDiv.appendChild($descriptionPlotContainer);
+            $descriptionPlotContainer.appendChild($descriptionPlotHeader);
+            $descriptionPlotContainer.appendChild($descriptionPlot);
+            $descriptionPlot.appendChild($descriptionContent);
+            $descriptionMainDiv.appendChild($descriptionCastContainer);
+            $descriptionCastContainer.appendChild($descriptionCastHeader);
+            $descriptionCastContainer.appendChild($descriptionContent2);
+            $descriptionMainDiv.appendChild($descriptionGenreContainer);
+            $descriptionGenreContainer.appendChild($descriptionGenreHeader);
+            $descriptionGenreContainer.appendChild($descriptionContent3);
+            $descriptionMainDiv.appendChild($descriptionScoreContainer);
+            $descriptionScoreContainer.appendChild($descriptionScoreHeader);
+            $descriptionScoreContainer.appendChild($descriptionContent4);
+            $descriptionMainDiv.appendChild($descriptionFilterContainer1);
+            $descriptionFilterContainer1.appendChild($descriptionFilterHeader1);
+            $descriptionFilterHeader1.appendChild($descriptionContentRating);
+            $descriptionFilterContainer1.appendChild($descriptionContent5);
+            $descriptionMainDiv.appendChild($descriptionFilterContainer2);
+            $descriptionFilterContainer2.appendChild($descriptionFilterHeader2);
+            $descriptionFilterHeader2.appendChild($descriptionRuntime);
+            $descriptionFilterContainer2.appendChild($descriptionContent6);
             $descriptionUl.appendChild($descriptionLi);
+            // var $descriptionLi = document.createElement('li');
+            // var $descriptionBackground = document.createElement('div');
+            // $descriptionBackground.className = 'description-background';
+            // var $descriptionTitle = document.createElement('div');
+            // $descriptionTitle.className = 'description-title';
+            // $descriptionTitle.textContent = xhr.response.results[i].title;
+            // var $descriptionmoviePosterContainer = document.createElement('div');
+            // $descriptionmoviePosterContainer.className = 'description-movie-poster-container';
+            // var $descriptionImage = document.createElement('img');
+            // $descriptionImage.setAttribute('src', xhr.response.results[i].image);
+            // $descriptionImage.setAttribute('alt', 'movie-poster');
+            // $descriptionImage.className = 'description-image';
+            // var $descriptionButtonContainer = document.createElement('div');
+            // $descriptionButtonContainer.className = 'description-button';
+            // var $descriptionAddButton = document.createElement('button');
+            // $descriptionAddButton.className = 'add-button';
+            // var $descriptionFaPlus = document.createElement('i');
+            // $descriptionFaPlus.classList.add('fa-solid', 'fa-plus', 'fa-3x');
+            // var $descriptionPlotHeader = document.createElement('h3');
+            // $descriptionPlotHeader.className = 'description-plot-header';
+            // $descriptionPlotHeader.textContent = 'Description';
+            // var $descriptionPlot = document.createElement('p');
+            // $descriptionPlot.className = 'description-plot';
+            // if (xhr.response.results[i].plot !== null) {
+            //   $descriptionPlot.textContent = xhr.response.results[i].plot;
+            // } else {
+            //   $descriptionPlot.textContent = 'N/A';
+            // }
+            // var $descriptionCastHeader = document.createElement('h3');
+            // $descriptionCastHeader.className = 'description-cast-header';
+            // $descriptionCastHeader.textContent = 'Cast:';
+            // var $descriptionCastList = document.createElement('div');
+            // $descriptionCastList.className = 'description-cast-list';
+            // if (xhr.response.results[i].stars !== null && xhr.response.results[i].stars !== '') {
+            //   $descriptionCastList.textContent = xhr.response.results[i].stars;
+            // } else {
+            //   $descriptionCastList.textContent = 'N/A';
+            // }
+            // var $descriptionGenreHeader = document.createElement('h3');
+            // $descriptionGenreHeader.className = 'description-genre-header';
+            // $descriptionGenreHeader.textContent = 'Genre:';
+            // var $descriptionGenreList = document.createElement('div');
+            // $descriptionGenreList.className = 'description-genre-list';
+            // if (xhr.response.results[i].genres !== null) {
+            //   $descriptionGenreList.textContent = xhr.response.results[i].genres;
+            // } else {
+            //   $descriptionGenreList.textContent = 'N/A';
+            // }
+            // var $descriptionThreeItemRow = document.createElement('div');
+            // $descriptionThreeItemRow.className = 'description-three-item-row';
+            // var $ContentRatingContainer = document.createElement('div');
+            // var $ContentRating = document.createElement('div');
+            // $ContentRating.textContent = 'Content Rating:';
+            // var $descriptionContentRatingResults = document.createElement('div');
+            // if (xhr.response.results[i].contentRating !== null) {
+            //   $descriptionContentRatingResults.textContent = xhr.response.results[i].contentRating;
+            // } else {
+            //   $descriptionContentRatingResults.textContent = 'N/A';
+            // }
+            // var $RuntimeContainer = document.createElement('div');
+            // var $Runtime = document.createElement('div');
+            // $Runtime.textContent = 'Runtime:';
+            // var $descriptionRuntime = document.createElement('div');
+            // if (xhr.response.results[i].runtimeStr !== null) {
+            //   $descriptionRuntime.textContent = xhr.response.results[i].runtimeStr;
+            // } else {
+            //   $descriptionRuntime.textContent = 'N/A';
+            // }
+            // var $averageCriticScoreContainer = document.createElement('div');
+            // var $averageCriticScore = document.createElement('div');
+            // $averageCriticScore.textContent = 'Average Critic Score:';
+            // var $descriptionAverageCriticScore = document.createElement('div');
+            // if (xhr.response.results[i].imDbRating !== null) {
+            //   $descriptionAverageCriticScore.textContent = xhr.response.results[i].imDbRating;
+            // } else {
+            //   $descriptionAverageCriticScore.textContent = 'N/A';
+            // }
+            // $descriptionLi.appendChild($descriptionBackground);
+            // $descriptionBackground.appendChild($descriptionTitle);
+            // $descriptionBackground.appendChild($descriptionmoviePosterContainer);
+            // $descriptionmoviePosterContainer.appendChild($descriptionImage);
+            // $descriptionBackground.appendChild($descriptionButtonContainer);
+            // $descriptionButtonContainer.appendChild($descriptionAddButton);
+            // $descriptionAddButton.appendChild($descriptionFaPlus);
+            // $descriptionBackground.appendChild($descriptionPlotHeader);
+            // $descriptionBackground.appendChild($descriptionPlot);
+            // $descriptionBackground.appendChild($descriptionCastHeader);
+            // $descriptionBackground.appendChild($descriptionCastList);
+            // $descriptionBackground.appendChild($descriptionGenreHeader);
+            // $descriptionBackground.appendChild($descriptionGenreList);
+            // $descriptionBackground.appendChild($descriptionThreeItemRow);
+            // $descriptionThreeItemRow.appendChild($ContentRatingContainer);
+            // $ContentRatingContainer.appendChild($ContentRating);
+            // $ContentRatingContainer.appendChild($descriptionContentRatingResults);
+            // $descriptionThreeItemRow.appendChild($RuntimeContainer);
+            // $RuntimeContainer.appendChild($Runtime);
+            // $RuntimeContainer.appendChild($descriptionRuntime);
+            // $descriptionThreeItemRow.appendChild($averageCriticScoreContainer);
+            // $averageCriticScoreContainer.appendChild($averageCriticScore);
+            // $averageCriticScoreContainer.appendChild($descriptionAverageCriticScore);
+            // $descriptionUl.appendChild($descriptionLi);
             var $movieInfoObject = {
               title: xhr.response.results[i].title,
               image: xhr.response.results[i].image,
