@@ -116,7 +116,11 @@ function getResults(name) {
       $resultsImageContainer.className = 'results-image-container';
       var $resultsImageContainer2 = document.createElement('div');
       var $resultsImage = document.createElement('img');
-      $resultsImage.setAttribute('src', xhr.response.results[i].image);
+      if (xhr.response.results[i].image !== null) {
+        $resultsImage.setAttribute('src', xhr.response.results[i].image);
+      } else {
+        $resultsImage.setAttribute('src', 'images/default-movie-poster.jpeg');
+      }
       $resultsImage.className = 'results-image';
       var $resultsLearnMoreContainer = document.createElement('div');
       $resultsLearnMoreContainer.className = 'flex justify-center results-learn-more-container';
@@ -182,7 +186,12 @@ function getResults(name) {
             var $descriptionImageContainer = document.createElement('div');
             $descriptionImageContainer.className = 'description-image-container';
             var $descriptionImage = document.createElement('img');
-            $descriptionImage.setAttribute('src', xhr.response.results[i].image);
+            if (xhr.response.results[i].image !== null) {
+              $descriptionImage.setAttribute('src', xhr.response.results[i].image);
+            } else {
+              $descriptionImage.setAttribute('src', 'images/default-movie-poster.jpeg');
+            }
+
             $descriptionImage.setAttribute('alt', 'movie-poster');
             // $descriptionImage.setAttribute('src', xhr.response.results[i].image);
             $descriptionImage.className = 'description-image';
@@ -410,6 +419,7 @@ function getResults(name) {
             };
             data.temporaryDescription.splice(0, 1);
             data.temporaryDescription.unshift($movieInfoObject);
+            document.documentElement.scrollTop = 0;
             viewSwap('description');
 
           }
