@@ -16,7 +16,7 @@ var $loaderHolder = document.querySelector('.loader-holder');
 var $homepageMedia = document.querySelector('.recommended-media-container');
 var $cardWrapper = document.querySelector('.recommended-container');
 var $cardWrapper2 = document.querySelector('.recommended-container2');
-var $widthToScroll = $cardWrapper.children[2].offsetWidth;
+var $widthToScroll = $cardWrapper.children[3].offsetWidth;
 var $nextArrow = document.querySelector('.arrow-next');
 var $prevArrow = document.querySelector('.arrow-prev');
 var $nextArrow2 = document.querySelector('.arrow-next2');
@@ -49,7 +49,6 @@ function addLoader() {
 }
 
 $homepageMedia.addEventListener('click', getHomepageResults);
-
 function getHomepageResults() {
   var clickedElement = event.target;
   var closestContainer = clickedElement.closest('.recommended-movie-container');
@@ -192,7 +191,12 @@ function getResults(name) {
             var $descriptionButtonContainer = document.createElement('div');
             $descriptionButtonContainer.className = 'description-button-container flex justify-center';
             var $descriptionAddButton = document.createElement('i');
-            $descriptionAddButton.className = 'fa-solid fa-plus fa-2x black white-bg add-button';
+            if (data.entries.some(obj => obj.title === xhr.response.results[i].title)) {
+              $descriptionAddButton.className = 'fa-solid fa-plus fa-2x black white-bg add-button no-button';
+            } else {
+              $descriptionAddButton.className = 'fa-solid fa-plus fa-2x black white-bg add-button';
+            }
+            // $descriptionAddButton.className = 'fa-solid fa-plus fa-2x black white-bg add-button';
             var $descriptionPlotContainer = document.createElement('div');
             $descriptionPlotContainer.className = 'description-plot-container';
             var $descriptionPlotHeader = document.createElement('h3');
@@ -696,7 +700,12 @@ function refreshDescriptionPage() {
   var $descriptionButtonContainer = document.createElement('div');
   $descriptionButtonContainer.className = 'description-button-container flex justify-center';
   var $descriptionAddButton = document.createElement('i');
-  $descriptionAddButton.className = 'fa-solid fa-plus fa-2x black white-bg add-button';
+  if (data.entries.some(obj => obj.title === data.temporaryDescription[0].title)) {
+    $descriptionAddButton.className = 'fa-solid fa-plus fa-2x black white-bg add-button no-button';
+  } else {
+    $descriptionAddButton.className = 'fa-solid fa-plus fa-2x black white-bg add-button';
+  }
+  // $descriptionAddButton.className = 'fa-solid fa-plus fa-2x black white-bg add-button';
   var $descriptionPlotContainer = document.createElement('div');
   $descriptionPlotContainer.className = 'description-plot-container';
   var $descriptionPlotHeader = document.createElement('h3');
@@ -750,7 +759,6 @@ function refreshDescriptionPage() {
   var $descriptionFilterContainer1 = document.createElement('div');
   $descriptionFilterContainer1.className = 'description-filter-container';
   var $descriptionFilterHeader1 = document.createElement('div');
-  // $descriptionFilterHeader1.className = 'description-filter-header';
   var $descriptionContentRating = document.createElement('h3');
   $descriptionContentRating.className = 'description-genre-header';
   $descriptionContentRating.textContent = 'Content Rating:';
@@ -764,7 +772,6 @@ function refreshDescriptionPage() {
   var $descriptionFilterContainer2 = document.createElement('div');
   $descriptionFilterContainer2.className = 'description-filter-container';
   var $descriptionFilterHeader2 = document.createElement('div');
-  // $descriptionFilterHeader2.className = 'description-filter-header';
   var $descriptionRuntime = document.createElement('h3');
   $descriptionRuntime.className = 'description-genre-header';
   $descriptionRuntime.textContent = 'Runtime:';
