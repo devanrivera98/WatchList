@@ -447,6 +447,55 @@ a {
 
 /* CSS For My List Page Starts Here */
 
+.list-li {
+  width: 80%;
+  margin: auto;
+}
+
+.list-title {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+
+.list-item-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.list-image-container {
+  width: 175px;
+  margin: auto;
+  padding-bottom: 1rem;
+}
+
+.list-image {
+  width: 100%;
+}
+
+.list-description-container {
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.list-description-title {
+  padding-bottom: 0.5rem;
+}
+
+.list-buttons-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+}
+
+.list-learn-more {
+  padding: 0.2rem;
+}
+
+.list-delete-entry {
+  padding: 0.2rem;
+}
+
 .two-item-row {
   display: flex;
   align-items: stretch;
