@@ -348,11 +348,7 @@
 
 .no-button {
   filter: blur(3px);
-
-  /* Adjust the blur radius as needed */
   pointer-events: none;
-
-  /* Optionally, you can add additional styling for a faded appearance */
   opacity: 0.7;
 }
 
@@ -414,11 +410,6 @@ li {
   padding: 1rem;
 }
 
-/* turned off all image tags so adjustments might need to be made on search results
-/* img {
-  width: 60%;
-} */
-
 .homepage-banner {
   height: 14rem;
   width: 100%;
@@ -439,53 +430,10 @@ a {
   margin: 0 auto;
 }
 
-.results-second-background {
-  display: flex;
-  flex-direction: column;
-  height: 350px;
-  text-align: center;
-  padding: 1rem 0;
-  width: 80%;
-}
-
-.movie-poster-container {
-  display: flex;
-  justify-content: center;
-  height: 200px;
-}
-
 .title {
   padding: 0 0.5rem 1rem;
   font-size: 14px;
 }
-
-/* .learn-more {
-  padding-top: 1rem;
-  font-size: 16px;
-} */
-
-.movie-poster-container img {
-  height: 200px;
-}
-
-/* CSS For Results Page Ends Here */
-
-/* CSS For Description Page Starts Here */
-
-.description-header {
-  padding-bottom: 0.5rem;
-}
-
-.description-background {
-  width: 80%;
-  margin: 0 auto;
-  text-align: center;
-  padding: 1rem;
-}
-
-/* .description-image {
-  padding: 1rem 0;
-} */
 
 .description-plot-header,
 .description-cast-header,
@@ -493,34 +441,6 @@ a {
 .description-score-header,
 .description-filter-header {
   padding: 0.5rem 0;
-}
-
-.description-three-item-row {
-  display: flex;
-  justify-content: space-around;
-  padding: 1rem;
-  padding-left: 2rem;
-  padding-top: 1.5rem;
-  font-size: 15px;
-}
-
-.description-row {
-  display: flex;
-  justify-content: center;
-}
-
-.description-button {
-  display: flex;
-  justify-content: center;
-}
-
-.description-movie-poster-container {
-  height: 250px;
-}
-
-.description-movie-poster-container img {
-  width: 50%;
-  height: 250px;
 }
 
 /* CSS For Description Page Ends Here */
@@ -695,28 +615,6 @@ a {
     margin: 0.8rem;
   }
 
-  .homepage-image-container {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-
-  .homepage-second-background {
-    width: 90%;
-    line-height: 2rem;
-    padding: 2rem 0;
-    font-size: 35px;
-    margin: 0;
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .homepage-text-container {
-    height: 500px;
-    padding-top: 0;
-    width: 100%;
-  }
-
   /* CSS Media for Results Starts Here */
 
   .title {
@@ -724,49 +622,13 @@ a {
     font-size: 20px;
   }
 
-  .result-page {
-    padding-top: 1rem;
-  }
-
-  .results-background {
-    height: 400px;
-  }
-
-  .results-second-background {
-    height: 350px;
-  }
-
-  .movie-poster-container {
-    width: 200px;
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    height: 200px;
-  }
-
-  .movie-poster-container img {
-    height: 200px;
-  }
-
   /* CSS Media for Results End Here */
 
   /* CSS Media for Description Page Starts Here */
 
-  .description-background {
-    width: 70%;
-    margin: 0 auto;
-    text-align: center;
-    padding: 1rem 2rem;
-    font-size: 20px;
-  }
-
   .description-title {
     font-size: 40px;
   }
-
-  /* .description-image {
-    padding: 1rem 0;
-  } */
 
   .description-plot-header,
   .description-cast-header,
@@ -784,27 +646,6 @@ a {
 
   .description-plot {
     width: 75%;
-  }
-
-  /* .description-plot {
-    padding: 0 0.5rem;
-  } */
-
-  .description-three-item-row {
-    display: flex;
-    justify-content: space-around;
-    padding: 1rem;
-    padding-left: 3rem;
-    padding-top: 1.5rem;
-    font-size: 20px;
-  }
-
-  .description-movie-poster-container {
-    height: 300px;
-  }
-
-  .description-movie-poster-container img {
-    height: 300px;
   }
 
   /* CSS Media for Description Page Ends Here */
@@ -872,10 +713,6 @@ a {
     width: 70%;
   }
 
-  .homepage-text {
-    font-size: 30px;
-  }
-
   .delete-button {
     font-size: 20px;
   }
@@ -890,16 +727,6 @@ a {
 
   .pop-up-button-confirm {
     font-size: 35px;
-  }
-
-  .description-movie-poster-container {
-    height: 400px;
-    width: 70%;
-    margin: 0 auto;
-  }
-
-  .description-movie-poster-container img {
-    height: 400px;
   }
 
   .description-image-container {

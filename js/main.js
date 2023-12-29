@@ -133,29 +133,6 @@ function getResults(name) {
       $resultsBackground.appendChild($resultsLearnMoreContainer);
       $resultsLearnMoreContainer.appendChild($resultsLearnMore);
       $resultsBackground.appendChild($movieId);
-      // var $movieBackground = document.createElement('div');
-      // $movieBackground.className = 'results-second-background';
-      // var $movieTitle = document.createElement('h2');
-      // $movieTitle.setAttribute('class', 'title');
-      // $movieTitle.textContent = xhr.response.results[i].title;
-      // var $moviePosterContainer = document.createElement('div');
-      // $moviePosterContainer.className = 'movie-poster-container';
-      // var $moviePoster = document.createElement('img');
-      // $moviePoster.setAttribute('src', xhr.response.results[i].image);
-      // $moviePoster.setAttribute('alt', 'movie-poster');
-      // var $learnMore = document.createElement('a');
-      // $learnMore.setAttribute('class', 'learn-more');
-      // $learnMore.textContent = 'Learn More';
-      // var $movieId = document.createElement('div');
-      // $movieId.className = 'hidden movie-id';
-      // $movieId.textContent = xhr.response.results[i].id;
-      // $li.appendChild($resultsBackground);
-      // $resultsBackground.appendChild($movieBackground);
-      // $movieBackground.appendChild($movieTitle);
-      // $movieBackground.appendChild($moviePosterContainer);
-      // $moviePosterContainer.appendChild($moviePoster);
-      // $movieBackground.appendChild($learnMore);
-      // $resultsBackground.appendChild($movieId);
       $ul.appendChild($li);
     }
 
@@ -196,7 +173,6 @@ function getResults(name) {
             } else {
               $descriptionAddButton.className = 'fa-solid fa-plus fa-2x black white-bg add-button';
             }
-            // $descriptionAddButton.className = 'fa-solid fa-plus fa-2x black white-bg add-button';
             var $descriptionPlotContainer = document.createElement('div');
             $descriptionPlotContainer.className = 'description-plot-container';
             var $descriptionPlotHeader = document.createElement('h3');
@@ -302,107 +278,6 @@ function getResults(name) {
             $descriptionFilterHeader2.appendChild($descriptionRuntime);
             $descriptionFilterContainer2.appendChild($descriptionContent6);
             $descriptionUl.appendChild($descriptionLi);
-            // var $descriptionLi = document.createElement('li');
-            // var $descriptionBackground = document.createElement('div');
-            // $descriptionBackground.className = 'description-background';
-            // var $descriptionTitle = document.createElement('div');
-            // $descriptionTitle.className = 'description-title';
-            // $descriptionTitle.textContent = xhr.response.results[i].title;
-            // var $descriptionmoviePosterContainer = document.createElement('div');
-            // $descriptionmoviePosterContainer.className = 'description-movie-poster-container';
-            // var $descriptionImage = document.createElement('img');
-            // $descriptionImage.setAttribute('src', xhr.response.results[i].image);
-            // $descriptionImage.setAttribute('alt', 'movie-poster');
-            // $descriptionImage.className = 'description-image';
-            // var $descriptionButtonContainer = document.createElement('div');
-            // $descriptionButtonContainer.className = 'description-button';
-            // var $descriptionAddButton = document.createElement('button');
-            // $descriptionAddButton.className = 'add-button';
-            // var $descriptionFaPlus = document.createElement('i');
-            // $descriptionFaPlus.classList.add('fa-solid', 'fa-plus', 'fa-3x');
-            // var $descriptionPlotHeader = document.createElement('h3');
-            // $descriptionPlotHeader.className = 'description-plot-header';
-            // $descriptionPlotHeader.textContent = 'Description';
-            // var $descriptionPlot = document.createElement('p');
-            // $descriptionPlot.className = 'description-plot';
-            // if (xhr.response.results[i].plot !== null) {
-            //   $descriptionPlot.textContent = xhr.response.results[i].plot;
-            // } else {
-            //   $descriptionPlot.textContent = 'N/A';
-            // }
-            // var $descriptionCastHeader = document.createElement('h3');
-            // $descriptionCastHeader.className = 'description-cast-header';
-            // $descriptionCastHeader.textContent = 'Cast:';
-            // var $descriptionCastList = document.createElement('div');
-            // $descriptionCastList.className = 'description-cast-list';
-            // if (xhr.response.results[i].stars !== null && xhr.response.results[i].stars !== '') {
-            //   $descriptionCastList.textContent = xhr.response.results[i].stars;
-            // } else {
-            //   $descriptionCastList.textContent = 'N/A';
-            // }
-            // var $descriptionGenreHeader = document.createElement('h3');
-            // $descriptionGenreHeader.className = 'description-genre-header';
-            // $descriptionGenreHeader.textContent = 'Genre:';
-            // var $descriptionGenreList = document.createElement('div');
-            // $descriptionGenreList.className = 'description-genre-list';
-            // if (xhr.response.results[i].genres !== null) {
-            //   $descriptionGenreList.textContent = xhr.response.results[i].genres;
-            // } else {
-            //   $descriptionGenreList.textContent = 'N/A';
-            // }
-            // var $descriptionThreeItemRow = document.createElement('div');
-            // $descriptionThreeItemRow.className = 'description-three-item-row';
-            // var $ContentRatingContainer = document.createElement('div');
-            // var $ContentRating = document.createElement('div');
-            // $ContentRating.textContent = 'Content Rating:';
-            // var $descriptionContentRatingResults = document.createElement('div');
-            // if (xhr.response.results[i].contentRating !== null) {
-            //   $descriptionContentRatingResults.textContent = xhr.response.results[i].contentRating;
-            // } else {
-            //   $descriptionContentRatingResults.textContent = 'N/A';
-            // }
-            // var $RuntimeContainer = document.createElement('div');
-            // var $Runtime = document.createElement('div');
-            // $Runtime.textContent = 'Runtime:';
-            // var $descriptionRuntime = document.createElement('div');
-            // if (xhr.response.results[i].runtimeStr !== null) {
-            //   $descriptionRuntime.textContent = xhr.response.results[i].runtimeStr;
-            // } else {
-            //   $descriptionRuntime.textContent = 'N/A';
-            // }
-            // var $averageCriticScoreContainer = document.createElement('div');
-            // var $averageCriticScore = document.createElement('div');
-            // $averageCriticScore.textContent = 'Average Critic Score:';
-            // var $descriptionAverageCriticScore = document.createElement('div');
-            // if (xhr.response.results[i].imDbRating !== null) {
-            //   $descriptionAverageCriticScore.textContent = xhr.response.results[i].imDbRating;
-            // } else {
-            //   $descriptionAverageCriticScore.textContent = 'N/A';
-            // }
-            // $descriptionLi.appendChild($descriptionBackground);
-            // $descriptionBackground.appendChild($descriptionTitle);
-            // $descriptionBackground.appendChild($descriptionmoviePosterContainer);
-            // $descriptionmoviePosterContainer.appendChild($descriptionImage);
-            // $descriptionBackground.appendChild($descriptionButtonContainer);
-            // $descriptionButtonContainer.appendChild($descriptionAddButton);
-            // $descriptionAddButton.appendChild($descriptionFaPlus);
-            // $descriptionBackground.appendChild($descriptionPlotHeader);
-            // $descriptionBackground.appendChild($descriptionPlot);
-            // $descriptionBackground.appendChild($descriptionCastHeader);
-            // $descriptionBackground.appendChild($descriptionCastList);
-            // $descriptionBackground.appendChild($descriptionGenreHeader);
-            // $descriptionBackground.appendChild($descriptionGenreList);
-            // $descriptionBackground.appendChild($descriptionThreeItemRow);
-            // $descriptionThreeItemRow.appendChild($ContentRatingContainer);
-            // $ContentRatingContainer.appendChild($ContentRating);
-            // $ContentRatingContainer.appendChild($descriptionContentRatingResults);
-            // $descriptionThreeItemRow.appendChild($RuntimeContainer);
-            // $RuntimeContainer.appendChild($Runtime);
-            // $RuntimeContainer.appendChild($descriptionRuntime);
-            // $descriptionThreeItemRow.appendChild($averageCriticScoreContainer);
-            // $averageCriticScoreContainer.appendChild($averageCriticScore);
-            // $averageCriticScoreContainer.appendChild($descriptionAverageCriticScore);
-            // $descriptionUl.appendChild($descriptionLi);
             var $movieInfoObject = {
               title: xhr.response.results[i].title,
               image: xhr.response.results[i].image,
@@ -705,7 +580,6 @@ function refreshDescriptionPage() {
   } else {
     $descriptionAddButton.className = 'fa-solid fa-plus fa-2x black white-bg add-button';
   }
-  // $descriptionAddButton.className = 'fa-solid fa-plus fa-2x black white-bg add-button';
   var $descriptionPlotContainer = document.createElement('div');
   $descriptionPlotContainer.className = 'description-plot-container';
   var $descriptionPlotHeader = document.createElement('h3');
@@ -811,107 +685,6 @@ function refreshDescriptionPage() {
   $descriptionFilterHeader2.appendChild($descriptionRuntime);
   $descriptionFilterContainer2.appendChild($descriptionContent6);
 
-  // var $descriptionLi = document.createElement('li');
-  // var $descriptionBackground = document.createElement('div');
-  // $descriptionBackground.className = 'description-background';
-  // var $descriptionTitle = document.createElement('div');
-  // $descriptionTitle.className = 'description-title';
-  // $descriptionTitle.textContent = data.temporaryDescription[0].title;
-  // var $descriptionmoviePosterContainer = document.createElement('div');
-  // $descriptionmoviePosterContainer.className = 'description-movie-poster-container';
-  // var $descriptionImage = document.createElement('img');
-  // $descriptionImage.setAttribute('src', data.temporaryDescription[0].image);
-  // $descriptionImage.setAttribute('alt', 'movie-poster');
-  // $descriptionImage.className = 'description-image';
-  // var $descriptionButtonContainer = document.createElement('div');
-  // $descriptionButtonContainer.className = 'description-button';
-  // var $descriptionAddButton = document.createElement('button');
-  // $descriptionAddButton.className = 'add-button';
-  // var $descriptionFaPlus = document.createElement('i');
-  // $descriptionFaPlus.classList.add('fa-solid', 'fa-plus', 'fa-3x');
-  // var $descriptionPlotHeader = document.createElement('h3');
-  // $descriptionPlotHeader.className = 'description-plot-header';
-  // $descriptionPlotHeader.textContent = 'Description';
-  // var $descriptionPlot = document.createElement('p');
-  // $descriptionPlot.className = 'description-plot';
-  // if (data.temporaryDescription[0].plot !== null) {
-  //   $descriptionPlot.textContent = data.temporaryDescription[0].plot;
-  // } else {
-  //   $descriptionPlot.textContent = 'N/A';
-  // }
-  // var $descriptionCastHeader = document.createElement('h3');
-  // $descriptionCastHeader.className = 'description-cast-header';
-  // $descriptionCastHeader.textContent = 'Cast:';
-  // var $descriptionCastList = document.createElement('div');
-  // $descriptionCastList.className = 'description-cast-list';
-  // if (data.temporaryDescription[0].stars !== null && data.temporaryDescription[0].stars !== '') {
-  //   $descriptionCastList.textContent = data.temporaryDescription[0].stars;
-  // } else {
-  //   $descriptionCastList.textContent = 'N/A';
-  // }
-  // var $descriptionGenreHeader = document.createElement('h3');
-  // $descriptionGenreHeader.className = 'description-genre-header';
-  // $descriptionGenreHeader.textContent = 'Genre:';
-  // var $descriptionGenreList = document.createElement('div');
-  // $descriptionGenreList.className = 'description-genre-list';
-  // if (data.temporaryDescription[0].genres !== null) {
-  //   $descriptionGenreList.textContent = data.temporaryDescription[0].genres;
-  // } else {
-  //   $descriptionGenreList.textContent = 'N/A';
-  // }
-  // var $descriptionThreeItemRow = document.createElement('div');
-  // $descriptionThreeItemRow.className = 'description-three-item-row';
-  // var $ContentRatingContainer = document.createElement('div');
-  // var $ContentRating = document.createElement('div');
-  // $ContentRating.textContent = 'Content Rating:';
-  // var $descriptionContentRatingResults = document.createElement('div');
-  // if (data.temporaryDescription[0].contentRating !== null) {
-  //   $descriptionContentRatingResults.textContent = data.temporaryDescription[0].contentRating;
-  // } else {
-  //   $descriptionContentRatingResults.textContent = 'N/A';
-  // }
-  // var $RuntimeContainer = document.createElement('div');
-  // var $Runtime = document.createElement('div');
-  // $Runtime.textContent = 'Runtime:';
-  // var $descriptionRuntime = document.createElement('div');
-  // if (data.temporaryDescription[0].runtime !== null) {
-  //   $descriptionRuntime.textContent = data.temporaryDescription[0].runtime;
-  // } else {
-  //   $descriptionRuntime.textContent = 'N/A';
-  // }
-  // // console.log($descriptionRuntime);
-  // var $averageCriticScoreContainer = document.createElement('div');
-  // var $averageCriticScore = document.createElement('div');
-  // $averageCriticScore.textContent = 'Average Critic Score:';
-  // var $descriptionAverageCriticScore = document.createElement('div');
-  // if (data.temporaryDescription[0].rating !== null) {
-  //   $descriptionAverageCriticScore.textContent = data.temporaryDescription[0].rating;
-  // } else {
-  //   $descriptionAverageCriticScore.textContent = 'N/A';
-  // }
-  // $descriptionLi.appendChild($descriptionBackground);
-  // $descriptionBackground.appendChild($descriptionTitle);
-  // $descriptionBackground.appendChild($descriptionmoviePosterContainer);
-  // $descriptionmoviePosterContainer.appendChild($descriptionImage);
-  // $descriptionBackground.appendChild($descriptionButtonContainer);
-  // $descriptionButtonContainer.appendChild($descriptionAddButton);
-  // $descriptionAddButton.appendChild($descriptionFaPlus);
-  // $descriptionBackground.appendChild($descriptionPlotHeader);
-  // $descriptionBackground.appendChild($descriptionPlot);
-  // $descriptionBackground.appendChild($descriptionCastHeader);
-  // $descriptionBackground.appendChild($descriptionCastList);
-  // $descriptionBackground.appendChild($descriptionGenreHeader);
-  // $descriptionBackground.appendChild($descriptionGenreList);
-  // $descriptionBackground.appendChild($descriptionThreeItemRow);
-  // $descriptionThreeItemRow.appendChild($ContentRatingContainer);
-  // $ContentRatingContainer.appendChild($ContentRating);
-  // $ContentRatingContainer.appendChild($descriptionContentRatingResults);
-  // $descriptionThreeItemRow.appendChild($RuntimeContainer);
-  // $RuntimeContainer.appendChild($Runtime);
-  // $RuntimeContainer.appendChild($descriptionRuntime);
-  // $descriptionThreeItemRow.appendChild($averageCriticScoreContainer);
-  // $averageCriticScoreContainer.appendChild($averageCriticScore);
-  // $averageCriticScoreContainer.appendChild($descriptionAverageCriticScore);
   $descriptionUl.appendChild($descriptionLi);
 
   $descriptionAddButton.addEventListener('click', addToList);
