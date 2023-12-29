@@ -6,6 +6,18 @@ html {
   color: white;
 }
 
+.black {
+  color: black;
+}
+
+.white-bg {
+  background-color: white;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
 .arrow-color {
   color: rgb(244, 197, 24);
 }
@@ -17,10 +29,6 @@ html {
 
 .arrow-color:hover::before {
   color: #ca2422;
-}
-
-.black {
-  color: black;
 }
 
 .vibrant-gray {
@@ -94,7 +102,9 @@ ul {
 
 .results-background,
 .description-background,
-.my-list-background {
+.more-info-bg,
+.my-list-background,
+.results-bg {
   background-color: #352e34;
 }
 

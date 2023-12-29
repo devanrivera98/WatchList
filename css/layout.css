@@ -136,6 +136,10 @@
   flex-direction: column;
 }
 
+.margin-auto {
+  margin: auto;
+}
+
 .justify-between {
   justify-content: space-between;
 }
@@ -299,6 +303,99 @@
   border-radius: 1%;
 }
 
+.results-title-container {
+  padding: 1rem 3rem;
+  align-items: center;
+  text-align: center;
+}
+
+.results-image-container {
+  width: 300px;
+  display: flex;
+  margin: auto;
+}
+
+.results-image {
+  width: 100%;
+}
+
+.results-learn-more-container {
+  padding: 1rem;
+}
+
+.results-learn-more {
+  padding: 0.5rem;
+  border-radius: 1rem;
+}
+
+.result-page {
+  width: 50%;
+}
+
+.results-bg {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  border-radius: 1rem;
+}
+
+.more-info-bg {
+  width: 75%;
+  margin: auto;
+}
+
+.no-button {
+  filter: blur(3px);
+
+  /* Adjust the blur radius as needed */
+  pointer-events: none;
+
+  /* Optionally, you can add additional styling for a faded appearance */
+  opacity: 0.7;
+}
+
+.description-title-container {
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+.description-image-container {
+  width: 175px;
+  margin: auto;
+}
+
+.description-image {
+  width: 100%;
+}
+
+.description-plot-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.description-button-container {
+  padding-top: 0.5rem;
+}
+
+.description-cast-container,
+.description-genre-container,
+.description-score-container,
+.description-filter-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.add-button {
+  padding: 0.33rem;
+}
+
 /* CSS for Results Page Starts Here */
 
 .results-header,
@@ -362,10 +459,10 @@ a {
   font-size: 14px;
 }
 
-.learn-more {
+/* .learn-more {
   padding-top: 1rem;
   font-size: 16px;
-}
+} */
 
 .movie-poster-container img {
   height: 200px;
@@ -386,18 +483,16 @@ a {
   padding: 1rem;
 }
 
-.description-image {
+/* .description-image {
   padding: 1rem 0;
-}
+} */
 
 .description-plot-header,
 .description-cast-header,
-.description-genre-header {
+.description-genre-header,
+.description-score-header,
+.description-filter-header {
   padding: 0.5rem 0;
-}
-
-.description-plot {
-  padding: 0 0.5rem;
 }
 
 .description-three-item-row {
@@ -556,12 +651,12 @@ a {
     max-width: 2000px;
   }
 
-  /* .poster {
-    height: 250px;
-  } */
-
   .our-motto {
     font-size: 30px;
+  }
+
+  .results-bg {
+    width: 60%;
   }
 
   .recommended-container {
@@ -629,9 +724,8 @@ a {
     font-size: 20px;
   }
 
-  .learn-more {
+  .result-page {
     padding-top: 1rem;
-    font-size: 20px;
   }
 
   .results-background {
@@ -670,20 +764,31 @@ a {
     font-size: 40px;
   }
 
-  .description-image {
+  /* .description-image {
     padding: 1rem 0;
-  }
+  } */
 
   .description-plot-header,
   .description-cast-header,
-  .description-genre-header {
+  .description-genre-header,
+  .description-score-header,
+  .description-filter-header,
+  .description-title-container {
     padding: 0.5rem 0;
     font-size: 30px;
   }
 
-  .description-plot {
-    padding: 0 0.5rem;
+  .description-content {
+    font-size: 20px;
   }
+
+  .description-plot {
+    width: 75%;
+  }
+
+  /* .description-plot {
+    padding: 0 0.5rem;
+  } */
 
   .description-three-item-row {
     display: flex;
@@ -795,5 +900,9 @@ a {
 
   .description-movie-poster-container img {
     height: 400px;
+  }
+
+  .description-image-container {
+    width: 200px;
   }
 }
