@@ -616,6 +616,10 @@ a {
 /* CSS For My List Page Ends Here */
 
 @media screen and (min-width: 650px) {
+  .list-li {
+    width: 60%;
+  }
+
   .container {
     max-width: 2000px;
   }
@@ -754,6 +758,10 @@ a {
 }
 
 @media screen and (min-width: 992px) {
+  .list-li {
+    width: 40%;
+  }
+
   .our-motto {
     font-size: 40px;
   }
