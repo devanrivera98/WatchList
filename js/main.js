@@ -98,7 +98,6 @@ function getResults(name) {
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
     removeLoader();
-    // console.log(xhr.response);
     for (var i = 0; i < 10; i++) {
       var $li = document.createElement('li');
       $li.setAttribute('data-entry-id', xhr.response.results[i].id);
@@ -446,126 +445,6 @@ function createMyList(event) {
     $listButtonsContainer.appendChild($listDeleteButtonContainer);
     $listDeleteButtonContainer.appendChild($listDeleteButton);
     $myListUl.appendChild($myListMainLi);
-    // var $myListBackground = document.createElement('div');
-    // $myListBackground.className = 'my-list-background';
-    // var $myListTwoItemRow = document.createElement('div');
-    // $myListTwoItemRow.className = 'two-item-row';
-    // var $myListMoviePoster = document.createElement('img');
-    // $myListMoviePoster.classList.add('my-list-movie-poster', 'column');
-    // $myListMoviePoster.setAttribute('src', data.entries[i].image);
-    // var $myListMovieDetails = document.createElement('div');
-    // $myListMovieDetails.classList.add('my-list-movie-details', 'column');
-    // var $myListTitle = document.createElement('div');
-    // $myListTitle.className = 'my-list-title';
-    // var $myListTitleInfo = document.createElement('h3');
-    // $myListTitleInfo.className = 'my-list-title-info';
-    // if (data.entries[i].title === null || data.entries[i].title === '') {
-    //   $myListTitleInfo.textContent = 'N/A';
-    // } else {
-    //   $myListTitleInfo.textContent = data.entries[i].title;
-    // }
-    // var $myListMovieDescription = document.createElement('div');
-    // $myListMovieDescription.className = 'my-list-movie-description';
-    // var $myListParagraphTitle = document.createElement('h3');
-    // $myListParagraphTitle.className = 'my-list-h3';
-    // $myListParagraphTitle.textContent = 'Description:';
-    // var $myListParagraph = document.createElement('p');
-    // $myListParagraph.className = 'my-list-paragraph';
-    // if (data.entries[i].plot === null || data.entries[i].plot === '') {
-    //   $myListParagraph.textContent = 'N/A';
-    // } else {
-    //   $myListParagraph.textContent = data.entries[i].plot;
-    // }
-    // var $myListCastContainer = document.createElement('div');
-    // var $myListCast = document.createElement('h3');
-    // $myListCast.className = 'my-list-h3';
-    // $myListCast.textContent = 'Cast:';
-    // var $myListCastInfo = document.createElement('div');
-    // $myListCastInfo.className = 'my-list-info';
-    // if (data.entries[i].stars === null || data.entries[i].stars === '') {
-    //   $myListCastInfo.textContent = 'N/A';
-    // } else {
-    //   $myListCastInfo.textContent = data.entries[i].stars;
-    // }
-    // var $myListGenreContainer = document.createElement('div');
-    // var $myListGenre = document.createElement('h3');
-    // $myListGenre.className = 'my-list-h3';
-    // $myListGenre.textContent = 'Genre:';
-    // var $myListGenreInfo = document.createElement('div');
-    // $myListGenreInfo.className = 'my-list-info';
-    // if (data.entries[i].genres === null || data.entries[i].genres === '') {
-    //   $myListGenreInfo.textContent = 'N/A';
-    // } else {
-    //   $myListGenreInfo.textContent = data.entries[i].genres;
-    // }
-    // var $mylistThreeItemRow = document.createElement('div');
-    // $mylistThreeItemRow.className = 'my-list-three-item-row';
-    // var $divContainerOne = document.createElement('div');
-    // var $myListContent = document.createElement('div');
-    // $myListContent.textContent = 'Content';
-    // var $myListRating = document.createElement('div');
-    // $myListRating.textContent = 'Rating:';
-    // var $myListContentRatingInfo = document.createElement('div');
-    // if (data.entries[i].contentRating === null || data.entries[i].contentRating === '') {
-    //   $myListContentRatingInfo.textContent = 'N/A';
-    // } else {
-    //   $myListContentRatingInfo.textContent = data.entries[i].contentRating;
-    // }
-    // var $divContainerTwo = document.createElement('div');
-    // var $myListRuntime = document.createElement('div');
-    // $myListRuntime.textContent = 'Runtime:';
-    // var $myListRuntimeInfo = document.createElement('div');
-    // if (data.entries[i].runtime === null || data.entries[i].runtime === '') {
-    //   $myListRuntimeInfo.textContent = 'N/A';
-    // } else {
-    //   $myListRuntimeInfo.textContent = data.entries[i].runtime;
-    // }
-    // var $divContainerThree = document.createElement('div');
-    // var $myListAverage = document.createElement('div');
-    // $myListAverage.textContent = 'Average';
-    // var $myListScore = document.createElement('div');
-    // $myListScore.textContent = 'Score:';
-    // var $myListAverageScoreInfo = document.createElement('div');
-    // if (data.entries[i].rating === null || data.entries[i].rating === '') {
-    //   $myListAverageScoreInfo.textContent = 'N/A';
-    // } else {
-    //   $myListAverageScoreInfo.textContent = data.entries[i].rating;
-    // }
-    // var $myListDeleteButtonContainer = document.createElement('div');
-    // $myListDeleteButtonContainer.className = 'delete-button-container';
-    // var $myListDeleteButton = document.createElement('button');
-    // $myListDeleteButton.className = 'delete-button';
-    // $myListDeleteButton.textContent = 'Delete Entry';
-    // $myListLi.appendChild($myListBackground);
-    // $myListBackground.appendChild($myListTwoItemRow);
-    // $myListTwoItemRow.appendChild($myListMoviePoster);
-    // $myListTwoItemRow.appendChild($myListMovieDetails);
-    // $myListMovieDetails.appendChild($myListTitle);
-    // $myListTitle.appendChild($myListTitleInfo);
-    // $myListMovieDetails.appendChild($myListMovieDescription);
-    // $myListMovieDescription.appendChild($myListParagraphTitle);
-    // $myListMovieDescription.appendChild($myListParagraph);
-    // $myListMovieDetails.appendChild($myListCastContainer);
-    // $myListCastContainer.appendChild($myListCast);
-    // $myListCastContainer.appendChild($myListCastInfo);
-    // $myListMovieDetails.appendChild($myListGenreContainer);
-    // $myListGenreContainer.appendChild($myListGenre);
-    // $myListGenreContainer.appendChild($myListGenreInfo);
-    // $myListMovieDetails.appendChild($mylistThreeItemRow);
-    // $mylistThreeItemRow.appendChild($divContainerOne);
-    // $divContainerOne.appendChild($myListContent);
-    // $divContainerOne.appendChild($myListRating);
-    // $divContainerOne.appendChild($myListContentRatingInfo);
-    // $mylistThreeItemRow.append($divContainerTwo);
-    // $divContainerTwo.appendChild($myListRuntime);
-    // $divContainerTwo.appendChild($myListRuntimeInfo);
-    // $mylistThreeItemRow.appendChild($divContainerThree);
-    // $divContainerThree.appendChild($myListAverage);
-    // $divContainerThree.appendChild($myListScore);
-    // $divContainerThree.appendChild($myListAverageScoreInfo);
-    // $myListUl.appendChild($myListLi);
-    // $myListMovieDetails.appendChild($myListDeleteButtonContainer);
-    // $myListDeleteButtonContainer.appendChild($myListDeleteButton);
   }
   $myListUl.addEventListener('click', popUpModal);
   $popUpPage.addEventListener('click', popUpModal);
