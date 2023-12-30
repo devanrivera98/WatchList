@@ -205,6 +205,7 @@
   justify-content: center;
 }
 
+/* RECOMMENDED MOVIES STARTS HERE */
 .recommended-movie-width {
   width: 100%;
   text-align: center;
@@ -229,6 +230,7 @@
   overflow-x: scroll;
 }
 
+/* RECOMMENDED MOVIES ENDS HERE */
 .header-row {
   display: flex;
   justify-content: space-between;
@@ -262,6 +264,8 @@
   display: none;
 }
 
+/* HOMEPAGE STARTS HERE */
+
 .homepage-image {
   width: 90%;
   border-radius: 2.5%;
@@ -289,6 +293,11 @@
   padding-top: 1rem;
 }
 
+.homepage-banner {
+  height: 14rem;
+  width: 100%;
+}
+
 .homepage-text {
   text-align: center;
   align-items: center;
@@ -302,6 +311,10 @@
   padding-bottom: 2rem;
   border-radius: 1%;
 }
+
+/* HOMEPAGE ENDS HERE */
+
+/* RESULTS START HERE */
 
 .results-title-container {
   padding: 1rem 3rem;
@@ -328,6 +341,15 @@
   border-radius: 1rem;
 }
 
+.results-background {
+  width: 50%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  margin: 0 auto;
+}
+
 .result-page {
   width: 50%;
 }
@@ -345,6 +367,10 @@
   width: 75%;
   margin: auto;
 }
+
+/* RESULTS ENDS HERE */
+
+/* DESCRIPTION STARTS HERE */
 
 .no-button {
   filter: blur(3px);
@@ -392,7 +418,7 @@
   padding: 0.33rem;
 }
 
-/* CSS for Results Page Starts Here */
+/* DESCRIPTION ENDS HERE */
 
 .results-header,
 .description-header,
@@ -410,24 +436,10 @@ li {
   padding: 1rem;
 }
 
-.homepage-banner {
-  height: 14rem;
-  width: 100%;
-}
-
 a {
   display: block;
   font-size: 1.5rem;
   font-weight: bold;
-}
-
-.results-background {
-  width: 50%;
-  height: 400px;
-  display: flex;
-  justify-content: center;
-  padding: 1rem;
-  margin: 0 auto;
 }
 
 .title {
@@ -442,8 +454,6 @@ a {
 .description-filter-header {
   padding: 0.5rem 0;
 }
-
-/* CSS For Description Page Ends Here */
 
 /* CSS For My List Page Starts Here */
 
@@ -495,68 +505,6 @@ a {
 
 .list-delete-entry {
   padding: 0.2rem;
-}
-
-.two-item-row {
-  display: flex;
-  align-items: stretch;
-}
-
-.my-list-background {
-  padding: 0.5rem;
-}
-
-.my-list-movie-poster {
-  object-fit: fill;
-  max-width: 40%;
-  height: 340px;
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-right: 0.5rem;
-  border-radius: 3%;
-}
-
-.my-list-movie-details {
-  display: flex;
-  flex-direction: column;
-  height: 340px;
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: 0.5rem;
-  text-align: center;
-  border-radius: 3%;
-}
-
-.my-list-title {
-  padding: 0.25rem 0;
-}
-
-.my-list-movie-description {
-  padding: 0 0.5rem;
-}
-
-.my-list-three-item-row {
-  display: flex;
-  padding: 0.5rem;
-  justify-content: space-around;
-  font-size: 13px;
-}
-
-.my-list-h3 {
-  padding: 0.5rem 0;
-  font-size: 14px;
-}
-
-.my-list-title-info {
-  font-size: 14px;
-}
-
-.my-list-paragraph {
-  font-size: 13px;
-}
-
-.my-list-info {
-  font-size: 13px;
 }
 
 .delete-button-container {
@@ -669,14 +617,10 @@ a {
     margin: 0.8rem;
   }
 
-  /* CSS Media for Results Starts Here */
-
   .title {
     padding: 0 0.5rem 1rem;
     font-size: 20px;
   }
-
-  /* CSS Media for Results End Here */
 
   /* CSS Media for Description Page Starts Here */
 
@@ -705,41 +649,6 @@ a {
   /* CSS Media for Description Page Ends Here */
 
   /* CSS Media for My List Page Starts Here */
-
-  .my-list-background {
-    width: 70%;
-    margin: auto;
-  }
-
-  .my-list-title-info {
-    font-size: 20px;
-  }
-
-  .my-list-paragraph {
-    font-size: 15px;
-  }
-
-  .my-list-three-item-row {
-    padding-top: 3%;
-    font-size: 15px;
-  }
-
-  .my-list-h3 {
-    font-size: 20px;
-  }
-
-  .my-list-info {
-    font-size: 15px;
-  }
-
-  .my-list-movie-poster {
-    object-fit: fill;
-    height: 400px;
-  }
-
-  .my-list-movie-details {
-    height: 400px;
-  }
 
   .pop-up-question {
     font-size: 35px;

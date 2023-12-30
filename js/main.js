@@ -570,7 +570,6 @@ function createMyList(event) {
   $myListUl.addEventListener('click', popUpModal);
   $popUpPage.addEventListener('click', popUpModal);
   function popUpModal(event) {
-    // console.log(event.target);
     if (event.target.classList.contains('list-delete-entry')) {
       data.editing = event.target.closest('li').getAttribute('data-entry-id');
       $popUpPage.classList.remove('section-off');
@@ -582,24 +581,49 @@ function createMyList(event) {
       data.editing = null;
     }
 
-    // $myListUl.addEventListener('click', LearnMoreAgain);
-    // function LearnMoreAgain(event) {
-    //   console.log(event.target.closest('button').getAttribute('id'));
+  }
 
-    // }
+  $myListUl.addEventListener('click', LearnMoreAgain);
 
-    // var $AllLearnMoreButtonsNodeList = document.querySelectorAll('.list-learn-more');
-    // var $AllLearnMoreButtonsArray = Array.from($AllLearnMoreButtonsNodeList);
-    // $AllLearnMoreButtonsArray.forEach(element => {
-    //   element.addEventListener('click', LearnMoreAgain);
-    // });
+  var isFirstClick = true;
+  var isEventHandled = false;
 
-    // function LearnMoreAgain(event) {
-    //   console.log(event.currentTarget.id);
-    //   if (event.target.classList.contains('list-learn-more')) {
-    //     console.log('yes');
-    //   }
-    // }
+  function LearnMoreAgain(event) {
+    event.stopImmediatePropagation();
+    if (isFirstClick && event.target.classList.contains('list-learn-more')) {
+      isFirstClick = false;
+      data.temporaryDescription = [];
+      while ($descriptionUl.firstChild) {
+        $descriptionUl.removeChild($descriptionUl.firstChild);
+      }
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', 'https://imdb-api.com/en/API/Title/k_99uf6ywj/' + event.target.id);
+      xhr.response = 'json';
+      xhr.addEventListener('load', function () {
+        if (isEventHandled) {
+          return;
+        }
+        isEventHandled = true;
+        var responseData = JSON.parse(xhr.response);
+        var $movieInfoObject = {
+          title: responseData.title,
+          image: responseData.image,
+          plot: responseData.plot,
+          stars: responseData.stars,
+          genres: responseData.genres,
+          contentRating: responseData.contentRating,
+          runtime: responseData.runtimeStr,
+          rating: responseData.imDbRating,
+          id: responseData.id
+        };
+        data.temporaryDescription.unshift($movieInfoObject);
+        refreshDescriptionPage();
+        document.documentElement.scrollTop = 0;
+        viewSwap('description');
+        $myListUl.removeEventListener('click', LearnMoreAgain);
+      });
+      xhr.send();
+    }
   }
 
   $popUpConfirm.addEventListener('click', confirmDelete);
