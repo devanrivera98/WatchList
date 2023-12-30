@@ -205,6 +205,7 @@
   justify-content: center;
 }
 
+/* RECOMMENDED MOVIES STARTS HERE */
 .recommended-movie-width {
   width: 100%;
   text-align: center;
@@ -229,6 +230,7 @@
   overflow-x: scroll;
 }
 
+/* RECOMMENDED MOVIES ENDS HERE */
 .header-row {
   display: flex;
   justify-content: space-between;
@@ -262,6 +264,8 @@
   display: none;
 }
 
+/* HOMEPAGE STARTS HERE */
+
 .homepage-image {
   width: 90%;
   border-radius: 2.5%;
@@ -289,6 +293,11 @@
   padding-top: 1rem;
 }
 
+.homepage-banner {
+  height: 14rem;
+  width: 100%;
+}
+
 .homepage-text {
   text-align: center;
   align-items: center;
@@ -302,6 +311,10 @@
   padding-bottom: 2rem;
   border-radius: 1%;
 }
+
+/* HOMEPAGE ENDS HERE */
+
+/* RESULTS START HERE */
 
 .results-title-container {
   padding: 1rem 3rem;
@@ -328,6 +341,15 @@
   border-radius: 1rem;
 }
 
+.results-background {
+  width: 50%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  margin: 0 auto;
+}
+
 .result-page {
   width: 50%;
 }
@@ -346,13 +368,13 @@
   margin: auto;
 }
 
+/* RESULTS ENDS HERE */
+
+/* DESCRIPTION STARTS HERE */
+
 .no-button {
   filter: blur(3px);
-
-  /* Adjust the blur radius as needed */
   pointer-events: none;
-
-  /* Optionally, you can add additional styling for a faded appearance */
   opacity: 0.7;
 }
 
@@ -396,7 +418,7 @@
   padding: 0.33rem;
 }
 
-/* CSS for Results Page Starts Here */
+/* DESCRIPTION ENDS HERE */
 
 .results-header,
 .description-header,
@@ -414,78 +436,16 @@ li {
   padding: 1rem;
 }
 
-/* turned off all image tags so adjustments might need to be made on search results
-/* img {
-  width: 60%;
-} */
-
-.homepage-banner {
-  height: 14rem;
-  width: 100%;
-}
-
 a {
   display: block;
   font-size: 1.5rem;
   font-weight: bold;
 }
 
-.results-background {
-  width: 50%;
-  height: 400px;
-  display: flex;
-  justify-content: center;
-  padding: 1rem;
-  margin: 0 auto;
-}
-
-.results-second-background {
-  display: flex;
-  flex-direction: column;
-  height: 350px;
-  text-align: center;
-  padding: 1rem 0;
-  width: 80%;
-}
-
-.movie-poster-container {
-  display: flex;
-  justify-content: center;
-  height: 200px;
-}
-
 .title {
   padding: 0 0.5rem 1rem;
   font-size: 14px;
 }
-
-/* .learn-more {
-  padding-top: 1rem;
-  font-size: 16px;
-} */
-
-.movie-poster-container img {
-  height: 200px;
-}
-
-/* CSS For Results Page Ends Here */
-
-/* CSS For Description Page Starts Here */
-
-.description-header {
-  padding-bottom: 0.5rem;
-}
-
-.description-background {
-  width: 80%;
-  margin: 0 auto;
-  text-align: center;
-  padding: 1rem;
-}
-
-/* .description-image {
-  padding: 1rem 0;
-} */
 
 .description-plot-header,
 .description-cast-header,
@@ -495,98 +455,56 @@ a {
   padding: 0.5rem 0;
 }
 
-.description-three-item-row {
-  display: flex;
-  justify-content: space-around;
-  padding: 1rem;
-  padding-left: 2rem;
-  padding-top: 1.5rem;
-  font-size: 15px;
-}
-
-.description-row {
-  display: flex;
-  justify-content: center;
-}
-
-.description-button {
-  display: flex;
-  justify-content: center;
-}
-
-.description-movie-poster-container {
-  height: 250px;
-}
-
-.description-movie-poster-container img {
-  width: 50%;
-  height: 250px;
-}
-
-/* CSS For Description Page Ends Here */
-
 /* CSS For My List Page Starts Here */
 
-.two-item-row {
+.list-li {
+  width: 80%;
+  padding: 1rem;
+  margin: auto;
+}
+
+.list-title {
   display: flex;
-  align-items: stretch;
+  justify-content: center;
+  padding-bottom: 1rem;
 }
 
-.my-list-background {
-  padding: 0.5rem;
-}
-
-.my-list-movie-poster {
-  object-fit: fill;
-  max-width: 40%;
-  height: 340px;
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-right: 0.5rem;
-  border-radius: 3%;
-}
-
-.my-list-movie-details {
+.list-item-container {
   display: flex;
   flex-direction: column;
-  height: 340px;
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: 0.5rem;
+}
+
+.list-image-container {
+  width: 175px;
+  margin: auto;
+  padding-bottom: 1rem;
+}
+
+.list-image {
+  width: 100%;
+}
+
+.list-description-container {
   text-align: center;
-  border-radius: 3%;
-}
-
-.my-list-title {
-  padding: 0.25rem 0;
-}
-
-.my-list-movie-description {
-  padding: 0 0.5rem;
-}
-
-.my-list-three-item-row {
-  display: flex;
-  padding: 0.5rem;
-  justify-content: space-around;
-  font-size: 13px;
-}
-
-.my-list-h3 {
   padding: 0.5rem 0;
-  font-size: 14px;
 }
 
-.my-list-title-info {
-  font-size: 14px;
+.list-description-title {
+  padding-bottom: 0.5rem;
 }
 
-.my-list-paragraph {
-  font-size: 13px;
+.list-buttons-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
 }
 
-.my-list-info {
-  font-size: 13px;
+.list-learn-more {
+  padding: 0.2rem;
+}
+
+.list-delete-entry {
+  padding: 0.2rem;
 }
 
 .delete-button-container {
@@ -647,6 +565,10 @@ a {
 /* CSS For My List Page Ends Here */
 
 @media screen and (min-width: 650px) {
+  .list-li {
+    width: 60%;
+  }
+
   .container {
     max-width: 2000px;
   }
@@ -695,78 +617,16 @@ a {
     margin: 0.8rem;
   }
 
-  .homepage-image-container {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-
-  .homepage-second-background {
-    width: 90%;
-    line-height: 2rem;
-    padding: 2rem 0;
-    font-size: 35px;
-    margin: 0;
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .homepage-text-container {
-    height: 500px;
-    padding-top: 0;
-    width: 100%;
-  }
-
-  /* CSS Media for Results Starts Here */
-
   .title {
     padding: 0 0.5rem 1rem;
     font-size: 20px;
   }
 
-  .result-page {
-    padding-top: 1rem;
-  }
-
-  .results-background {
-    height: 400px;
-  }
-
-  .results-second-background {
-    height: 350px;
-  }
-
-  .movie-poster-container {
-    width: 200px;
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    height: 200px;
-  }
-
-  .movie-poster-container img {
-    height: 200px;
-  }
-
-  /* CSS Media for Results End Here */
-
   /* CSS Media for Description Page Starts Here */
-
-  .description-background {
-    width: 70%;
-    margin: 0 auto;
-    text-align: center;
-    padding: 1rem 2rem;
-    font-size: 20px;
-  }
 
   .description-title {
     font-size: 40px;
   }
-
-  /* .description-image {
-    padding: 1rem 0;
-  } */
 
   .description-plot-header,
   .description-cast-header,
@@ -786,65 +646,9 @@ a {
     width: 75%;
   }
 
-  /* .description-plot {
-    padding: 0 0.5rem;
-  } */
-
-  .description-three-item-row {
-    display: flex;
-    justify-content: space-around;
-    padding: 1rem;
-    padding-left: 3rem;
-    padding-top: 1.5rem;
-    font-size: 20px;
-  }
-
-  .description-movie-poster-container {
-    height: 300px;
-  }
-
-  .description-movie-poster-container img {
-    height: 300px;
-  }
-
   /* CSS Media for Description Page Ends Here */
 
   /* CSS Media for My List Page Starts Here */
-
-  .my-list-background {
-    width: 70%;
-    margin: auto;
-  }
-
-  .my-list-title-info {
-    font-size: 20px;
-  }
-
-  .my-list-paragraph {
-    font-size: 15px;
-  }
-
-  .my-list-three-item-row {
-    padding-top: 3%;
-    font-size: 15px;
-  }
-
-  .my-list-h3 {
-    font-size: 20px;
-  }
-
-  .my-list-info {
-    font-size: 15px;
-  }
-
-  .my-list-movie-poster {
-    object-fit: fill;
-    height: 400px;
-  }
-
-  .my-list-movie-details {
-    height: 400px;
-  }
 
   .pop-up-question {
     font-size: 35px;
@@ -864,16 +668,16 @@ a {
 }
 
 @media screen and (min-width: 992px) {
+  .list-li {
+    width: 40%;
+  }
+
   .our-motto {
     font-size: 40px;
   }
 
   .my-list-background {
     width: 70%;
-  }
-
-  .homepage-text {
-    font-size: 30px;
   }
 
   .delete-button {
@@ -890,16 +694,6 @@ a {
 
   .pop-up-button-confirm {
     font-size: 35px;
-  }
-
-  .description-movie-poster-container {
-    height: 400px;
-    width: 70%;
-    margin: 0 auto;
-  }
-
-  .description-movie-poster-container img {
-    height: 400px;
   }
 
   .description-image-container {

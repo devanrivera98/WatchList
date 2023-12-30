@@ -1,7 +1,6 @@
 /* exported data */
 var data = {
-  view: 'results',
-  // was homepage
+  view: 'homepage',
   temporaryResults: [],
   temporaryDescription: [],
   entries: [],
