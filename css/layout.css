@@ -316,6 +316,10 @@
 
 /* RESULTS START HERE */
 
+.results-header {
+  padding-top: 1rem;
+}
+
 .results-title-container {
   padding: 1rem 3rem;
   align-items: center;
@@ -414,6 +418,10 @@
   align-items: center;
 }
 
+.description-header {
+  padding: 1rem 0;
+}
+
 .add-button {
   padding: 0.33rem;
 }
@@ -456,6 +464,10 @@ a {
 }
 
 /* CSS For My List Page Starts Here */
+
+.my-list-header {
+  padding-top: 1rem;
+}
 
 .list-li {
   width: 80%;
