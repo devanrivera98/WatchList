@@ -64,7 +64,7 @@ function getHomepageResults() {
     $descriptionUl.removeChild($descriptionUl.firstElementChild);
   }
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'https://imdb-api.com/en/API/Title/k_99uf6ywj/' + movieId);
+  xhr.open('GET', 'https://tv-api.com/en/API/Title/k_99uf6ywj/' + movieId);
   xhr.response = 'json';
   xhr.addEventListener('load', function () {
     var responseData = JSON.parse(xhr.response);
@@ -94,7 +94,7 @@ function getResults(name) {
   data.temporaryResults.unshift(name);
   $searchForm.reset();
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'https://imdb-api.com/API/AdvancedSearch/k_99uf6ywj/?title=' + name);
+  xhr.open('GET', 'https://tv-api.com/API/AdvancedSearch/k_99uf6ywj/?title=' + name);
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
     removeLoader();
@@ -476,7 +476,7 @@ function createMyList(event) {
         $descriptionUl.removeChild($descriptionUl.firstChild);
       }
       var xhr = new XMLHttpRequest();
-      xhr.open('GET', 'https://imdb-api.com/en/API/Title/k_99uf6ywj/' + event.target.id);
+      xhr.open('GET', 'https://tv-api.com/en/API/Title/k_99uf6ywj/' + event.target.id);
       xhr.response = 'json';
       xhr.addEventListener('load', function () {
         if (isEventHandled) {
